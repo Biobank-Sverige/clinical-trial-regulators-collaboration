@@ -1,0 +1,73 @@
+{
+    "$id": "https://github.com/tomassna/clinical-trial-regulators-collaboration/schema/components/EMADocumentDescriptionSchema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": ":vriga dokumenten",
+    "description": "Struktur för beskrivningen av bifogade samverkansdokument.",
+    "type": "object",
+    "properties":
+    {
+        "filename":
+        {
+            "description": "Filnamn på dokumentet",
+            "type": "string"
+        },
+        "documentType":
+        {
+            "description": "Typ av handling som bilagan utgör",
+            "type": "object",
+            "properties":
+            {
+                "code":
+                {
+                    "description": "Dokumenttypens kod",
+                    "type": "string",
+                    "enum":
+                    [
+                        "samverk_1",
+                        "samverk_2",
+                        "samverk_3",
+                        "samverk_4",
+                        "samverk_5",
+                        "samverk_6",
+                        "samverk_7",
+                        "samverk_8",
+                        "samverk_9",
+                        "samverk_10",
+                        "samverk_11",
+                        "9001"
+                    ]
+                },
+                "displayName":
+                {
+                    "description": "Benämning på de dokument som LV, RBC och EPM skapar. Alla dokument ska vara typade",
+                    "type": "string",
+                    "enum":
+                    [
+                        "Meddelandemetadata samarbetspartner",
+                        "Strukturerad data från ansökan",
+                        "Preliminär granskning del I",
+                        "Preliminär granskning del II",
+                        "Granskning av synpunkter från MSC",
+                        "Yttrande del I",
+                        "Yttrande del II",
+                        "Underlag till invändning mot RMS slutsats",
+                        "Synpunkt",
+                        "RFI/RFI-svar",
+                        "Ärendeinformation",
+                        "Beslutshandling"
+                    ]
+                },
+                "required":
+                [
+                    "code",
+                    "displayName"
+                ]
+            }
+        },
+        "required":
+        [
+            "filename",
+            "documentType"
+        ]
+    }
+}

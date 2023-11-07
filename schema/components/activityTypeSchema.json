@@ -1,0 +1,59 @@
+{
+    "$id": "https://github.com/tomassna/clinical-trial-regulators-collaboration/schema/components/activityTypeSchema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Longitude and Latitude",
+    "description": "Avgränsad aktivitet i handläggningen av en ansökan om prövningstillstånd för farmakologisk prövning.",
+    "required":
+    [
+        "activity",
+        "order"
+    ],
+    "type": "object",
+    "properties":
+    {
+        "activity":
+        {
+            "description": "LV:s beskrivande text av tidtabellhändelsen",
+            "type": "string"
+        },
+        "activityType":
+        {
+            "description": "LV:s interna typ på tidtabellhändelsen. Exempelvis \"start\", \"deadline\" eller \"meeting\".",
+            "type": "string"
+        },
+        "status":
+        {
+            "description": "LV:s interna status på tidtabellshändelsen.",
+            "type": "string",
+            "enum":
+            [
+                "Selected",
+                "Ongoing",
+                "Completed"
+            ]
+        },
+        "key":
+        {
+            "description": "En nyckel till tidtabellshändelsen i LV:s ärendehanteringssystem.",
+            "type": "string"
+        },
+        "order":
+        {
+            "description": "Sorteringsordning av tidtabellhändelserna. I dokumentet kan händelserna komma osorterade.",
+            "type": "integer",
+            "inclusiveMinimum": 0
+        },
+        "plannedEndDate":
+        {
+            "description": "Det planerade datumet då tidtabellhändelsen ska avslutas, uttryckt enligt ISO-8601 med datumupplösning.",
+            "type": "string",
+            "format": "date"
+        },
+        "actualEndDate":
+        {
+            "description": "Det datum då tidtabellhändelsen faktiskt avslutades, uttryckt enligt ISO-8601 med datumupplösning.",
+            "type": "string",
+            "format": "date"
+        }
+    }
+}

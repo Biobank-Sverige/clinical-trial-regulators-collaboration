@@ -1,0 +1,372 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/product.schema.json",
+    "title": "Message",
+    "description": "Schema for message metadata version 2.0",
+    "type": "object",
+    "properties":
+    {
+        "header":
+        {
+            "description": "Metadata som beskriver meddelandet självt",
+            "type": "object",
+            "properties":
+            {
+                "version":
+                {
+                    "description": "Version för det protokoll som versionen motsvarar, detta schema behöver stödja 2 samtidigt, men tanken är sedan att framtida versioner får nya scheman som eventuellt deprecerar tidigare versioner.",
+                    "type": "string",
+                    "enum":
+                    [
+                        "1.0",
+                        "2.0"
+                    ]
+                },
+                "from":
+                {
+                    "description": "Avsändaren utryckt som en av ”LV”, ”EPM”, ”RBC”",
+                    "type": "string",
+                    "enum":
+                    [
+                        "LV",
+                        "EMP",
+                        "RBC"
+                    ]
+                },
+                "to":
+                {
+                    "description": "Mottagaren utryckt som en av ”LV”, ”EPM”, ”RBC”",
+                    "type": "string",
+                    "enum":
+                    [
+                        "LV",
+                        "EMP",
+                        "RBC"
+                    ]
+                },
+                "transactionId":
+                {
+                    "description": "Ett unikt id för meddelandet. Återanvänds inte även om meddelandet skickas om.",
+                    "type": "string"
+                },
+                "messageId":
+                {
+                    "description": "Ett id för meddelandet. Om ett meddelande behöver skickas om används samma messageId som på ursprungsmeddelandet.",
+                    "type": "string"
+                },
+                "parentMessageId":
+                {
+                    "description": "Används när ett meddelande är ett svar på ett annat meddelande. Sätt då till det värde messageId har i urspungsmeddelandet.",
+                    "type": "string"
+                },
+                "timestamp":
+                {
+                    "description": "Tidpunkten när meddelandet skapas uttryckt enligt ISO-8601 med sekundupplösning.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "messageReasonType":
+                {
+                    "description": "En text som beskriver varför meddelandet skickats.",
+                    "type": "string",
+                    "enum":
+                    [
+                        "Notis: Initial ansökan del I och II",
+                        "Notis: Initial ansökan del I",
+                        "Notis: Initial ansökan del II",
+                        "Notis: Ändringsansökan",
+                        "Notis: Validerings-RFI till sponsor",
+                        "Notis: Valid ansökan",
+                        "Begäran: Preliminär granskning del I",
+                        "Begäran: Preliminär granskning del II",
+                        "Begäran: Invändningar del II till EPM",
+                        "Svar: Preliminär granskning del I",
+                        "Svar: Preliminär granskning del II",
+                        "Svar: Invändningar del II till EPM",
+                        "Notis: DAR inkommen",
+                        "Notis: Bedömnings-RFI del I till sponsor",
+                        "Notis: Bedömnings-RFI del II till sponsor",
+                        "Notis: Komplettering från sponsor del I",
+                        "Notis: Komplettering från sponsor del II",
+                        "Notis: AR och slutsats del I",
+                        "Notis: AR och slutsats del II",
+                        "Notis: Informell RFI",
+                        "Notis: Ansökan förfallen",
+                        "Notis: Ansökan har dragits tillbaka",
+                        "Notis: Ansökan tyst godkännande",
+                        "Notis: Beslut för ansökan",
+                        "Notis: Beslut för överflyttad prövning"
+                    ]
+                },
+                "dueDate":
+                {
+                    "description": "Senaste datumet när avsändaren vill ha svar, uttryckt enligt ISO-8601 med datumupplösning. Null om inget svar förväntas.",
+                    "type": "string",
+                    "format": "date"
+                }
+            },
+            "required":
+            [
+                "version",
+                "from",
+                "to",
+                "transactionId",
+                "messageId",
+                "timestamp",
+                "messageReasonType"
+            ]
+        },
+        "caseData":
+        {
+            "description": "Metadata gällande ansökningsärendet och dess behandling",
+            "type": "object",
+            "properties":
+            {
+                "lvDiaryNumber":
+                {
+                    "description": "Diarienummer från LV, unikt ID för varje ansökan. Används som korrelationsID för olika meddelanden i ett ärende.",
+                    "type": "string"
+                },
+                "domain":
+                {
+                    "description": "Kommer tillsvidare alltid vara ”HumMedProd” som ska utläsas ” läkemedel för människor”. Framtidssäkring eftersom vi vad det lider även kommer att skicka meddelanden som rör medicintekniska produkter och läkemedel för djur.",
+                    "type": "string",
+                    "enum":
+                    [
+                        "HumMedProd"
+                    ]
+                },
+                "caseType":
+                {
+                    "description": "Den ärendetyp som LV gett ärendet. Ska ge EPM/RBC tillräcklig information om vilken sorts ärende det är frågan om (multinationell eller bara Sverige? Del I, del II, eller båda? Nyansökan eller ändringsansökan?)",
+                    "type": "string",
+                    "enum":
+                    [
+                        "KP-ansökan, multinationell, initialt del I",
+                        "KP-ansökan, multinationell, initialt komplett",
+                        "KP-ansökan, mononationell, initialt del I",
+                        "KP-ansökan, mononationell, initialt komplett",
+                        "KP-ansökan, Tillägg av SE som MSC",
+                        "Ändring, multinationell, del I",
+                        "Ändring, multinationell, del I och del II",
+                        "Ändring, mononationell, del I",
+                        "Ändring, mononationell, del I och del II",
+                        "Ändring, nationell, del II"
+                    ]
+                },
+                "isTransitioned":
+                {
+                    "description": "Boolean som ger true om ärendet gäller en prövning som flyttats över från gamla reglementet. Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen",
+                    "type": "boolean"
+                },
+                "transitionedFrom":
+                {
+                    "description": "EudtraCT-nummer på den tidigare prövningen.Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen",
+                    "type": "string"
+                },
+                "concernsEpm":
+                {
+                    "description": "Anger om ansökan rör EPM och RBC. Kan vara null om EMP:s/RBS:s medverkan inte ännu kunnat bestämmas.",
+                    "type": "boolean"
+                },
+                "concernsRbc":
+                {
+                    "description": "Anger om ansökan rör EPM och RBC. Kan vara null om EMP:s/RBS:s medverkan inte ännu kunnat bestämmas.",
+                    "type": "boolean"
+                },
+                "timetable":
+                {
+                    "description": "Lista på för RBC/EPM relevanta tidtabellshändelser så som LV planerar dem. Ska användas för att RBC/EPM ska kunna planera framtida bemanning.",
+                    "type": "array",
+                    "itmes":
+                    {
+                        "$ref": "https://github.com/tomassna/clinical-trial-regulators-collaboration/schema/components/activityTypeSchema.json"
+                    }
+                }
+            }
+        },
+        "clinicalTrialData":
+        {
+            "description": "Innehåller vissa översiktsdata om prövningen.",
+            "type": "object",
+            "properties":
+            {
+                "clinicalTrialId":
+                {
+                    "description": "Prövningens id i CTIS-portalen",
+                    "type": "string"
+                },
+                "emaSubmissionDate":
+                {
+                    "description": "Datum då ansökan skickades in till ctis-portalen.",
+                    "type": "string",
+                    "format": "date"
+                },
+                "swedenRole":
+                {
+                    "description": "Sveriges aktuella RMS/MSC-status i prövningen. Kan uppdateras under valideringsfasen.",
+                    "type": "string",
+                    "enum":
+                    [
+                        "Föreslagen MSC",
+                        "Föreslagen RMS",
+                        "MSC",
+                        "RMS"
+                    ]
+                },
+                "memberstateConcerned":
+                {
+                    "description": "En lista på alla deltagande länder i prövningen.",
+                    "type": "array",
+                    "items":
+                    {
+                        "type": "string"
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                },
+                "sponsor":
+                {
+                    "type": "object",
+                    "properties":
+                    {
+                        "name":
+                        {
+                            "description": "Huvudsponsorns namn baserat på vad som angivits i CTIS-portalen",
+                            "type": "string"
+                        },
+                        "country":
+                        {
+                            "description": "Sponsors ort som angivits i adressen.",
+                            "type": "string"
+                        }
+                    }
+                },
+                "part1Data":
+                {
+                    "description": "Huvudobjekt för detaljerade data om prövningen gemensam för alla MSC.",
+                    "type": "object",
+                    "properties":
+                    {
+                        "title":
+                        {
+                            "description": "Prövningens officiella titel",
+                            "type": "string"
+                        }
+                    }
+                },
+                "swedishPart2Data":
+                {
+                    "description": "Huvudobjekt för data om prövningen som bara berör Sverige.",
+                    "type": "object",
+                    "properties":
+                    {
+                        "trialSites":
+                        {
+                            "description": "En lista med alla prövningsställen i Sverige",
+                            "type": "object",
+                            "properties":
+                            {
+                                "trialSiteName":
+                                {
+                                    "description": "Namnet på prövningsstället. Värdet kommer tillsvidare alltid vara null eftersom det är så det skickas ut från CTIS.",
+                                    "type": "string"
+                                },
+                                "department":
+                                {
+                                    "description": "Ett fritextfält",
+                                    "type": "string"
+                                },
+                                "organisationAddress":
+                                {
+                                    "description": "Adressinformation enligt EMA:s SPOR-databas",
+                                    "type": "object",
+                                    "properties":
+                                    {
+                                        "addressLine1":
+                                        {
+                                            "description": "Adressrad 1",
+                                            "type": "string"
+                                        },
+                                        "addressLine2":
+                                        {
+                                            "description": "Adressrad 2",
+                                            "type": "string"
+                                        },
+                                        "addressLine3":
+                                        {
+                                            "description": "Adressrad 3",
+                                            "type": "string"
+                                        },
+                                        "addressLine4":
+                                        {
+                                            "description": "Adressrad 4",
+                                            "type": "string"
+                                        },
+                                        "postalCode":
+                                        {
+                                            "description": "Postnummer ",
+                                            "type": "string"
+                                        },
+                                        "city":
+                                        {
+                                            "description": "Ort",
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "principalInvestigator":
+                                {
+                                    "description": "Prövningsställets huvudprövares kontaktuppgifter.",
+                                    "type": "object",
+                                    "properties":
+                                    {
+                                        "familyName":
+                                        {
+                                            "description": "Efternamn",
+                                            "type": "string"
+                                        },
+                                        "givenName":
+                                        {
+                                            "description": "Förnamn",
+                                            "type": "string"
+                                        },
+                                        "phoneNumber":
+                                        {
+                                            "description": "Telefonnummer",
+                                            "type": "string"
+                                        },
+                                        "emailAddress":
+                                        {
+                                            "description": "E-postadress",
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "emaDocuments":
+        {
+            "description": "Lista på metadata om dokument från ctis",
+            "type": "array",
+            "items":
+            {
+                "$ref": "https://github.com/tomassna/clinical-trial-regulators-collaboration/schema/components/EMADocumentDescriptionSchema.json"
+            }
+        },
+        "otherDocuments":
+        {
+            "description": "Lista med metadata om samverkansdokument som finns i meddelandet. Skall i samtliga fall vara minst 4 stycken, 'message.json', 'message.htm', 'ctisMetadata.json' och 'ctismetadata.htm'",
+            "type": "array",
+            "items":
+            {
+                "$ref": "https://github.com/tomassna/clinical-trial-regulators-collaboration/schema/components/otherDocumentDescriptionSchema.json"
+            },
+            "minItems": 4
+        }
+    }
+}
