@@ -6,9 +6,9 @@ This repository is created to gather technical documentation relevant to the col
 
 ## structure
 
-Detta repository innehåller i första hand dokumentation och saknar därför konfigurationer för byggen och liknande som man förväntar sig för kod.
+The purpose of this repository is first and foremost to collect common documentation in a place where it is accessable to all parties in the collaboration. The choice of platform and format is mainly due to making it accessible to buildservers and such (i.e. schema definitions).
 
-Strukturen är övergripande uppdelad enligt:
+The repository is structured according to following:
  
  * documentation/
  	* common
