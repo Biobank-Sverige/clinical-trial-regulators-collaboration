@@ -233,6 +233,8 @@ Följande dokumenttyper accepteras när BBS skickar meddelanden till LV:
 Processbeskrivning
 ------------------
 
+För detaljer kring vad som utgör ett korrekt meddelande, se [verifications](rbc/verifications.md).
+
 Som första meddelande för en ansökan (case) från LV till BBS accepteras:
 
 - Notis: Initial ansökan del I
