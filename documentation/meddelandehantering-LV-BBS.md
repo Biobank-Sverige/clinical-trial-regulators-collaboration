@@ -252,4 +252,21 @@ Som första meddelande för en ansökan (case) från LV till BBS accepteras:
 - Notis: Beslut för överflyttad prövning
     - KP-ansökan, multinationell, transitional
 
-När ett sådant meddelande är mottaget öppnas ett *case*
+När ett sådant meddelande är mottaget öppnas en ansökan (*case*) och en eller två bedömning(ar) (*asessment(s)*) 
+
+Avlsut av bedömning
+
+När en bedömning del I är öppen kan följande meddelanden tas emot:
+
+När en bedömning del I är pausad kan följande meddelanden tas emot:
+
+När en bedömning del II är öppen kan följande meddelanden tas emot:
+
+En ansökan avslutas när något av följande meddelanden skickas
+
+- Notis: Ansökan dragits tillbaka
+- Notis: Ansökan förfallen
+- Notis: Ansökan tyst godkännande
+- Notis: Beslut för ansökan
+
+Notera att en Notis: AR och slutsats del I inte avslutar ansökan. Vid sådant meddelande
