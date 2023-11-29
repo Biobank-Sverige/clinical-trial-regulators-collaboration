@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>.step-contenttable {
+border-collapse: collapse;
+min-width: 800px;
+max-width: 800px;
+}.step-contenttable td, th {
+border: 1px solid #999;
+padding: 0.5rem;
+text-align: left;
+}.step-resulttable {
+border-collapse: collapse;
+margin: 3px 0;
+font-family: sans-serif;
+font-size: 12px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+min-width: 800px;
+max-width: 800px;
+}.step-resulttable td, th {
+padding: 2px 5px;
+text-align: left;
+word-break:break-all;
+}.step-resulttable tbody tr:nth-of-type(even) {
+background-color: #f3f3f3;
+}
+td:nth-child(1) {width: 30%};listtr:nth-child(even) {background-color: #f2f2f2;}</style>
+<head>
+<body>
+<table class="step-contenttable">
+<tr>
+<td><b>Header</b></td>
+</tr>
+<tr>
+<td>
+<table class="step-resulttable">
+<tr>
+<td>Version</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>From</td>
+<td>LV</td>
+</tr>
+<tr>
+<td>To</td>
+<td>RBC</td>
+</tr>
+<tr>
+<td>Message Id</td>
+<td>123456789</td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>2022-04-08T09:15:22+02:00</td>
+</tr>
+<tr>
+<td>Message Reason Type</td>
+<td>Notis: Beslut för överflyttad prövning</td>
+</tr>
+<tr>
+<td>Due Date</td>
+<td></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</br><table class="step-contenttable">
+<tr>
+<td><b>Case Data</b></td>
+</tr>
+<tr>
+<td>
+<table class="step-resulttable">
+<tr>
+<td>LV Diary Number</td>
+<td>1.1.1-2022-12345</td>
+</tr>
+<tr>
+<td>Domain</td>
+<td>HumMedProd</td>
+</tr>
+<tr>
+<td>Case Type</td>
+<td>KP-ansökan, multinationell, transitional</td>
+</tr>
+<tr>
+<td>Is Transitioned</td>
+<td>true</td>
+</tr>
+<tr>
+<td>Transitioned From</td>
+<td>2022-001067-27</td>
+</tr>
+<tr>
+<td>Concerns EPM</td>
+<td>false</td>
+</tr>
+<tr>
+<td>Concerns RBC</td>
+<td>false</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</br><table class="step-contenttable">
+<tr>
+<td><b>Clinical Trial Data</b></td>
+</tr>
+<tr>
+<td>
+<table class="step-resulttable">
+<tr>
+<td>Clinical Trial Id</td>
+<td>00</td>
+</tr>
+<tr>
+<td>EMA Submission Date</td>
+<td>2021-02-19T00:00:00</td>
+</tr>
+<tr>
+<td>Sweden Role</td>
+<td>RMS</td>
+</tr>
+<tr>
+<td>Memberstate Concerned</td>
+<td>
+Poland,
+Austria,
+Belgium	,
+Czechia,
+Finland,
+France,
+Germany,
+Greece,
+Hungary,
+Latvia,
+Lithuania,
+Portugal,
+Spain,
+Sweden,
+Netherlands (the),
+Norway,
+</tr>
+</table>
+</br>
+<table class="step-resulttable">
+<tr>
+<td><b>Sponsor</b></td>
+</tr>
+</table>
+<table class="step-resulttable">
+<tr>
+<td>Name</td>
+<td>XYZ</td>
+</tr>
+<tr>
+<td>Country</td>
+<td>Germany</td>
+</tr>
+</table>
+</br>
+<table class="step-resulttable">
+<tr>
+<td><b>Part1 Data</b></td>
+</tr>
+</table>
+<table class="step-resulttable">
+<tr>
+<td>Title</td>
+<td>(XYZ) A multicenter, study</td>
+</tr>
+</table>
+</br>
+<table class="step-resulttable">
+<tr>
+<td><b>Swedish Part2 Data</b></td>
+</tr>
+<tr>
+<td><b>Trial Sites</b></td>
+</tr>
+</table>
+<table class="step-resulttable">
+<tr>
+<td>Trial Site Name</td>
+<td>Region Hospital</td>
+</tr>
+<tr>
+<td>Department</td>
+<td>Kliniken</td>
+</tr>
+<tr>
+<td>Address Line 1</td>
+<td>Gatan 92</td>
+</tr>
+<tr>
+<td>Address Line 2</td>
+<td></td>
+</tr>
+<tr>
+<td>Address Line 3</td>
+<td></td>
+</tr>
+<tr>
+<td>Address Line 4</td>
+<td></td>
+</tr>
+<tr>
+<td>Postal Code</td>
+<td>123 10</td>
+</tr>
+<tr>
+<td>City</td>
+<td>Åbo</td>
+</tr>
+</table>
+</br>
+</br><table class="step-contenttable">
+<tr>
+<td><b>Ema Documents</b></td>
+</tr>
+<tr>
+<td>
+<table class="step-resulttable">
+<tr>
+<td>File Name</td>
+<td>Regulatory submission.pdf</td>
+</tr>
+<tr>
+<td>Application Part</td>
+<td>1</td>
+</tr>
+<tr>
+<td>System Version</td>
+<td>2.00</td>
+</tr>
+<tr>
+<td>Document Type</td>
+<td>Cover letter (for publication)</td>
+</tr>
+</table>
+</br>
+<table class="step-resulttable">
+<tr>
+<td>File Name</td>
+<td>Regulatory Cover For publication_v1.00.pdf</td>
+</tr>
+<tr>
+<td>Application Part</td>
+<td>1</td>
+</tr>
+<tr>
+<td>System Version</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Document Type</td>
+<td>Cover letter (for publication)</td>
+</tr>
+</table>
+</br>
+<table class="step-resulttable">
+<tr>
+<td>File Name</td>
+<td>Regulatory submission EN 20604 Cover Letter For publication_v1.00.pdf</td>
+</tr>
+<tr>
+<td>Application Part</td>
+<td>1</td>
+</tr>
+<tr>
+<td>System Version</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Document Type</td>
+<td>Cover letter (for publication)</td>
+</tr>
+</table>
+</br>
+<table class="step-resulttable">
+<tr>
+<td>File Name</td>
+<td>Protocol.pdf</td>
+</tr>
+<tr>
+<td>Application Part</td>
+<td>1</td>
+</tr>
+<tr>
+<td>System Version</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Document Type</td>
+<td>Protocol (not for publication)</td>
+</tr>
+</table>
+</br>
+<table class="step-resulttable">
+<tr>
+<td>File Name</td>
+<td>Synopsis.pdf</td>
+</tr>
+<tr>
+<td>Application Part</td>
+<td>1</td>
+</tr>
+<tr>
+<td>System Version</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Document Type</td>
+<td>Synopsis of the protocol (for publication)</td>
+</tr>
+</table>
+</br>
+<table class="step-resulttable">
+<tr>
+<td>File Name</td>
+<td>Överföring.pdf</td>
+</tr>
+<tr>
+<td>Application Part</td>
+<td>2</td>
+</tr>
+<tr>
+<td>System Version</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Document Type</td>
+<td>Supporting documentation (for publication)</td>
+</tr>
+</table>
+</br>
+<table class="step-resulttable">
+<tr>
+<td>File Name</td>
+<td>For publication.pdf</td>
+</tr>
+<tr>
+<td>Application Part</td>
+<td>2</td>
+</tr>
+<tr>
+<td>System Version</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Document Type</td>
+<td>Subject information and informed consent form (for publication)</td>
+</tr>
+</table>
+</br>
+<table class="step-resulttable">
+<tr>
+<td>File Name</td>
+<td>Expecting publication.pdf</td>
+</tr>
+<tr>
+<td>Application Part</td>
+<td>2</td>
+</tr>
+<tr>
+<td>System Version</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Document Type</td>
+<td>Subject information and informed consent form (for publication)</td>
+</tr>
+</table>
+</br>
+<table class="step-resulttable">
+<tr>
+<td>File Name</td>
+<td>Core publication.pdf</td>
+</tr>
+<tr>
+<td>Application Part</td>
+<td>2</td>
+</tr>
+<tr>
+<td>System Version</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Document Type</td>
+<td>Subject information and informed consent form (for publication)</td>
+</tr>
+</table>
+</br>
+<table class="step-resulttable">
+<tr>
+<td>File Name</td>
+<td>Submission.pdf</td>
+</tr>
+<tr>
+<td>Application Part</td>
+<td>2</td>
+</tr>
+<tr>
+<td>System Version</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Document Type</td>
+<td>Recruitment arrangements (for publication)</td>
+</tr>
+</table>
+</br>
+<table class="step-resulttable">
+<tr>
+<td>File Name</td>
+<td>Compliance of biological samples.pdf</td>
+</tr>
+<tr>
+<td>Application Part</td>
+<td>2</td>
+</tr>
+<tr>
+<td>System Version</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Document Type</td>
+<td>Compliance with use of Biological samples (for publication)</td>
+</tr>
+</table>
+</br>
+</td>
+</tr>
+</table>
+</br><table class="step-contenttable">
+<tr>
+<td><b>Other Documents</b></td>
+</tr>
+<tr>
+<td>
+<table class="step-resulttable">
+<tr>
+<td>File Name</td>
+<td>message-HTML.htm</td>
+</tr>
+<tr>
+<td>Document Type</td>
+<td>Meddelandemetadata samarbetspartner</td>
+</tr>
+</table>
+</br>
+<table class="step-resulttable">
+<tr>
+<td>File Name</td>
+<td>Clinical-Trial-metadata-HTML.htm</td>
+</tr>
+<tr>
+<td>Document Type</td>
+<td>Strukturerad data från ansökan</td>
+</tr>
+</table>
+</br>
+<table class="step-resulttable">
+<tr>
+<td>File Name</td>
+<td>message.json</td>
+</tr>
+<tr>
+<td>Document Type</td>
+<td>Meddelandemetadata samarbetspartner</td>
+</tr>
+</table>
+</br>
+<table class="step-resulttable">
+<tr>
+<td>File Name</td>
+<td>Clinical-Trial-metadata.json</td>
+</tr>
+<tr>
+<td>Document Type</td>
+<td>Strukturerad data från ansökan</td>
+</tr>
+</table>
+</br>
+</td>
+</tr>
+</table>
+</br><table class="step-contenttable">
+<tr>
+<td><b>Timetable</b></td>
+</tr>
+<tr>
+<td>
+<table class="step-resulttable">
+<tr>
+<th>Activity</th>
+<th>Activity Type</th>
+<th>Status</th>
+<th>Planned End Date</th>
+<th>Actual End Date</th>
+<th>Order</th>
+</tr>
+<tr>
+<td>Ankomstdatum</td>
+<td>Start</td>
+<td>Completed</td>
+<td></td>
+<td>2021-02-13</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Slutföra registrering</td>
+<td>Deadline för LV</td>
+<td>Completed</td>
+<td>2022-02-31</td>
+<td>2022-03-02</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Ange roll, RMS/MSC</td>
+<td>Deadline för LV</td>
+<td>Completed</td>
+<td></td>
+<td></td>
+<td>3</td>
+</tr>
+<tr>
+<td>Första besked om roll, RMS/MSC</td>
+<td>Svarsfrist</td>
+<td>Completed</td>
+<td></td>
+<td></td>
+<td>4</td>
+</tr>
+</table>
+</body>
+</html>

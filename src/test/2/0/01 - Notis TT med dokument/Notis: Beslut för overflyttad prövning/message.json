@@ -1,0 +1,565 @@
+{
+"header": {
+"version": "2.0",
+"from": "LV",
+"to": "RBC",
+"transactionId": "123456789",
+"messageId": "123456789",
+"parentMessageId": null,
+"timestamp": "2023-08-20T10:14:28+02:00",
+"messageReasonType": "Notis: Beslut för överflyttad prövning",
+"dueDate": null
+},
+"caseData": {
+"lvDiaryNumber": "5.1.1-2023-12345",
+"domain": "HumMedProd",
+"caseType": "KP-ansökan, multinationell, transitional",
+"isTransitioned": "true",
+"transitionedFrom": "2020-001234-11",
+"concernsEpm": "false",
+"concernsRbc": "false",
+"timetable": [
+{
+"activity": "Ankomstdatum",
+"activityType": "Start",
+"status": "Completed",
+"key": "08001bf68021d0b1",
+"order": 0,
+"plannedEndDate": null,
+"actualEndDate": "2023-08-14"
+}
+,
+{
+"activity": "Slutföra registrering",
+"activityType": "Deadline för LV",
+"status": "Completed",
+"key": "08001bf68021e303",
+"order": 2,
+"plannedEndDate": "2023-08-14",
+"actualEndDate": "2023-08-15"
+}
+,
+{
+"activity": "Ange roll, RMS/MSC",
+"activityType": "Deadline för LV",
+"status": "Completed",
+"key": "08001bf68021e304",
+"order": 3,
+"plannedEndDate": "2023-08-17",
+"actualEndDate": "2023-08-15"
+}
+,
+{
+"activity": "Första besked om roll, RMS/MSC",
+"activityType": "Svarsfrist",
+"status": "Completed",
+"key": "08001bf68021e305",
+"order": 4,
+"plannedEndDate": "2023-08-17",
+"actualEndDate": "2023-08-15"
+}
+,
+{
+"activity": "Ange slutgiltig roll, RMS/MSC",
+"activityType": "Deadline för LV",
+"status": "Completed",
+"key": "08001bf68021e306",
+"order": 5,
+"plannedEndDate": "2023-08-18",
+"actualEndDate": "2023-08-18"
+}
+,
+{
+"activity": "Besked om utsedd RMS",
+"activityType": "Svarsfrist",
+"status": "Completed",
+"key": "08001bf68021e373",
+"order": 6,
+"plannedEndDate": "2023-08-19",
+"actualEndDate": "2023-08-18"
+}
+,
+{
+"activity": "Besked om synpunkter, validering",
+"activityType": "Svarsfrist",
+"status": "Completed",
+"key": "08001bf68021e374",
+"order": 7,
+"plannedEndDate": "2023-08-23",
+"actualEndDate": "2023-08-22"
+}
+,
+{
+"activity": "Lämna synpunkter, validering",
+"activityType": "Deadline för LV",
+"status": "Completed",
+"key": "08001bf68021e375",
+"order": 8,
+"plannedEndDate": "2023-08-23",
+"actualEndDate": "2023-08-22"
+}
+,
+{
+"activity": "Konsolidera synpunkter, validering",
+"activityType": "Deadline för LV",
+"status": "Completed",
+"key": "08001bf68021e376",
+"order": 9,
+"plannedEndDate": "2023-08-25",
+"actualEndDate": "2023-08-25"
+}
+,
+{
+"activity": "RFI-svar (validering)",
+"activityType": "Svarsfrist",
+"status": "Completed",
+"key": "08001bf68022acd2",
+"order": 13,
+"plannedEndDate": "2023-09-07",
+"actualEndDate": "2023-09-07"
+}
+,
+{
+"activity": "Besked om synpunkter på RFI-svar (validering)",
+"activityType": "Deadline för LV",
+"status": "Completed",
+"key": "08001bf68022acd3",
+"order": 14,
+"plannedEndDate": "2023-09-12",
+"actualEndDate": "2023-09-12"
+}
+,
+{
+"activity": "Valideringsbesked lämnas",
+"activityType": "Deadline för LV",
+"status": "Completed",
+"key": "08001bf68022acd4",
+"order": 15,
+"plannedEndDate": "2023-09-12",
+"actualEndDate": "2023-09-12"
+}
+,
+{
+"activity": "Besked om validering",
+"activityType": "Deadline för LV",
+"status": "Completed",
+"key": "08001bf68021e377",
+"order": 16,
+"plannedEndDate": "2023-09-12",
+"actualEndDate": "2023-09-12"
+}
+,
+{
+"activity": "Bedömningen börjar (Del I)",
+"activityType": "Start",
+"status": "Completed",
+"key": "08001bf68021e378",
+"order": 17,
+"plannedEndDate": "2023-09-12",
+"actualEndDate": "2023-09-12"
+}
+,
+{
+"activity": "Bedömningen börjar (Del II)",
+"activityType": "Start",
+"status": "Completed",
+"key": "08001bf68021e379",
+"order": 18,
+"plannedEndDate": "2023-09-12",
+"actualEndDate": "2023-09-12"
+}
+,
+{
+"activity": "Preliminär rapport (manuell)",
+"activityType": "Deadline för LV",
+"status": "Completed",
+"key": "08001bf68021e37a",
+"order": 19,
+"plannedEndDate": "2023-09-15",
+"actualEndDate": "2023-09-14"
+}
+,
+{
+"activity": "Intern deadline",
+"activityType": "Inkommande",
+"status": "Completed",
+"key": "08001bf68021e37b",
+"order": 20,
+"plannedEndDate": "2023-09-13",
+"actualEndDate": "2023-09-14"
+}
+,
+{
+"activity": "Intern deadline",
+"activityType": "Inkommande",
+"status": "Completed",
+"key": "08001bf68021e37c",
+"order": 21,
+"plannedEndDate": "2023-09-14",
+"actualEndDate": "2023-09-14"
+}
+,
+{
+"activity": "Besked om synpunkter, bedömning del I (manuell)",
+"activityType": "Svarsfrist",
+"status": "Completed",
+"key": "08001bf68021e37d",
+"order": 22,
+"plannedEndDate": "2023-09-15",
+"actualEndDate": "2023-09-15"
+}
+,
+{
+"activity": "Konsolidera synpunkter, bedömning del I (manuell)",
+"activityType": "Deadline för LV",
+"status": "Completed",
+"key": "08001bf68021e37e",
+"order": 23,
+"plannedEndDate": "2023-09-18",
+"actualEndDate": "2023-09-27"
+}
+,
+{
+"activity": "Final rapport eller RFI (Del I)",
+"activityType": "Deadline för LV",
+"status": "Completed",
+"key": "08001bf68021e37f",
+"order": 24,
+"plannedEndDate": "2023-09-27",
+"actualEndDate": "2023-09-27"
+}
+,
+{
+"activity": "Intern deadline",
+"activityType": "Inkommande",
+"status": "Completed",
+"key": "08001bf68021e380",
+"order": 25,
+"plannedEndDate": "2023-09-25",
+"actualEndDate": "2023-09-27"
+}
+,
+{
+"activity": "Intern deadline",
+"activityType": "Inkommande",
+"status": "Completed",
+"key": "08001bf68021e381",
+"order": 26,
+"plannedEndDate": "2023-09-26",
+"actualEndDate": "2023-09-27"
+}
+,
+{
+"activity": "Hårt slut bedömningsrunda (Del I, manuell)",
+"activityType": "Deadline för LV",
+"status": "Completed",
+"key": "08001bf68021e382",
+"order": 27,
+"plannedEndDate": "2023-09-27",
+"actualEndDate": "2023-09-27"
+}
+,
+{
+"activity": "Konsolidera synpunkter, bedömning del II (manuell)",
+"activityType": "Deadline för LV",
+"status": "Completed",
+"key": "08001bf68021e383",
+"order": 28,
+"plannedEndDate": "2023-09-19",
+"actualEndDate": "2023-09-14"
+}
+,
+{
+"activity": "Final rapport eller RFI (Del II)",
+"activityType": "Deadline för LV",
+"status": "Completed",
+"key": "08001bf68021e384",
+"order": 29,
+"plannedEndDate": "2023-09-14",
+"actualEndDate": "2023-09-14"
+}
+,
+{
+"activity": "Hårt slut bedömningsrunda (Del II, manuell)",
+"activityType": "Deadline för LV",
+"status": "Completed",
+"key": "08001bf68021e385",
+"order": 30,
+"plannedEndDate": "2023-09-14",
+"actualEndDate": "2023-09-14"
+}
+,
+{
+"activity": "Beslut (manuell)",
+"activityType": "Deadline för LV",
+"status": null,
+"key": "08001bf68021e386",
+"order": 31,
+"plannedEndDate": "2023-10-02",
+"actualEndDate": null
+}
+,
+{
+"activity": "Avsluta ärendet",
+"activityType": "Deadline för LV",
+"status": null,
+"key": "08001bf68021e387",
+"order": 32,
+"plannedEndDate": "2023-10-16",
+"actualEndDate": null
+}
+]}
+,
+"clinicalTrialData": {
+"clinicalTrialId": "2023-543210-11-00",
+"emaSubmissionDate": "2023-07-08T00:00:00",
+"swedenRole": "RMS",
+"memberstateConcerned": [
+"Poland"
+,
+"Slovakia"
+,
+"Austria"
+,
+"Belgium"
+,
+"Bulgaria"
+,
+"Czechia"
+,
+"Denmark"
+,
+"Finland"
+,
+"Germany"
+,
+"Greece"
+,
+"Hungary"
+,
+"Italy"
+,
+"Latvia"
+,
+"Lithuania"
+,
+"Portugal"
+,
+"Sweden"
+,
+"Netherlands (the)"
+,
+"Norway"
+],
+"sponsor": {
+"name": "Bayer AG",
+"country": "Germany"
+},
+"part1Data": {
+"title": "(192983 ONgoiNG STUDY) A multicenter, randomized, placebo controlled, double-blind, parallel group and event driven Phase 3 study of the phenomenon"
+},
+"swedishPart2Data": {
+"trialSites": [
+{
+"trialSiteName": "Region Skane Hospital",
+"department": "Medicinkliniken",
+"organisationAddress": {
+"addressLine1": "Bättringsvägen 1",
+"addressLine2": null,
+"addressLine3": null,
+"addressLine4": null,
+"postalCode": "123 45",
+"city": "Lund"
+},
+"principalInvestigator": {
+"familyName": "Eriksson",
+"givenName": "Sven",
+"phoneNumber": "4612345000",
+"emailAddress": "Sven.Eriksson@hotmail.com"
+}
+}
+,
+{
+"trialSiteName": "Uppsala Hospital",
+"department": "Strokeavdelning",
+"organisationAddress": {
+"addressLine1": "Akademiska Sjukhuset",
+"addressLine2": null,
+"addressLine3": null,
+"addressLine4": null,
+"postalCode": "750 00",
+"city": "Uppsala"
+},
+"principalInvestigator": {
+"familyName": "Svensson",
+"givenName": "Erik",
+"phoneNumber": "46184710000",
+"emailAddress": "Erik.Svensson@hotmail.com"
+}
+}
+,
+{
+"trialSiteName": "Region Jaemtland Haerjedalen",
+"department": "Forskningsavdelningen",
+"organisationAddress": {
+"addressLine1": "Studiegatan 12",
+"addressLine2": null,
+"addressLine3": null,
+"addressLine4": null,
+"postalCode": "888 00",
+"city": "Sveg"
+},
+"principalInvestigator": {
+"familyName": "Olsson",
+"givenName": "Anna",
+"phoneNumber": "466543210",
+"emailAddress": "Anna.Olsson@hotmail.com"
+}
+}
+]
+}
+},
+"emaDocuments": [{
+"filename": "Regulatory submission EN 22202 Cover Letter Appendix 1 For publication_v2.00.pdf",
+"applicationPart": "1",
+"systemVersion": "2.00",
+"documentType": {
+"code": "49",
+"displayName": "Cover letter (for publication)"
+}
+}
+,
+{
+"filename": "Regulatory submission EN 22202 Cover Letter Appendix 2 For publication_v1.00.pdf",
+"applicationPart": "1",
+"systemVersion": "1.00",
+"documentType": {
+"code": "49",
+"displayName": "Cover letter (for publication)"
+}
+}
+,
+{
+"filename": "Regulatory submission EN 22202 Cover Letter For publication_v1.00.pdf",
+"applicationPart": "1",
+"systemVersion": "1.00",
+"documentType": {
+"code": "49",
+"displayName": "Cover letter (for publication)"
+}
+}
+,
+{
+"filename": "D1_Protocol 2023-543210-11-00_EN_v1.00.pdf",
+"applicationPart": "1",
+"systemVersion": "1.00",
+"documentType": {
+"code": "5",
+"displayName": "Protocol (not for publication)"
+}
+}
+,
+{
+"filename": "D1_Protocol Synopsis Placeholder 2023-543210-11-00_v1.00.pdf",
+"applicationPart": "1",
+"systemVersion": "1.00",
+"documentType": {
+"code": "7",
+"displayName": "Synopsis of the protocol (for publication)"
+}
+}
+,
+{
+"filename": "Överföring av KP till CTIS_v1.00.pdf",
+"applicationPart": "2",
+"systemVersion": "1.00",
+"documentType": {
+"code": "43",
+"displayName": "Supporting documentation (for publication)"
+}
+}
+,
+{
+"filename": "ICF Other SV 22202 short summary of study For publication_v1.00.pdf",
+"applicationPart": "2",
+"systemVersion": "1.00",
+"documentType": {
+"code": "15",
+"displayName": "Subject information and informed consent form (for publication)"
+}
+}
+,
+{
+"filename": "ICF Expecting parents - female SV 22202 For publication_v1.00.pdf",
+"applicationPart": "2",
+"systemVersion": "1.00",
+"documentType": {
+"code": "15",
+"displayName": "Subject information and informed consent form (for publication)"
+}
+}
+,
+{
+"filename": "ICF Core SV 22202 For publication_v1.00.pdf",
+"applicationPart": "2",
+"systemVersion": "1.00",
+"documentType": {
+"code": "15",
+"displayName": "Subject information and informed consent form (for publication)"
+}
+}
+,
+{
+"filename": "EC-IRB submission SV 22202 Recruitment and ICF procedure For publication Placeholder_v1.00.pdf",
+"applicationPart": "2",
+"systemVersion": "1.00",
+"documentType": {
+"code": "14",
+"displayName": "Recruitment arrangements (for publication)"
+}
+}
+,
+{
+"filename": "EC-IRB submission SV 22202 Compliance of biological samples For publication Placeholder_v1.00.pdf",
+"applicationPart": "2",
+"systemVersion": "1.00",
+"documentType": {
+"code": "278",
+"displayName": "Compliance with use of Biological samples (for publication)"
+}
+}],
+"otherDocuments": [
+{
+"filename": "message-HTML.htm",
+"documentType": {
+"code": "samverk_1",
+"displayName": "Meddelandemetadata samarbetspartner"
+}
+}
+,
+{
+"filename": "Clinical-Trial-metadata-HTML.htm",
+"documentType": {
+"code": "samverk_2",
+"displayName": "Strukturerad data från ansökan"
+}
+}
+,
+{
+"filename": "message.json",
+"documentType": {
+"code": "samverk_1",
+"displayName": "Meddelandemetadata samarbetspartner"
+}
+}
+,
+{
+"filename": "Clinical-Trial-metadata.json",
+"documentType": {
+"code": "samverk_2",
+"displayName": "Strukturerad data från ansökan"
+}
+}
+]
+}
+
