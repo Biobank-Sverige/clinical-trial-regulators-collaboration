@@ -224,6 +224,11 @@ Följande dokumenttyper accepteras när LV skickar meddelanden till BBS:
 - 373 (Lista över ändringar (ej för publicering))
 - 9001 (Beslutshandling)
 
+- 371 - (Bilaga till synpunkt (ej för publicering))
+- 279 - (Bilaga till synpunkt (för publicering))
+- 370 - (Bilaga(id370))
+- 215 - (Bilaga (för publicering) (id215))
+
 Meddelanden som innehåller dokument av typ som inte är listad ovan kommer att *? vad gör vi då? Upptaget till lv-möte
 2023-12-05,
 se [agenda](https://biobanksverige.atlassian.net/wiki/spaces/PUBLICWIKI/pages/506888247/LV+-+RBC+Meddelanden+f+r+kliniska+pr+vningar#2023-12-05-11%3A00---12%3A30).*
@@ -272,7 +277,10 @@ En ansökan kan också skapas med
   - Ändring, mononationell, del I
   - Ändring, mononationell, del I och del II
 
-Detta förutsätter att det inte finns någon pågående ansökan.
+Detta förutsätter att det inte finns någon pågående ansökan för studien.
+
+En ansökan kan innehålla noll eller en bedömning del I och noll eller en bedömning del II.
+
 När ett sådant meddelande är mottaget startas en (ändrings)ansökan (*case*) och en eller två bedömning (ar) (*assessment(s)*)
 
 Ansökan avslutas med något av:
