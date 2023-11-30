@@ -5,15 +5,18 @@ Terminologi
 -----------
 
 Meddelande:
-    Paket av information skickat vid en tidpunkt
 
-Ansökan: 
-    En ansökan är samma sak som *case* och defineras av alla meddelanden med samma diarienummer hos Läkemedelsverket.
-    En ansökan har en orsak (*caseType*) som defineras vid första meddelandet. 
+Paket av information skickat vid en tidpunkt
+
+Ansökan:
+
+En ansökan är samma sak som *case* och defineras av alla meddelanden med samma diarienummer hos Läkemedelsverket.
+En ansökan har en orsak (*caseType*) som defineras vid första meddelandet.
 
 Bedömning:
-    En bedömning är samma sak som *asessment* och görs inom ramen för en ansökan. Kan innehålla 
-    del I, del II eller del I och II.
+
+En bedömning är samma sak som *asessment* och görs inom ramen för en ansökan. Kan innehålla
+del I, del II eller del I och II.
 
 Meddelandetyper
 ---------------
@@ -224,10 +227,10 @@ Följande dokumenttyper accepteras när LV skickar meddelanden till BBS:
 - 373 (Lista över ändringar (ej för publicering))
 - 9001 (Beslutshandling)
 
-- 371 - (Bilaga till synpunkt (ej för publicering))
-- 279 - (Bilaga till synpunkt (för publicering))
-- 370 - (Bilaga(id370))
-- 215 - (Bilaga (för publicering) (id215))
+- 371 (Bilaga till synpunkt (ej för publicering))
+- 279 (Bilaga till synpunkt (för publicering))
+- 370 (Bilaga(id370))
+- 215 (Bilaga (för publicering) (id215))
 
 Meddelanden som innehåller dokument av typ som inte är listad ovan kommer att *? vad gör vi då? Upptaget till lv-möte
 2023-12-05,
@@ -240,7 +243,6 @@ Processbeskrivning
 ------------------
 
 För detaljer kring vad som utgör ett korrekt meddelande, se [verifications](rbc/verifications.md).
-
 
 ### Livscykel studie
 
@@ -261,7 +263,8 @@ Som första meddelande för en ny studie från LV till BBS accepteras:
 - Notis: Beslut för överflyttad prövning
     - KP-ansökan, multinationell, transitional
 
-När ett sådant meddelande är mottaget startas en studie och en ansökan (*case*) och en eller två bedömning(ar) (*asessment(s)*)
+När ett sådant meddelande är mottaget startas en studie och en ansökan (*case*) och en eller två bedömning(ar) (
+*asessment(s)*)
 
 En studie kan inte avslutas.
 
@@ -272,16 +275,17 @@ Ansökan skapas i samband med att studien startar (se ovan).
 En ansökan kan också skapas med
 
 - Notis: Ändringsansökan
-  - Ändring, multinationell, del I
-  - Ändring, multinationell, del I och del II
-  - Ändring, mononationell, del I
-  - Ändring, mononationell, del I och del II
+    - Ändring, multinationell, del I
+    - Ändring, multinationell, del I och del II
+    - Ändring, mononationell, del I
+    - Ändring, mononationell, del I och del II
 
 Detta förutsätter att det inte finns någon pågående ansökan för studien.
 
 En ansökan kan innehålla noll eller en bedömning del I och noll eller en bedömning del II.
 
-När ett sådant meddelande är mottaget startas en (ändrings)ansökan (*case*) och en eller två bedömning (ar) (*assessment(s)*)
+När ett sådant meddelande är mottaget startas en (ändrings)ansökan (*case*) och en eller två bedömning (ar) (
+*assessment(s)*)
 
 Ansökan avslutas med något av:
 
@@ -297,10 +301,10 @@ Bedömning del I startar alltid i samband med
 - Notis: Initial ansökan del I
 - Notis: Initial ansökan del I och II
 - Notis: Ändringsansökan
-  - Ändring, multinationell, del I
-  - Ändring, multinationell, del I och del II
-  - Ändring, mononationell, del I
-  - Ändring, mononationell, del I och del II
+    - Ändring, multinationell, del I
+    - Ändring, multinationell, del I och del II
+    - Ändring, mononationell, del I
+    - Ändring, mononationell, del I och del II
 
 Bedömning del I avslutas vid meddelande:
 
@@ -320,7 +324,7 @@ Dessa är:
 - Notis: Bedömnings-RFI del I till sponsor
 - Notis: Komplettering från sponsor del I
 - Notis: Informell RFI
- 
+
 ### Livscykel bedömning del II
 
 Bedömning del II startar alltid i samband med
@@ -328,9 +332,9 @@ Bedömning del II startar alltid i samband med
 - Notis: Initial ansökan del II
 - Notis: Initial ansökan del I och II
 - Notis: Ändringsansökan
-  - Ändring, multinationell, del I och del II
-  - Ändring, mononationell, del I och del II
-  - Ändring, nationell, del II
+    - Ändring, multinationell, del I och del II
+    - Ändring, mononationell, del I och del II
+    - Ändring, nationell, del II
 
 Bedömning del II avslutas vid meddelande:
 
