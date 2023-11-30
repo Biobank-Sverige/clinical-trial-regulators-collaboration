@@ -39,6 +39,7 @@ Följande kombinationer av dessa accepteras när LV skickar meddelanden till BBS
     - Ändring, multinationell, del I och del II
     - Ändring, mononationell, del I
     - Ändring, mononationell, del I och del II
+    - Ändring, nationell, del II
 - Notis: Valid ansökan
     - KP-ansökan, multinationell, initialt del I
     - KP-ansökan, multinationell, initialt komplett
@@ -235,7 +236,10 @@ Processbeskrivning
 
 För detaljer kring vad som utgör ett korrekt meddelande, se [verifications](rbc/verifications.md).
 
-Som första meddelande för en ansökan (case) från LV till BBS accepteras:
+
+### Livscykel studie
+
+Som första meddelande för en ny studie från LV till BBS accepteras:
 
 - Notis: Initial ansökan del I
     - KP-ansökan, multinationell, initialt del I
@@ -252,21 +256,89 @@ Som första meddelande för en ansökan (case) från LV till BBS accepteras:
 - Notis: Beslut för överflyttad prövning
     - KP-ansökan, multinationell, transitional
 
-När ett sådant meddelande är mottaget öppnas en ansökan (*case*) och en eller två bedömning(ar) (*asessment(s)*) 
+När ett sådant meddelande är mottaget startas en studie och en ansökan (*case*) och en eller två bedömning(ar) (*asessment(s)*)
 
-Avlsut av bedömning
+En studie kan inte avslutas.
 
-När en bedömning del I är öppen kan följande meddelanden tas emot:
+### Livscykel ansökan
 
-När en bedömning del I är pausad kan följande meddelanden tas emot:
+Ansökan skapas i samband med att studien startar (se ovan).
 
-När en bedömning del II är öppen kan följande meddelanden tas emot:
+En ansökan kan också skapas med
 
-En ansökan avslutas när något av följande meddelanden skickas
+- Notis: Ändringsansökan
+  - Ändring, multinationell, del I
+  - Ändring, multinationell, del I och del II
+  - Ändring, mononationell, del I
+  - Ändring, mononationell, del I och del II
+
+Detta förutsätter att det inte finns någon pågående ansökan.
+När ett sådant meddelande är mottaget startas en (ändrings)ansökan (*case*) och en eller två bedömning (ar) (*assessment(s)*)
+
+Ansökan avslutas med något av:
 
 - Notis: Ansökan dragits tillbaka
 - Notis: Ansökan förfallen
 - Notis: Ansökan tyst godkännande
 - Notis: Beslut för ansökan
 
-Notera att en Notis: AR och slutsats del I inte avslutar ansökan. Vid sådant meddelande
+### Livscykel bedömning del I
+
+Bedömning del I startar alltid i samband med
+
+- Notis: Initial ansökan del I
+- Notis: Initial ansökan del I och II
+- Notis: Ändringsansökan
+  - Ändring, multinationell, del I
+  - Ändring, multinationell, del I och del II
+  - Ändring, mononationell, del I
+  - Ändring, mononationell, del I och del II
+
+Bedömning del I avslutas vid meddelande:
+
+- Notis: AR och slutsats del I
+- Notis: Beslut för ansökan *Ska detta vara tillåtet?*
+- Notis: Ansökan dragits tillbaka *Ska detta vara tillåtet?*
+- Notis: Ansökan förfallen *Ska detta vara tillåtet?*
+- Notis: Ansökan tyst godkännande *Ska detta vara tillåtet?*
+
+Övriga meddelanden rörande en bedömning kan bara tas emot när ansökan är aktiv (startad men inte avslutad)
+
+Dessa är:
+
+- Notis: Valid ansökan
+- Notis: Validerings-RFI till sponsor
+- Begäran: Preliminär granskning del I
+- Notis: Bedömnings-RFI del I till sponsor
+- Notis: Komplettering från sponsor del I
+- Notis: Informell RFI
+ 
+### Livscykel bedömning del II
+
+Bedömning del II startar alltid i samband med
+
+- Notis: Initial ansökan del II
+- Notis: Initial ansökan del I och II
+- Notis: Ändringsansökan
+  - Ändring, multinationell, del I och del II
+  - Ändring, mononationell, del I och del II
+  - Ändring, nationell, del II
+
+Bedömning del II avslutas vid meddelande:
+
+- Notis: AR och slutsats del II
+- Notis: Beslut för ansökan *Ska detta vara tillåtet?*
+- Notis: Ansökan dragits tillbaka *Ska detta vara tillåtet?*
+- Notis: Ansökan förfallen *Ska detta vara tillåtet?*
+- Notis: Ansökan tyst godkännande *Ska detta vara tillåtet?*
+
+Övriga meddelanden rörande en bedömning kan bara tas emot när ansökan är aktiv (startad men inte avslutad)
+
+Dessa är:
+
+- Notis: Valid ansökan
+- Notis: Validerings-RFI till sponsor
+- Begäran: Preliminär granskning del II
+- Notis: Bedömnings-RFI del II till sponsor
+- Notis: Komplettering från sponsor del II
+- Notis: Informell RFI
