@@ -1,8 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://example.com/product.schema.json",
+    "$id": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/message",
     "title": "Message",
-    "description": "Schema for message metadata version 2.0",
+    "description": "Schema for message metadata version 2.2",
     "type": "object",
     "properties":
     {
@@ -180,7 +180,7 @@
                     "type": "array",
                     "itmes":
                     {
-                        "$ref": "https://github.com/tomassna/clinical-trial-regulators-collaboration/schema/components/activityTypeSchema.json"
+                        "$ref": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/components/activityTypeSchema.json"
                     }
                 }
             }
@@ -244,7 +244,7 @@
                 },
                 "part1Data":
                 {
-                    "description": "Huvudobjekt för detaljerade data om prövningen gemensam för alla MSC.",
+                    "description": "Huvudobjekt för data från del I av ansökan.",
                     "type": "object",
                     "properties":
                     {
@@ -267,82 +267,7 @@
                             "type": "object",
                             "properties":
                             {
-                                "trialSiteName":
-                                {
-                                    "description": "Namnet på prövningsstället. Värdet kommer tillsvidare alltid vara null eftersom det är så det skickas ut från CTIS.",
-                                    "type": "string"
-                                },
-                                "department":
-                                {
-                                    "description": "Ett fritextfält",
-                                    "type": "string"
-                                },
-                                "organisationAddress":
-                                {
-                                    "description": "Adressinformation enligt EMA:s SPOR-databas",
-                                    "type": "object",
-                                    "properties":
-                                    {
-                                        "addressLine1":
-                                        {
-                                            "description": "Adressrad 1",
-                                            "type": "string"
-                                        },
-                                        "addressLine2":
-                                        {
-                                            "description": "Adressrad 2",
-                                            "type": "string"
-                                        },
-                                        "addressLine3":
-                                        {
-                                            "description": "Adressrad 3",
-                                            "type": "string"
-                                        },
-                                        "addressLine4":
-                                        {
-                                            "description": "Adressrad 4",
-                                            "type": "string"
-                                        },
-                                        "postalCode":
-                                        {
-                                            "description": "Postnummer ",
-                                            "type": "string"
-                                        },
-                                        "city":
-                                        {
-                                            "description": "Ort",
-                                            "type": "string"
-                                        }
-                                    }
-                                },
-                                "principalInvestigator":
-                                {
-                                    "description": "Prövningsställets huvudprövares kontaktuppgifter.",
-                                    "type": "object",
-                                    "properties":
-                                    {
-                                        "familyName":
-                                        {
-                                            "description": "Efternamn",
-                                            "type": "string"
-                                        },
-                                        "givenName":
-                                        {
-                                            "description": "Förnamn",
-                                            "type": "string"
-                                        },
-                                        "phoneNumber":
-                                        {
-                                            "description": "Telefonnummer",
-                                            "type": "string"
-                                        },
-                                        "emailAddress":
-                                        {
-                                            "description": "E-postadress",
-                                            "type": "string"
-                                        }
-                                    }
-                                }
+                                "$ref": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/components/trialSiteDescriptionSchema.json"                          
                             }
                         }
                     }
@@ -355,7 +280,7 @@
             "type": "array",
             "items":
             {
-                "$ref": "https://github.com/tomassna/clinical-trial-regulators-collaboration/schema/components/EMADocumentDescriptionSchema.json"
+                "$ref": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/components/EMADocumentDescriptionSchema.json"
             }
         },
         "otherDocuments":
@@ -364,7 +289,7 @@
             "type": "array",
             "items":
             {
-                "$ref": "https://github.com/tomassna/clinical-trial-regulators-collaboration/schema/components/otherDocumentDescriptionSchema.json"
+                "$ref": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/components/otherDocumentDescriptionSchema.json"
             },
             "minItems": 4
         }

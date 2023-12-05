@@ -1,5 +1,5 @@
 {
-    "$id": "https://github.com/tomassna/clinical-trial-regulators-collaboration/schema/components/activityTypeSchema.json",
+    "$id": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/components/activityTypeSchema.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "Longitude and Latitude",
     "description": "Avgränsad aktivitet i handläggningen av en ansökan om prövningstillstånd för farmakologisk prövning.",

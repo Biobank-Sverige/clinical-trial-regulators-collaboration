@@ -1,5 +1,5 @@
 {
-    "$id": "https://github.com/tomassna/clinical-trial-regulators-collaboration/schema/components/EMADocumentDescriptionSchema.json",
+    "$id": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/components/EMADocumentDescriptionSchema.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "EMA dokumenten",
     "description": "Struktur för beskrivningen av bifogade dokument som hämtats ur CTIS.",
