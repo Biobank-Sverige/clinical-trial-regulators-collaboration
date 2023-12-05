@@ -156,3 +156,6 @@ Granska komplettering
 
 Granska beslut med villkor
 --------------------------
+
+Avgör om beslutad överförd prövning bytt sponsor
+------------------------------------------------
