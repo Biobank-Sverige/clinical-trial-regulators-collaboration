@@ -264,8 +264,8 @@
                         "trialSites":
                         {
                             "description": "En lista med alla prövningsställen i Sverige",
-                            "type": "object",
-                            "properties":
+                            "type": "array",
+                            "items":
                             {
                                 "$ref": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/components/trialSiteDescriptionSchema.json"                          
                             }
