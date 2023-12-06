@@ -2,7 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/message",
     "title": "Message",
-    "description": "Schema for message metadata version 2.2",
+    "description": "Schema for message metadata version 2.0",
     "type": "object",
     "properties":
     {
@@ -14,12 +14,11 @@
             {
                 "version":
                 {
-                    "description": "Version för det protokoll som versionen motsvarar, detta schema behöver stödja 2 samtidigt, men tanken är sedan att framtida versioner får nya scheman som eventuellt deprecerar tidigare versioner.",
+                    "description": "Version för det protokoll som versionen motsvarar.",
                     "type": "string",
                     "enum":
                     [
-                        "1.0",
-                        "2.0"
+                        "1.0"
                     ]
                 },
                 "from":
@@ -57,7 +56,7 @@
                 "parentMessageId":
                 {
                     "description": "Används när ett meddelande är ett svar på ett annat meddelande. Sätt då till det värde messageId har i urspungsmeddelandet.",
-                    "type": "string"
+                    "type": ["string", "null"]
                 },
                 "timestamp":
                 {
@@ -101,7 +100,7 @@
                 "dueDate":
                 {
                     "description": "Senaste datumet när avsändaren vill ha svar, uttryckt enligt ISO-8601 med datumupplösning. Null om inget svar förväntas.",
-                    "type": "string",
+                    "type": ["string", "null"],
                     "format": "date"
                 }
             },
@@ -162,7 +161,34 @@
                 "transitionedFrom":
                 {
                     "description": "EudtraCT-nummer på den tidigare prövningen.Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen",
-                    "type": "string"
+                    "type": ["string", "null"]
+                },
+                "decision":
+                {
+                    "description": "I fall där det finns ett beslut är utfallet noterat i detta element.",
+                    "type": ["string", "null"],
+                    "enum":
+                    [
+                        "Avslag",
+                        "Avslut",
+                        "Bifall",
+                        "Avvisning",
+                        "Avskrivning"
+                    ]
+                },
+                "decisionDetail":
+                {
+                    "description": "Ytterligare information om beslutet som fattats, i princip om det finns villkor alternativt motiv till avslag.",
+                    "type": ["string", "null"],
+                    "enum":
+                    [
+                        "Bifall enligt ansökan i sin helhet",
+                        "Förutsättningar att bevilja ansökan saknas",
+                        "Nödvändig komplettering inte inkommen",
+                        "Ingen ytterligare åtgärd krävs",
+                        "Ansökan ej komplett eller annan formell brist",
+                        "Ansökan återtagen"
+                    ]
                 },
                 "concernsEpm":
                 {
@@ -178,12 +204,70 @@
                 {
                     "description": "Lista på för RBC/EPM relevanta tidtabellshändelser så som LV planerar dem. Ska användas för att RBC/EPM ska kunna planera framtida bemanning.",
                     "type": "array",
-                    "itmes":
+                    "items":
                     {
-                        "$ref": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/components/activityTypeSchema.json"
+                        "title": "Longitude and Latitude",
+                        "description": "Avgränsad aktivitet i handläggningen av en ansökan om prövningstillstånd för farmakologisk prövning.",
+                        "required":
+                        [
+                            "activity",
+                            "order"
+                        ],
+                        "type": "object",
+                        "properties":
+                        {
+                            "activity":
+                            {
+                                "description": "LV:s beskrivande text av tidtabellhändelsen",
+                                "type": "string"
+                            },
+                            "activityType":
+                            {
+                                "description": "LV:s interna typ på tidtabellhändelsen. Exempelvis \"start\", \"deadline\" eller \"meeting\".",
+                                "type": "string"
+                            },
+                            "status" : {
+                                "oneOf": [
+                                    {
+                                        "type": "string",
+                                        "enum": [
+                                            "Selected",
+                                            "Ongoing",
+                                            "Completed"
+                                        ]
+                                    },
+                                    {
+                                        "type": "null"
+                                    }
+                                ]
+                            },
+                            "key": {
+                                "description": "En nyckel till tidtabellshändelsen i LV:s ärendehanteringssystem.",
+                                "type": "string"
+                            },
+                            "order":
+                            {
+                                "description": "Sorteringsordning av tidtabellhändelserna. I dokumentet kan händelserna komma osorterade.",
+                                "type": "integer",
+                                "inclusiveMinimum": 0
+                            },
+                            "plannedEndDate":
+                            {
+                                "description": "Det planerade datumet då tidtabellhändelsen ska avslutas, uttryckt enligt ISO-8601 med datumupplösning.",
+                                "type": ["string", "null"],
+                                "format": "date"
+                            },
+                            "actualEndDate":
+                            {
+                                "description": "Det datum då tidtabellhändelsen faktiskt avslutades, uttryckt enligt ISO-8601 med datumupplösning.",
+                                "type": ["string", "null"],
+                                "format": "date"
+                            }
+                        }
                     }
                 }
-            }
+            },
+            "required": ["lvDiaryNumber", "caseType"]
         },
         "clinicalTrialData":
         {
@@ -244,7 +328,7 @@
                 },
                 "part1Data":
                 {
-                    "description": "Huvudobjekt för data från del I av ansökan.",
+                    "description": "Huvudobjekt för detaljerade data om prövningen gemensam för alla MSC.",
                     "type": "object",
                     "properties":
                     {
@@ -267,7 +351,82 @@
                             "type": "array",
                             "items":
                             {
-                                "$ref": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/components/trialSiteDescriptionSchema.json"                          
+                                "trialSiteName":
+                                {
+                                    "description": "Namnet på prövningsstället. Värdet kommer tillsvidare alltid vara null eftersom det är så det skickas ut från CTIS.",
+                                    "type": "string"
+                                },
+                                "department":
+                                {
+                                    "description": "Ett fritextfält",
+                                    "type": "string"
+                                },
+                                "organisationAddress":
+                                {
+                                    "description": "Adressinformation enligt EMA:s SPOR-databas",
+                                    "type": "object",
+                                    "properties":
+                                    {
+                                        "addressLine1":
+                                        {
+                                            "description": "Adressrad 1",
+                                            "type": "string"
+                                        },
+                                        "addressLine2":
+                                        {
+                                            "description": "Adressrad 2",
+                                            "type": "string"
+                                        },
+                                        "addressLine3":
+                                        {
+                                            "description": "Adressrad 3",
+                                            "type": "string"
+                                        },
+                                        "addressLine4":
+                                        {
+                                            "description": "Adressrad 4",
+                                            "type": "string"
+                                        },
+                                        "postalCode":
+                                        {
+                                            "description": "Postnummer ",
+                                            "type": "string"
+                                        },
+                                        "city":
+                                        {
+                                            "description": "Ort",
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "principalInvestigator":
+                                {
+                                    "description": "Prövningsställets huvudprövares kontaktuppgifter.",
+                                    "type": "object",
+                                    "properties":
+                                    {
+                                        "familyName":
+                                        {
+                                            "description": "Efternamn",
+                                            "type": "string"
+                                        },
+                                        "givenName":
+                                        {
+                                            "description": "Förnamn",
+                                            "type": "string"
+                                        },
+                                        "phoneNumber":
+                                        {
+                                            "description": "Telefonnummer",
+                                            "type": "string"
+                                        },
+                                        "emailAddress":
+                                        {
+                                            "description": "E-postadress",
+                                            "type": "string"
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -280,7 +439,50 @@
             "type": "array",
             "items":
             {
-                "$ref": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/components/EMADocumentDescriptionSchema.json"
+                "description": "Struktur för beskrivningen av bifogade dokument som hämtats ur CTIS.",
+                "type": "object",
+                "properties":
+                {
+                    "filename":
+                    {
+                        "description": "Filnamnet på dokumentet",
+                        "type": "string"
+                    },
+                    "applicationPart":
+                    {
+                        "description": "Om dokumentet tillhör del I eller del II, representerad som ”1” eller ”2”. Observera att även ”” förekommer, vilket är rapporterat som bug hos CTIS/EMA.",
+                        "type": "string"
+                    },
+                    "systemVersion":
+                    {
+                        "description": "Version som uppdateras varje gång dokumentet laddas upp i CTIS-portalen",
+                        "type": "string"
+                    },
+                    "documentType":
+                    {
+                        "description": "Benämning på dokumentet i CTIS-portalen. Alla dokument CTIS-portalen är hårt typade och representeras av en kod och ett “DisplayName”. En sponsor kan inte lägga till godtyckliga dokument, men kan lägga till flera dokument av varje tillåten typ.",
+                        "type": "object",
+                        "properties":
+                        {
+                            "code":
+                            {
+                                "description": "Dokumenttypens kod",
+                                "type": "string"
+                            }
+                        },
+                        "displayName":
+                        {
+                            "description": "displayName uttrycks på svenska och kan användas för att beskriva bilagorna för handläggarna. Mängden av dokumenttyper som finns tillgängliga är inte bunden utan kan utökas efter hand.",
+                            "type": "string"
+                        },
+                        "required":
+                        [
+                            "code",
+                            "displayName"
+                        ]
+                    }
+                },
+                "required": ["filename", "documentType"]
             }
         },
         "otherDocuments":
@@ -289,7 +491,67 @@
             "type": "array",
             "items":
             {
-                "$ref": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/components/otherDocumentDescriptionSchema.json"
+                "title": ":Övriga dokumenten",
+                "description": "Struktur för beskrivningen av bifogade samverkansdokument.",
+                "type": "object",
+                "properties":
+                {
+                    "filename":
+                    {
+                        "description": "Filnamn på dokumentet",
+                        "type": "string"
+                    },
+                    "documentType":
+                    {
+                        "description": "Typ av handling som bilagan utgör",
+                        "type": "object",
+                        "properties":
+                        {
+                            "code":
+                            {
+                                "description": "Dokumenttypens kod",
+                                "type": "string",
+                                "enum":
+                                [
+                                    "samverk_1",
+                                    "samverk_2",
+                                    "samverk_3",
+                                    "samverk_4",
+                                    "samverk_5",
+                                    "samverk_6",
+                                    "samverk_7",
+                                    "samverk_8",
+                                    "samverk_9",
+                                    "samverk_10",
+                                    "samverk_11",
+                                    "9001"
+                                ]
+                            },
+                            "displayName":
+                            {
+                                "description": "Benämning på de dokument som LV, RBC och EPM skapar. Alla dokument ska vara typade",
+                                "type": "string",
+                                "enum":
+                                [
+                                    "Meddelandemetadata samarbetspartner",
+                                    "Strukturerad data från ansökan",
+                                    "Preliminär granskning del I",
+                                    "Preliminär granskning del II",
+                                    "Granskning av synpunkter från MSC",
+                                    "Yttrande del I",
+                                    "Yttrande del II",
+                                    "Underlag till invändning mot RMS slutsats",
+                                    "Synpunkt",
+                                    "RFI/RFI-svar",
+                                    "Ärendeinformation",
+                                    "Beslutshandling"
+                                ]
+                            }
+                        },
+                        "required": ["code", "displayName"]
+                    }
+                },
+                "required": ["filename", "documentType"]
             },
             "minItems": 4
         }
