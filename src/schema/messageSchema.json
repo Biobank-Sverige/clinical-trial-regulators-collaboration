@@ -93,8 +93,7 @@
                         "Notis: Ansökan förfallen",
                         "Notis: Ansökan har dragits tillbaka",
                         "Notis: Ansökan tyst godkännande",
-                        "Notis: Beslut för ansökan",
-                        "Notis: Beslut för överflyttad prövning"
+                        "Notis: Beslut för ansökan"
                     ]
                 },
                 "dueDate":
@@ -151,43 +150,6 @@
                         "Ändring, mononationell, del I",
                         "Ändring, mononationell, del I och del II",
                         "Ändring, nationell, del II"
-                    ]
-                },
-                "isTransitioned":
-                {
-                    "description": "Boolean som ger true om ärendet gäller en prövning som flyttats över från gamla reglementet. Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen",
-                    "type": "boolean"
-                },
-                "transitionedFrom":
-                {
-                    "description": "EudtraCT-nummer på den tidigare prövningen.Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen",
-                    "type": ["string", "null"]
-                },
-                "decision":
-                {
-                    "description": "I fall där det finns ett beslut är utfallet noterat i detta element.",
-                    "type": ["string", "null"],
-                    "enum":
-                    [
-                        "Avslag",
-                        "Avslut",
-                        "Bifall",
-                        "Avvisning",
-                        "Avskrivning"
-                    ]
-                },
-                "decisionDetail":
-                {
-                    "description": "Ytterligare information om beslutet som fattats, i princip om det finns villkor alternativt motiv till avslag.",
-                    "type": ["string", "null"],
-                    "enum":
-                    [
-                        "Bifall enligt ansökan i sin helhet",
-                        "Förutsättningar att bevilja ansökan saknas",
-                        "Nödvändig komplettering inte inkommen",
-                        "Ingen ytterligare åtgärd krävs",
-                        "Ansökan ej komplett eller annan formell brist",
-                        "Ansökan återtagen"
                     ]
                 },
                 "concernsEpm":
