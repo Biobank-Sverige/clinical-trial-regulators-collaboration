@@ -2,7 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/message",
     "title": "Message",
-    "description": "Schema for message metadata version 1.0",
+    "description": "Schema for message metadata version 2.0",
     "type": "object",
     "properties":
     {
@@ -18,7 +18,7 @@
                     "type": "string",
                     "enum":
                     [
-                        "1.0"
+                        "2.0"
                     ]
                 },
                 "from":
@@ -93,7 +93,8 @@
                         "Notis: Ansökan förfallen",
                         "Notis: Ansökan har dragits tillbaka",
                         "Notis: Ansökan tyst godkännande",
-                        "Notis: Beslut för ansökan"
+                        "Notis: Beslut för ansökan",
+                        "Notis: Beslut för överflyttad prövning"
                     ]
                 },
                 "dueDate":
@@ -151,6 +152,16 @@
                         "Ändring, mononationell, del I och del II",
                         "Ändring, nationell, del II"
                     ]
+                },
+                 "isTransitioned":
+                {
+                    "description": "Boolean som ger true om ärendet gäller en prövning som flyttats över från gamla reglementet. Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen",
+                    "type": "boolean"
+                },
+                "transitionedFrom":
+                {
+                    "description": "EudtraCT-nummer på den tidigare prövningen.Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen",
+                    "type": ["string", "null"]
                 },
                 "concernsEpm":
                 {
