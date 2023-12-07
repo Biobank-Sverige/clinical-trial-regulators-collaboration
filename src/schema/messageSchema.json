@@ -156,7 +156,12 @@
                  "isTransitioned":
                 {
                     "description": "Boolean som ger true om ärendet gäller en prövning som flyttats över från gamla reglementet. Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen",
-                    "type": "boolean"
+                    "type": "string",
+                    "enum":
+                    [
+                        "true",
+                        "false"
+                    ]
                 },
                 "transitionedFrom":
                 {
@@ -205,12 +210,22 @@
                 "concernsEpm":
                 {
                     "description": "Anger om ansökan rör EPM och RBC. Kan vara null om EMP:s/RBS:s medverkan inte ännu kunnat bestämmas.",
-                    "type": "boolean"
+                    "type": "string",
+                    "enum":
+                    [
+                        "true",
+                        "false"
+                    ]
                 },
                 "concernsRbc":
                 {
                     "description": "Anger om ansökan rör EPM och RBC. Kan vara null om EMP:s/RBS:s medverkan inte ännu kunnat bestämmas.",
-                    "type": "boolean"
+                    "type": "string",
+                    "enum":
+                    [
+                        "true",
+                        "false"
+                    ]
                 },
                 "timetable":
                 {
@@ -296,7 +311,7 @@
                 {
                     "description": "Datum då ansökan skickades in till ctis-portalen.",
                     "type": "string",
-                    "format": "date"
+                    "format": "date-time"
                 },
                 "swedenRole":
                 {
