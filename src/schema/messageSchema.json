@@ -2,7 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/message",
     "title": "Message",
-    "description": "Schema for message metadata version 2.2",
+    "description": "Schema for message metadata version 2.3",
     "type": "object",
     "properties":
     {
@@ -20,7 +20,8 @@
                     [
                         "2.0",
                         "2.1",
-                        "2.2"
+                        "2.2",
+                        "2.3"
                     ]
                 },
                 "from":
@@ -153,8 +154,10 @@
                     [
                         "KP-ansökan, multinationell, initialt del I",
                         "KP-ansökan, multinationell, initialt komplett",
+                        "KP-ansökan, multinationell, transitional",
                         "KP-ansökan, mononationell, initialt del I",
                         "KP-ansökan, mononationell, initialt komplett",
+                        "KP-ansökan, mononationell, transitional",			
                         "KP-ansökan, Tillägg av SE som MSC",
                         "Ändring, multinationell, del I",
                         "Ändring, multinationell, del I och del II",
@@ -320,8 +323,8 @@
                 "emaSubmissionDate":
                 {
                     "description": "Datum då ansökan skickades in till ctis-portalen.",
-                    "type": "string",
-                    "format": "date-time"
+                    "type": ["string", "null"],
+                    "format": "date"
                 },
                 "swedenRole":
                 {
