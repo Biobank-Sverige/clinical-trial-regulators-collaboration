@@ -2,7 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/message",
     "title": "Message",
-    "description": "Schema for message metadata version 2.3",
+    "description": "Schema for message metadata version 2.3-SNAPSHOT",
     "type": "object",
     "properties":
     {
@@ -21,7 +21,7 @@
                         "2.0",
                         "2.1",
                         "2.2",
-                        "2.3"
+                        "2.3-SNAPSHOT"
                     ]
                 },
                 "from":
