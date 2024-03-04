@@ -262,6 +262,17 @@ Som första meddelande för en ny studie från LV till BBS accepteras:
     - KP-ansökan, Tillägg av SE som MSC
 - Notis: Beslut för överflyttad prövning
     - KP-ansökan, multinationell, transitional
+- Notis: Ansökan tyst godkännande
+    - KP-ansökan, multinationell, initialt del I
+    - KP-ansökan, multinationell, initialt komplett
+    - KP-ansökan, mononationell, initialt del I
+    - KP-ansökan, mononationell, initialt komplett
+    - KP-ansökan, Tillägg av SE som MSC
+    - Ändring, multinationell, del I
+    - Ändring, multinationell, del I och del II
+    - Ändring, mononationell, del I
+    - Ändring, monongodkännandeationell, del I och del II
+    - Ändring, nationell, del II
 
 När ett sådant meddelande är mottaget startas en studie och en ansökan (*case*) och en eller två bedömning(ar) (
 *asessment(s)*)
