@@ -232,11 +232,7 @@ Följande dokumenttyper accepteras när LV skickar meddelanden till BBS:
 - 370 (Bilaga(id370))
 - 215 (Bilaga (för publicering) (id215))
 
-Meddelanden som innehåller dokument av typ som inte är listad ovan kommer att *? vad gör vi då? Upptaget till lv-möte
-2023-12-05,
-se [agenda](https://biobanksverige.atlassian.net/wiki/spaces/PUBLICWIKI/pages/506888247/LV+-+RBC+Meddelanden+f+r+kliniska+pr+vningar#2023-12-05-11%3A00---12%3A30).*
-
-Följande dokumenttyper accepteras när BBS skickar meddelanden till LV:
+Meddelanden som innehåller dokument av typ som inte är listad ovan kommer att betraktas som felaktiga (alltså inte tas emot och generera ett felmeddelande)
 
 
 Processbeskrivning
