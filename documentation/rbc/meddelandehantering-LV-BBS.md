@@ -25,16 +25,14 @@ Kommunikationen bygger på fasta meddelandetyper som defineras av *messageReason
 
 Följande kombinationer av dessa accepteras när LV skickar meddelanden till BBS:
 
-N.B. Transitioned trial typen ska läggas till i tabellen nedan.
-
 - Notis: Initial ansökan del I
     - KP-ansökan, multinationell, initialt del I
     - KP-ansökan, mononationell, initialt del I
-- Notis: Initial ansökan del II
-    - Samma som första meddelandet i ansökan
+    - KP-ansökan, Tillägg av SE som MSC
 - Notis: Initial ansökan del I och II
     - KP-ansökan, multinationell, initialt komplett
     - KP-ansökan, mononationell, initialt komplett
+    - KP-ansökan, Tillägg av SE som MSC
 - Notis: Ändringsansökan
     - Ändring, multinationell, del I
     - Ändring, multinationell, del I och del II
@@ -42,6 +40,10 @@ N.B. Transitioned trial typen ska läggas till i tabellen nedan.
     - Ändring, mononationell, del I och del II
     - Ändring, nationell, del II
     - KP-ansökan, Tillägg av SE som MSC
+- Notis: Beslut för överflyttad prövning
+    - KP-ansökan, multinationell, transitional
+- Notis: Initial ansökan del II
+    - Samma som första meddelandet i ansökan
 - Notis: Valid ansökan
     - Samma som första meddelandet i ansökan
 - Notis: Validerings-RFI till sponsor
@@ -71,8 +73,6 @@ N.B. Transitioned trial typen ska läggas till i tabellen nedan.
 - Notis: Beslut för ansökan
     - Samma som första meddelandet i ansökan
 - Notis: Informell RFI
-    - Samma som första meddelandet i ansökan
-- Notis: Beslut för överflyttad prövning
     - Samma som första meddelandet i ansökan
 
 Följande kombinationer av dessa accepteras när BBS skickar meddelanden till LV:
@@ -163,6 +163,7 @@ En ansökan kan också skapas med
     - Ändring, multinationell, del I och del II
     - Ändring, mononationell, del I
     - Ändring, mononationell, del I och del II
+    - KP-ansökan, Tillägg av SE som MSC
 
 Detta förutsätter att det inte finns någon pågående ansökan för studien.
 
@@ -189,6 +190,7 @@ Bedömning del I startar alltid i samband med
     - Ändring, multinationell, del I och del II
     - Ändring, mononationell, del I
     - Ändring, mononationell, del I och del II
+    - KP-ansökan, Tillägg av SE som MSC
 
 Bedömning del I avslutas vid meddelande:
 
@@ -219,6 +221,7 @@ Bedömning del II startar alltid i samband med
     - Ändring, multinationell, del I och del II
     - Ändring, mononationell, del I och del II
     - Ändring, nationell, del II
+    - KP-ansökan, Tillägg av SE som MSC
 
 Bedömning del II avslutas vid meddelande:
 
