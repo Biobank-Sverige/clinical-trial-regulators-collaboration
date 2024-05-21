@@ -28,7 +28,6 @@ Följande kombinationer av dessa accepteras när LV skickar meddelanden till BBS
 - Notis: Initial ansökan del I
     - KP-ansökan, multinationell, initialt del I
     - KP-ansökan, mononationell, initialt del I
-    - KP-ansökan, Tillägg av SE som MSC
 - Notis: Initial ansökan del I och II
     - KP-ansökan, multinationell, initialt komplett
     - KP-ansökan, mononationell, initialt komplett
@@ -39,7 +38,6 @@ Följande kombinationer av dessa accepteras när LV skickar meddelanden till BBS
     - Ändring, mononationell, del I
     - Ändring, mononationell, del I och del II
     - Ändring, nationell, del II
-    - KP-ansökan, Tillägg av SE som MSC
 - Notis: Beslut för överflyttad prövning
     - KP-ansökan, multinationell, transitional
 - Notis: Initial ansökan del II
@@ -128,7 +126,6 @@ Som första meddelande för en ny studie från LV till BBS accepteras:
 - Notis: Initial ansökan del I
     - KP-ansökan, multinationell, initialt del I
     - KP-ansökan, mononationell, initialt del I
-    - KP-ansökan, Tillägg av SE som MSC
 - Notis: Initial ansökan del I och II
     - KP-ansökan, multinationell, initialt komplett
     - KP-ansökan, mononationell, initialt komplett
@@ -163,7 +160,7 @@ En ansökan kan också skapas med
     - Ändring, multinationell, del I och del II
     - Ändring, mononationell, del I
     - Ändring, mononationell, del I och del II
-    - KP-ansökan, Tillägg av SE som MSC
+    - Ändring, nationell, del II
 
 Detta förutsätter att det inte finns någon pågående ansökan för studien.
 
