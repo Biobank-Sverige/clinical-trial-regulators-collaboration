@@ -40,6 +40,7 @@ Följande kombinationer av dessa accepteras när LV skickar meddelanden till BBS
     - Ändring, nationell, del II
 - Notis: Beslut för överflyttad prövning
     - KP-ansökan, multinationell, transitional
+    - KP-ansökan, mononationell, transitional
 - Notis: Initial ansökan del II
     - Samma som första meddelandet i ansökan
 - Notis: Valid ansökan
