@@ -25,174 +25,55 @@ Kommunikationen bygger på fasta meddelandetyper som defineras av *messageReason
 
 Följande kombinationer av dessa accepteras när LV skickar meddelanden till BBS:
 
+N.B. Transitioned trial typen ska läggas till i tabellen nedan.
+
 - Notis: Initial ansökan del I
     - KP-ansökan, multinationell, initialt del I
     - KP-ansökan, mononationell, initialt del I
-    - KP-ansökan, Tillägg av SE som MSC
 - Notis: Initial ansökan del II
-    - KP-ansökan, multinationell, initialt komplett
-    - KP-ansökan, mononationell, initialt komplett
-    - KP-ansökan, Tillägg av SE som MSC
+    - Samma som första meddelandet i ansökan
 - Notis: Initial ansökan del I och II
     - KP-ansökan, multinationell, initialt komplett
     - KP-ansökan, mononationell, initialt komplett
-    - KP-ansökan, Tillägg av SE som MSC
 - Notis: Ändringsansökan
     - Ändring, multinationell, del I
     - Ändring, multinationell, del I och del II
     - Ändring, mononationell, del I
     - Ändring, mononationell, del I och del II
     - Ändring, nationell, del II
+    - KP-ansökan, Tillägg av SE som MSC
 - Notis: Valid ansökan
-    - KP-ansökan, multinationell, initialt del I
-    - KP-ansökan, multinationell, initialt komplett
-    - KP-ansökan, mononationell, initialt del I
-    - KP-ansökan, mononationell, initialt komplett
-    - KP-ansökan, Tillägg av SE som MSC
-    - Ändring, multinationell, del I
-    - Ändring, multinationell, del I och del II
-    - Ändring, mononationell, del I
-    - Ändring, mononationell, del I och del II
-    - Ändring, nationell, del II
+    - Samma som första meddelandet i ansökan
 - Notis: Validerings-RFI till sponsor
-    - KP-ansökan, multinationell, initialt del I
-    - KP-ansökan, multinationell, initialt komplett
-    - KP-ansökan, mononationell, initialt del I
-    - KP-ansökan, mononationell, initialt komplett
-    - KP-ansökan, Tillägg av SE som MSC
-    - Ändring, multinationell, del I
-    - Ändring, multinationell, del I och del II
-    - Ändring, mononationell, del I
-    - Ändring, mononationell, del I och del II
-    - Ändring, nationell, del II
+    - Samma som första meddelandet i ansökan
 - Begäran: Preliminär granskning del I
-    - KP-ansökan, multinationell, initialt del I
-    - KP-ansökan, multinationell, initialt komplett
-    - KP-ansökan, mononationell, initialt del I
-    - KP-ansökan, mononationell, initialt komplett
-    - KP-ansökan, Tillägg av SE som MSC
-    - Ändring, multinationell, del I
-    - Ändring, multinationell, del I och del II
-    - Ändring, mononationell, del I
-    - Ändring, mononationell, del I och del II
+    - Samma som första meddelandet i ansökan
 - Begäran: Preliminär granskning del II
-    - KP-ansökan, multinationell, initialt komplett
-    - KP-ansökan, mononationell, initialt komplett
-    - KP-ansökan, Tillägg av SE som MSC
-    - Ändring, multinationell, del I och del II
-    - Ändring, mononationell, del I och del II
-    - Ändring, nationell, del II
+    - Samma som första meddelandet i ansökan
 - Notis: Bedömnings-RFI del I till sponsor
-    - KP-ansökan, multinationell, initialt del I
-    - KP-ansökan, multinationell, initialt komplett
-    - KP-ansökan, mononationell, initialt del I
-    - KP-ansökan, mononationell, initialt komplett
-    - KP-ansökan, Tillägg av SE som MSC
-    - Ändring, multinationell, del I
-    - Ändring, multinationell, del I och del II
-    - Ändring, mononationell, del I
-    - Ändring, mononationell, del I och del II
+    - Samma som första meddelandet i ansökan
 - Notis: Bedömnings-RFI del II till sponsor
-    - KP-ansökan, multinationell, initialt komplett
-    - KP-ansökan, mononationell, initialt komplett
-    - KP-ansökan, Tillägg av SE som MSC
-    - Ändring, multinationell, del I och del II
-    - Ändring, mononationell, del I och del II
-    - Ändring, nationell, del II
+    - Samma som första meddelandet i ansökan
 - Notis: Komplettering från sponsor del I
-    - KP-ansökan, multinationell, initialt del I
-    - KP-ansökan, multinationell, initialt komplett
-    - KP-ansökan, mononationell, initialt del I
-    - KP-ansökan, mononationell, initialt komplett
-    - KP-ansökan, Tillägg av SE som MSC
-    - Ändring, multinationell, del I
-    - Ändring, multinationell, del I och del II
-    - Ändring, mononationell, del I
-    - Ändring, mononationell, del I och del II
+    - Samma som första meddelandet i ansökan
 - Notis: Komplettering från sponsor del II
-    - KP-ansökan, multinationell, initialt komplett
-    - KP-ansökan, mononationell, initialt komplett
-    - KP-ansökan, Tillägg av SE som MSC
-    - Ändring, multinationell, del I och del II
-    - Ändring, mononationell, del I och del II
-    - Ändring, nationell, del II
+    - Samma som första meddelandet i ansökan
 - Notis: AR och slutsats del I
-    - KP-ansökan, multinationell, initialt del I
-    - KP-ansökan, multinationell, initialt komplett
-    - KP-ansökan, mononationell, initialt del I
-    - KP-ansökan, mononationell, initialt komplett
-    - KP-ansökan, Tillägg av SE som MSC
-    - Ändring, multinationell, del I
-    - Ändring, multinationell, del I och del II
-    - Ändring, mononationell, del I
-    - Ändring, mononationell, del I och del II
+    - Samma som första meddelandet i ansökan
 - Notis: AR och slutsats del II
-    - KP-ansökan, multinationell, initialt del I
-    - KP-ansökan, multinationell, initialt komplett
-    - KP-ansökan, mononationell, initialt del I
-    - KP-ansökan, mononationell, initialt komplett
-    - KP-ansökan, Tillägg av SE som MSC
-    - Ändring, multinationell, del I
-    - Ändring, multinationell, del I och del II
-    - Ändring, mononationell, del I
-    - Ändring, mononationell, del I och del II
+    - Samma som första meddelandet i ansökan
 - Notis: Ansökan dragits tillbaka
-    - KP-ansökan, multinationell, initialt del I
-    - KP-ansökan, multinationell, initialt komplett
-    - KP-ansökan, mononationell, initialt del I
-    - KP-ansökan, mononationell, initialt komplett
-    - KP-ansökan, Tillägg av SE som MSC
-    - Ändring, multinationell, del I
-    - Ändring, multinationell, del I och del II
-    - Ändring, mononationell, del I
-    - Ändring, mononationell, del I och del II
-    - Ändring, nationell, del II
+    - Samma som första meddelandet i ansökan
 - Notis: Ansökan förfallen
-    - KP-ansökan, multinationell, initialt del I
-    - KP-ansökan, multinationell, initialt komplett
-    - KP-ansökan, mononationell, initialt del I
-    - KP-ansökan, mononationell, initialt komplett
-    - KP-ansökan, Tillägg av SE som MSC
-    - Ändring, multinationell, del I
-    - Ändring, multinationell, del I och del II
-    - Ändring, mononationell, del I
-    - Ändring, mononationell, del I och del II
-    - Ändring, nationell, del II
+    - Samma som första meddelandet i ansökan
 - Notis: Ansökan tyst godkännande
-    - KP-ansökan, multinationell, initialt del I
-    - KP-ansökan, multinationell, initialt komplett
-    - KP-ansökan, mononationell, initialt del I
-    - KP-ansökan, mononationell, initialt komplett
-    - KP-ansökan, Tillägg av SE som MSC
-    - Ändring, multinationell, del I
-    - Ändring, multinationell, del I och del II
-    - Ändring, mononationell, del I
-    - Ändring, mononationell, del I och del II
-    - Ändring, nationell, del II
+    - Samma som första meddelandet i ansökan
 - Notis: Beslut för ansökan
-    - KP-ansökan, multinationell, initialt del I
-    - KP-ansökan, multinationell, initialt komplett
-    - KP-ansökan, mononationell, initialt del I
-    - KP-ansökan, mononationell, initialt komplett
-    - KP-ansökan, Tillägg av SE som MSC
-    - Ändring, multinationell, del I
-    - Ändring, multinationell, del I och del II
-    - Ändring, mononationell, del I
-    - Ändring, mononationell, del I och del II
-    - Ändring, nationell, del II
+    - Samma som första meddelandet i ansökan
 - Notis: Informell RFI
-    - KP-ansökan, multinationell, initialt del I
-    - KP-ansökan, multinationell, initialt komplett
-    - KP-ansökan, mononationell, initialt del I
-    - KP-ansökan, mononationell, initialt komplett
-    - KP-ansökan, Tillägg av SE som MSC
-    - Ändring, multinationell, del I
-    - Ändring, multinationell, del I och del II
-    - Ändring, mononationell, del I
-    - Ändring, mononationell, del I och del II
-    - Ändring, nationell, del II
+    - Samma som första meddelandet i ansökan
 - Notis: Beslut för överflyttad prövning
-    - KP-ansökan, multinationell, transitional
+    - Samma som första meddelandet i ansökan
 
 Följande kombinationer av dessa accepteras när BBS skickar meddelanden till LV:
 
