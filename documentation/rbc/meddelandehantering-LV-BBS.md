@@ -118,7 +118,7 @@ Meddelanden som innehåller dokument av typ som inte är listad ovan kommer att 
 Processbeskrivning
 ------------------
 
-För detaljer kring vad som utgör ett korrekt meddelande, se [verifications](rbc/verifications.md).
+För detaljer kring vad som utgör ett korrekt meddelande, se [verifications](verifications.md).
 
 ### Livscykel studie
 
