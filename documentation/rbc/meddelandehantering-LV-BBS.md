@@ -76,8 +76,8 @@ Följande kombinationer av dessa accepteras när LV skickar meddelanden till BBS
 
 Följande kombinationer av dessa accepteras när BBS skickar meddelanden till LV:
 
-Dokumettyper
-------------
+Dokumenttyper
+-------------
 
 Lista över dokumenttyper finns på 
 [enumerations](https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/blob/main/documentation/common/Enumerationer.md)
