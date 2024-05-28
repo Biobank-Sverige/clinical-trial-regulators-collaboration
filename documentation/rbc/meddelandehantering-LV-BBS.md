@@ -79,38 +79,10 @@ Följande kombinationer av dessa accepteras när BBS skickar meddelanden till LV
 Dokumettyper
 ------------
 
-Följande dokumenttyper accepteras när LV skickar meddelanden till BBS:
+Lista över dokumenttyper finns på 
+[enumerations](https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/blob/main/documentation/common/Enumerationer.md)
 
-- SAMVERK_1 (Meddelandemetadata samarbetspartner)
-- SAMVERK_2 (Strukturerad data från ansökan)
-- SAMVERK_10 (RFI/RFI-svar)
-- 2 (Följebrev (ej för publicering))
-- 5 (Protokoll (ej för publicering))
-- 7 (Sammanfattning av protokoll (för publicering))
-- 14 (Rekryteringsförfarande (för publicering))
-- 15 (Försökspersonsinformation och informerat samtycke (för publicering))
-- 41 (Final utredningsrapport del II (ej för publicering))
-- 42 (Final utredningsrapport del II (för publicering))
-- 49 (Följebrev (för publicering))
-- 52 (Ändringsbeskrivning (för publicering)) *Denna ska diskuteras*
-- 104 (Protokoll (för publicering))
-- 251 (Lista över ändringar (för publicering))
-- 273 (Part I assessment report quality - Final) *Vad heter denna på svenska?*
-- 274 (Final utredningsrapport del I exklusive kvalitet (för publicering)) *Denna ska diskuteras*
-- 278 (Följsamhet med regler för användning av biologiska prover (för publicering))
-- 308 (Sammanfattning av protokoll (ej för publicering))
-- 322 (Rekryteringsförfarande (ej för publicering))
-- 323 (Försökspersonsinformation och informerat samtycke (ej för publicering))
-- 324 (Ändringsbeskrivning (ej för publicering)) *Denna ska diskuteras*
-- 328 (Följsamhet med regler för användning av biologiska prover (ej för publicering))
-- 366 (Final utredningsrapport del I exklusive kvalitet (ej för publicering))
-- 373 (Lista över ändringar (ej för publicering))
-- 9001 (Beslutshandling)
-
-- 371 (Bilaga till synpunkt (ej för publicering))
-- 279 (Bilaga till synpunkt (för publicering))
-- 370 (Bilaga(id370))
-- 215 (Bilaga (för publicering) (id215))
+Meddelanden som innehåller dokument av typ som inte RBC efterfrågade (markerade med -) kommer att generera en varning i mail till avsändaren, men meddelandet kommer att accepteras.
 
 Meddelanden som innehåller dokument av typ som inte är listad ovan kommer att betraktas som felaktiga (alltså inte tas emot och generera ett felmeddelande)
 
