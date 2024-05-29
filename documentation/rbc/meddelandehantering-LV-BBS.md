@@ -165,10 +165,10 @@ Bedömning del I startar alltid i samband med
 Bedömning del I avslutas vid meddelande:
 
 - Notis: AR och slutsats del I
-- Notis: Beslut för ansökan *Ska detta vara tillåtet?*
-- Notis: Ansökan dragits tillbaka *Ska detta vara tillåtet?*
-- Notis: Ansökan förfallen *Ska detta vara tillåtet?*
-- Notis: Ansökan tyst godkännande *Ska detta vara tillåtet?*
+- Notis: Beslut för ansökan
+- Notis: Ansökan dragits tillbaka
+- Notis: Ansökan förfallen
+- Notis: Ansökan tyst godkännande
 
 Övriga meddelanden rörande en bedömning kan bara tas emot när ansökan är aktiv (startad men inte avslutad)
 
@@ -196,10 +196,10 @@ Bedömning del II startar alltid i samband med
 Bedömning del II avslutas vid meddelande:
 
 - Notis: AR och slutsats del II
-- Notis: Beslut för ansökan *Ska detta vara tillåtet?*
-- Notis: Ansökan dragits tillbaka *Ska detta vara tillåtet?*
-- Notis: Ansökan förfallen *Ska detta vara tillåtet?*
-- Notis: Ansökan tyst godkännande *Ska detta vara tillåtet?*
+- Notis: Beslut för ansökan
+- Notis: Ansökan dragits tillbaka
+- Notis: Ansökan förfallen
+- Notis: Ansökan tyst godkännande
 
 Övriga meddelanden rörande en bedömning kan bara tas emot när ansökan är aktiv (startad men inte avslutad)
 
