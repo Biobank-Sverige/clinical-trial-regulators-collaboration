@@ -74,8 +74,8 @@ Följande kombinationer av dessa accepteras när LV skickar meddelanden till BBS
 - Notis: Informell RFI
     - Samma som första meddelandet i ansökan
 - Notis: Beslut för överflyttad prövning
-    - KP-ansökan, multinationell, transitional ?
-    - KP-ansökan, mononationell, transitiona ?
+    - KP-ansökan, multinationell, transitional
+    - KP-ansökan, mononationell, transitiona
 
 Följande kombinationer av dessa accepteras när BBS skickar meddelanden till LV:
 
