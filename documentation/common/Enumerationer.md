@@ -72,7 +72,7 @@ typeCode|Dokumentnamn RBC|För publicering|DisplayName Svenska|DisplayName Engel
 388|Följsamhet med förordning (EU) 2016/679|Nej|Följsamhet med förordning (EU) 2016/679 (ej för publicering)||?|-
 9006|Slutrapport|?|Slutrapport||?|X
 9008|Tjänsteanteckning|?|Tjänsteanteckning||?|-
-90001|Beslutshandling|?|Beslutshandling||?|X
+9001|Beslutshandling|?|Beslutshandling||?|X
 samverk_1|message.json|?|Meddelandemetadata samarbetspartner||?|X
 samverk_10|RFI/RFI-svar|?|RFI/RFI-svar||?|X
 samverk_11|Ärendeinformation|?|Ärendeinformation||?|X
