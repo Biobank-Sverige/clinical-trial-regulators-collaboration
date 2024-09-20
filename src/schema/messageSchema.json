@@ -2,7 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/message",
     "title": "Message",
-    "description": "Schema for message metadata version 2.3-SNAPSHOT",
+    "description": "Schema for message metadata version 3.0-SNAPSHOT",
     "type": "object",
     "properties":
     {
@@ -18,10 +18,7 @@
                     "type": "string",
                     "enum":
                     [
-                        "2.0",
-                        "2.1",
-                        "2.2",
-                        "2.3-SNAPSHOT"
+                        "3.0-SNAPSHOT"
                     ]
                 },
                 "from":
@@ -76,7 +73,9 @@
                         "Notis: Initial ansökan del I och II",
                         "Notis: Initial ansökan del I",
                         "Notis: Initial ansökan del II",
-                        "Notis: Ändringsansökan",
+                        "Notis: Ändringsansökan del I och II",
+                        "Notis: Ändringsansökan del I",
+                        "Notis: Ändringsansökan del II",
                         "Notis: Valid ansökan",
                         "Notis: Validerings-RFI till sponsor",
                         "Begäran: Preliminär granskning del I",
@@ -104,7 +103,9 @@
                         "Notis: Ansökan förfallen",
                         "Notis: Ansökan tyst godkännande",
                         "Notis: Beslut för ansökan",
-                        "Notis: Informell RFI",
+                        "Notis: Informell RFI del I",
+                        "Notis: Informell RFI del II",
+                        "Notis: Informell RFI validering",
                         "Notis: Beslut för överflyttad prövning"
                     ]
                 },
