@@ -12,19 +12,18 @@ Relationen Notis: Ny ansökan och elementet CaseType
 
 Det finns fyra typer av notiser om nya ärenden och där valet av notis indikerar vilken typ av ärende som det handlar om. Samtidigt finns information om ärendets typ i elementet casetype. Det är en form av redundans som skapar ett behov av regler.
 
-Notis                                             Notis: Initial ansökan del I     Notis: Initial ansökan del II     Notis: Initial ansökan del I & II     Notis: Ändringsansökan 
------                                             ----------------------------     -----------------------------     ---------------------------------     ----------------------
-
-KP-ansökan, multinationell, initialt del I                   OK                                 -                                   -                                 - 
-KP-ansökan, multinationell, initialt komplett                 -                                 -                                   OK                                - 
-KP-ansökan, mononationell, initialt del I                    OK                                 -                                   -                                 - 
-KP-ansökan, mononationell, initialt komplett                  -                                 -                                   OK                                - 
-KP-ansökan, Tillägg av SE som MSC                             ?                                 ?                                   ?                                 ?
-Ändring, multinationell, del I                                -                                 -                                   -                                 OK
-Ändring, multinationell, del I och del II                     -                                 -                                   -                                 OK
-Ändring, mononationell, del I                                 -                                 -                                   -                                 OK
-Ändring, mononationell, del I och del II                      -                                 -                                   -                                 OK
-Ändring, nationell, del II                                    -                                 -                                   -                                 -
+| Notis                                         | Initial ansökan del I | Initial ansökan del II | Initial ansökan del I & II | Ändringsansökan |
+| --------------------------------------------- | --------------------- | ---------------------- | -------------------------- | --------------- |
+| KP-ansökan, multinationell, initialt del I    | OK                    | -                      | -                          | -               |
+| KP-ansökan, multinationell, initialt komplett | -                     | -                      | OK                         | -               |
+| KP-ansökan, mononationell, initialt del I     | OK                    | -                      | -                          | -               |
+| KP-ansökan, mononationell, initialt komplett  | -                     | -                      | OK                         | -               |
+| KP-ansökan, Tillägg av SE som MSC             | ?                     | ?                      | ?                          | ?               |
+| Ändring, multinationell, del I                | -                     | -                      | -                          | OK              |
+| Ändring, multinationell, del I och del II     | -                     | -                      | -                          | OK              |
+| Ändring, mononationell, del I                 | -                     | -                      | -                          | OK              |
+| Ändring, mononationell, del I och del II      | -                     | -                      | -                          | OK              |
+| Ändring, nationell, del II                    | -                     | -                      | -                          | -               |
 
 
 I övrigt gäller för CaseType att den sätts av den första notisen om ärendet. För alla efterföljande meddelanden som har samma LV-DiaryNumber antas CaseType vara exakt samma som i den första notisen.
