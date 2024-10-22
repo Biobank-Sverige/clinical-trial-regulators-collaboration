@@ -10,18 +10,18 @@ Paket av information skickat vid en tidpunkt
 
 Ansökan:
 
-En ansökan är samma sak som *case* och defineras av alla meddelanden med samma diarienummer hos Läkemedelsverket.
-En ansökan har en orsak (*caseType*) som defineras vid första meddelandet.
+En ansökan är samma sak som *case* och definieras av alla meddelanden med samma diarienummer hos Läkemedelsverket.
+En ansökan har en orsak (*caseType*) som definieras vid första meddelandet.
 
 Bedömning:
 
-En bedömning är samma sak som *asessment* och görs inom ramen för en ansökan. Kan innehålla
+En bedömning är samma sak som *assessment* och görs inom ramen för en ansökan. Kan innehålla
 del I, del II eller del I och II.
 
 Meddelandetyper
 ---------------
 
-Kommunikationen bygger på fasta meddelandetyper som defineras av *messageReasonType* och *caseType*
+Kommunikationen bygger på fasta meddelandetyper som definieras av *messageReasonType* och *caseType*
 
 Följande kombinationer av dessa accepteras när LV skickar meddelanden till BBS:
 
@@ -75,7 +75,7 @@ Följande kombinationer av dessa accepteras när LV skickar meddelanden till BBS
     - Samma som första meddelandet i ansökan
 - Notis: Beslut för överflyttad prövning
     - KP-ansökan, multinationell, transitional
-    - KP-ansökan, mononationell, transitiona
+    - KP-ansökan, mononationell, transitional
 
 Följande kombinationer av dessa accepteras när BBS skickar meddelanden till LV:
 
@@ -117,11 +117,10 @@ Som första meddelande för en ny studie från LV till BBS accepteras:
     - Ändring, multinationell, del I
     - Ändring, multinationell, del I och del II
     - Ändring, mononationell, del I
-    - Ändring, monongodkännandeationell, del I och del II
+    - Ändring, mononationell, del I och del II
     - Ändring, nationell, del II
 
-När ett sådant meddelande är mottaget startas en studie och en ansökan (*case*) och en eller två bedömning(ar) (
-*asessment(s)*)
+När ett sådant meddelande är mottaget startas en studie och en ansökan (*case*) och en eller två bedömning(ar) (*assessment(s)*)
 
 En studie kan inte avslutas.
 
@@ -142,8 +141,7 @@ Detta förutsätter att det inte finns någon pågående ansökan för studien.
 
 En ansökan kan innehålla noll eller en bedömning del I och noll eller en bedömning del II.
 
-När ett sådant meddelande är mottaget startas en (ändrings)ansökan (*case*) och en eller två bedömning (ar) (
-*assessment(s)*)
+När ett sådant meddelande är mottaget startas en (ändrings)ansökan (*case*) och en eller två bedömning (ar) (*assessment(s)*)
 
 Ansökan avslutas med något av:
 
