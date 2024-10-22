@@ -7,7 +7,7 @@
   "/":
     "get":
       "tags":
-        - Clinical Trials
+        - "Clinical Trials"
       "summary": "Get a list of all clinical trials you are allowed to see"
       "description": ""
       "operationId": "getClinicalTrials"
@@ -26,9 +26,9 @@
       "description": "Parter i kommunikationen ”LV”, ”EPM”, ”RBC”"
       "type": "string"
       "enum":
-        - LV
-        - EPM
-        - RBC
+        - "LV"
+        - "EPM"
+        - "RBC"
     "messageReasonType":
       "description": "En text som beskriver varför meddelandet skickats."
       "type": "string"
@@ -74,8 +74,8 @@
       "description": "Anger vilken prövningsdomän ärendet gäller"
       "type": "string"
       "enum":
-        - HumMedProd
-        - MT
+        - "HumMedProd"
+        - "MT"
     "headerType":
       "description": "Metadata som beskriver meddelandet självt"
       "type": "object"
@@ -84,13 +84,13 @@
           "description": "Version för det protokoll som versionen motsvarar."
           "type": "string"
           "enum":
-            - 3.0-SNAPSHOT
+            - "3.0-SNAPSHOT"
         "from":
           "$ref": "#/components/schemas/partyType"
         "to":
           "$ref": "#/components/schemas/partyType"
         "transactionId":
-          "description": "Ett unikt id för meddelandet. Återanvänds inte även om meddelandet skickas om."
+          "description": "Ett unikt id för transaktionen. Återanvänds inte även om meddelandet skickas om."
           "type": "string"
         "messageId":
           "description": "Ett id för meddelandet. Om ett meddelande behöver skickas om används samma messageId som på ursprungsmeddelandet."
@@ -99,7 +99,7 @@
           "description": "Används när ett meddelande är ett svar på ett annat meddelande. Sätt då till det värde messageId har i ursprungsmeddelandet."
           "type": "string"
         "timestamp":
-          "description": "Tidpunkten när meddelandet skapas uttryckt enligt ISO-8601 med sekundupplösning."
+          "description": "Tidpunkten när meddelandet skapas uttryckt enligt RFC 3339 med sekundupplösning."
           "type": "string"
           "format": "date-time"
         "domain":
@@ -107,17 +107,17 @@
         "messageReason":
           "$ref": "#/components/schemas/messageReasonType"
         "dueDate":
-          "description": "Senaste datumet när avsändaren vill ha svar, uttryckt enligtISO-8601 med datumupplösning. Null om inget svar förväntas."
+          "description": "Senaste datumet när avsändaren vill ha svar, uttryckt enligt RFC 3339 med datumupplösning. Null om inget svar förväntas."
           "type": "string"
           "format": "date"
       "required":
-        - version
-        - from
-        - to
-        - transactionId
-        - messageId
-        - timestamp
-        - messageReason
+        - "version"
+        - "from"
+        - "to"
+        - "transactionId"
+        - "messageId"
+        - "timestamp"
+        - "messageReason"
     "addressType":
       "type": "object"
       "properties":
@@ -193,10 +193,10 @@
           "description": "Sveriges aktuella RMS/MSC-status i prövningen. Kan uppdateras under valideringsfasen."
           "type": "string"
           "enum":
-            - Föreslagen MSC
-            - Föreslagen RMS
-            - MSC
-            - RMS
+            - "Föreslagen MSC"
+            - "Föreslagen RMS"
+            - "MSC"
+            - "RMS"
         "memberstateConcerned":
           "description": "En lista på alla deltagande länder i prövningen."
           "type": "array"
@@ -230,7 +230,7 @@
           "description": "Prövningens titel"
           "type": "string"
         "submissionDate":
-          "description": "Datum då ansökan skickades in till ctis-portalen."
+          "description": "Datum då ansökan skickades in."
           "type": "string"
           "format": "date"
         "sponsor":
@@ -240,7 +240,7 @@
               "description": "Huvudsponsorns namn baserat på vad som angivits i ansökningsformuläret"
               "type": "string"
     "documentTypeType":
-      "description": "Benämning på dokumentet i CTIS-portalen. Alla dokument CTIS-portalen är hårt typade och representeras av en kod och ett “DisplayName”. En sponsor kan inte lägga till godtyckliga dokument, men kan lägga till flera dokument av varje tillåten typ."
+      "description": "Benämning på dokumentet i CTIS-portalen. Alla dokument CTIS-portalen är hårt typade och representeras av en kod och ett DisplayName. En sponsor kan inte lägga till godtyckliga dokument, men kan lägga till flera dokument av varje tillåten typ."
       "type": "object"
       "properties":
         "code":
@@ -250,8 +250,7 @@
           "description": "displayName uttrycks på svenska och kan användas för att beskriva bilagorna för handläggarna. Mängden av dokumenttyper som finns tillgängliga är inte bunden utan kan utökas efter hand."
           "type": "string"
       "required":
-        - code
-        - displayName
+        - "code"
     "documentInListType":
       "type": "object"
       "properties":
@@ -267,8 +266,8 @@
         "documentType":
           "$ref": "#/components/schemas/documentTypeType"
       "required":
-        - filename
-        - documentType
+        - "filename"
+        - "documentType"
     "sponsorDocumentsType":
       "description": "Lista på metadata om dokument från prövningens sponsor"
       "type": "array"
@@ -288,34 +287,34 @@
       "description": "Den klassificering ärende har i LVs klassificeringssystem LVKS"
       "type": "string"
       "enum":
-        - Nyansökan
-        - Ändring
+        - "Nyansökan"
+        - "Ändring"
     "decisionType":
       "description": "I fall där det finns ett beslut är utfallet noterat i detta element."
       "type": "string"
       "enum":
-        - Avslag
-        - Avslut
-        - Bifall
-        - Avvisning
-        - Avskrivning
+        - "Avslag"
+        - "Avslut"
+        - "Bifall"
+        - "Avvisning"
+        - "Avskrivning"
     "decisionDetailType":
       "description": "Ytterligare information om beslutet som fattats, i princip om det finns villkor alternativt motiv till avslag."
       "oneOf":
         - "type": "string"
           "enum":
-            - Bifall enligt ansökan i sin helhet
-            - Förutsättningar att bevilja ansökan saknas
-            - Nödvändig komplettering inte inkommen
-            - Ingen ytterligare åtgärd krävs
-            - Ansökan ej komplett eller annan formell brist
-            - Ansökan återtagen
+            - "Bifall enligt ansökan i sin helhet"
+            - "Förutsättningar att bevilja ansökan saknas"
+            - "Nödvändig komplettering inte inkommen"
+            - "Ingen ytterligare åtgärd krävs"
+            - "Ansökan ej komplett eller annan formell brist"
+            - "Ansökan återtagen"
         - {}
     "timeTableType":
       "description": "Avgränsad aktivitet i handläggningen av en ansökan om prövningstillstånd för farmakologisk prövning."
       "required":
-        - activity
-        - order
+        - "activity"
+        - "order"
       "type": "object"
       "properties":
         "activity":
@@ -328,9 +327,9 @@
           "oneOf":
             - "type": "string"
               "enum":
-                - Selected
-                - Ongoing
-                - Completed
+                - "Selected"
+                - "Ongoing"
+                - "Completed"
             - {}
         "key":
           "description": "En nyckel till tidtabellshändelsen i LV:s ärendehanteringssystem."
@@ -339,11 +338,11 @@
           "description": "Sorteringsordning av tidtabellhändelserna. I dokumentet kan händelserna komma osorterade."
           "type": "integer"
         "plannedEndDate":
-          "description": "Det planerade datumet då tidtabellhändelsen ska avslutas, uttryckt enligt ISO-8601 med datumupplösning."
+          "description": "Det planerade datumet då tidtabellhändelsen ska avslutas, uttryckt enligt RFC 3339 med datumupplösning."
           "type": "string"
           "format": "date"
         "actualEndDate":
-          "description": "Det datum då tidtabellhändelsen faktiskt avslutades, uttryckt enligt ISO-8601 med datumupplösning."
+          "description": "Det datum då tidtabellhändelsen faktiskt avslutades, uttryckt enligt RFC 3339 med datumupplösning."
           "type": "string"
           "format": "date"
     "kpCaseDataType":
@@ -359,18 +358,18 @@
           "description": "Den ärendetyp som LV gett ärendet. Ska ge EPM/RBC tillräcklig information om vilken sorts ärende det är frågan om (multinationell eller bara Sverige? Del I, del II, eller båda? Nyansökan eller ändringsansökan?)"
           "type": "string"
           "enum":
-            - 'KP-ansökan, multinationell, initialt del I'
-            - 'KP-ansökan, multinationell, initialt komplett'
-            - 'KP-ansökan, multinationell, transitional'
-            - 'KP-ansökan, mononationell, initialt del I'
-            - 'KP-ansökan, mononationell, initialt komplett'
-            - 'KP-ansökan, mononationell, transitional'
-            - 'KP-ansökan, Tillägg av SE som MSC'
-            - 'Ändring, multinationell, del I'
-            - 'Ändring, multinationell, del I och del II'
-            - 'Ändring, mononationell, del I'
-            - 'Ändring, mononationell, del I och del II'
-            - 'Ändring, nationell, del II'
+            - "KP-ansökan, multinationell, initialt del I"
+            - "KP-ansökan, multinationell, initialt komplett"
+            - "KP-ansökan, multinationell, transitional"
+            - "KP-ansökan, mononationell, initialt del I"
+            - "KP-ansökan, mononationell, initialt komplett"
+            - "KP-ansökan, mononationell, transitional"
+            - "KP-ansökan, Tillägg av SE som MSC"
+            - "Ändring, multinationell, del I"
+            - "Ändring, multinationell, del I och del II"
+            - "Ändring, mononationell, del I"
+            - "Ändring, mononationell, del I och del II"
+            - "Ändring, nationell, del II"
         "isTransitioned":
           "description": "Boolean som ger true om ärendet gäller en prövning som flyttats över från gamla reglementet. Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen"
           "type": "boolean"
@@ -393,8 +392,8 @@
           "items":
             "$ref": "#/components/schemas/timeTableType"
       "required":
-        - lvDiaryNumber
-        - caseType
+        - "lvDiaryNumber"
+        - "caseType"
     "mtCaseDataType":
       "description": "Metadata gällande KP-ärendet och dess behandling"
       "type": "object"
@@ -408,19 +407,19 @@
           "description": "Den ärendetyp som LV gett ärendet. Ska ge EPM/RBC tillräcklig information om vilken sorts ärende det är frågan om (multinationell eller bara Sverige? Del I, del II, eller båda? Nyansökan eller ändringsansökan?)"
           "type": "string"
           "enum":
-            - 'MDR, Ansökan, 70.7a'
-            - 'MDR, Ansökan, 70.7b'
-            - 'MDR, Anmälan, 82/74.1'
-            - 'IVDR, Ansökan 66.7a'
-            - 'IVDR, Ansökan 66.7b'
-            - 'IVDR, Anmälan 70.1'
-            - 'IVDR, Anmälan 58.2'
-            - 'MDR, Ändring av Ansökan, 70.7a'
-            - 'MDR, Ändring av Ansökan, 70.7b'
-            - 'MDR, Ändring av Anmälan, 74.1'
-            - 'MDR, Ändring av Anmälan, 82'
-            - 'IVDR, Ändring av Ansökan, 66.7a'
-            - 'IVDR, Ändring av Anmälan 70.1'
+            - "MDR, Ansökan, 70.7a"
+            - "MDR, Ansökan, 70.7b"
+            - "MDR, Anmälan, 82/74.1"
+            - "IVDR, Ansökan 66.7a"
+            - "IVDR, Ansökan 66.7b"
+            - "IVDR, Anmälan 70.1"
+            - "IVDR, Anmälan 58.2"
+            - "MDR, Ändring av Ansökan, 70.7a"
+            - "MDR, Ändring av Ansökan, 70.7b"
+            - "MDR, Ändring av Anmälan, 74.1"
+            - "MDR, Ändring av Anmälan, 82"
+            - "IVDR, Ändring av Ansökan, 66.7a"
+            - "IVDR, Ändring av Anmälan 70.1"
         "decision":
           "$ref": "#/components/schemas/decisionType"
         "decisionDetail":
@@ -437,8 +436,8 @@
           "items":
             "$ref": "#/components/schemas/timeTableType"
       "required":
-        - lvDiaryNumber
-        - caseType
+        - "lvDiaryNumber"
+        - "caseType"
     "caseDataType":
       "oneOf":
         - "$ref": "#/components/schemas/kpCaseDataType"
