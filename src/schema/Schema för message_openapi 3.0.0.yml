@@ -1,26 +1,25 @@
-"openapi": "3.0.0,"
-"info": {
+"openapi": "3.0.0"
+"info":
   "description": "Clinical Trial API for the EU Portal and Database"
   "version": "3.0.0-oas3"
-"title": "CTIS - ClinicalTrial API"
-}
+  "title": "CTIS - ClinicalTrial API"
 "paths":
   "/":
     "get":
       "tags":
         - Clinical Trials
       "summary": "Get a list of all clinical trials you are allowed to see"
-      "description": "''"
+      "description": ""
       "operationId": "getClinicalTrials"
       "responses":
-        "'200'":
+        "200":
           "description": "successful operation"
           "content":
             "application/xml":
               "schema":
-                "$ref": "'#/components/schemas/messageType'"
+                "$ref": "#/components/schemas/messageType"
 "servers":
-  - "url": ""https"://virtserver.swaggerhub.com/sostma/CT-ClinicalTrials-API/1.0.0"
+  - "url": "https://virtserver.swaggerhub.com/sostma/CT-ClinicalTrials-API/1.0.0"
 "components":
   "schemas":
     "partyType":
@@ -34,43 +33,43 @@
       "description": "En text som beskriver varför meddelandet skickats."
       "type": "string"
       "enum":
-        - "'Notis": "Initial ansökan del I och II'"
-        - "'Notis": "Initial ansökan del I'"
-        - "'Notis": "Initial ansökan del II'"
-        - "'Notis": "Ändringsansökan del I och II'"
-        - "'Notis": "Ändringsansökan del I'"
-        - "'Notis": "Ändringsansökan del II'"
-        - "'Notis": "Valid ansökan'"
-        - "'Notis": "Validerings-RFI till sponsor'"
-        - "'Begäran": "Preliminär granskning del I'"
-        - "'Begäran": "Preliminär granskning del II'"
-        - "'Svar": "Preliminär granskning del I'"
-        - "'Svar": "Preliminär granskning del II'"
-        - "'Begäran": "Granskning av synpunkter från MSC'"
-        - "'Svar": "Granskning av synpunkter från MSC'"
-        - "'Notis": "Bedömnings-RFI del I till sponsor'"
-        - "'Notis": "Bedömnings-RFI del II till sponsor'"
-        - "'Begäran": "Yttrande del I'"
-        - "'Begäran": "Yttrande del II'"
-        - "'Notis": "Komplettering från sponsor del I'"
-        - "'Notis": "Komplettering från sponsor del II'"
-        - "'Notis": "Synpunkter från MSC efter komplettering del I'"
-        - "'Notis": "Synpunkter från MSC efter komplettering del II'"
-        - "'Svar": "Yttrande del I'"
-        - "'Svar": "Yttrande del II'"
-        - "'Notis": "AR och slutsats del I'"
-        - "'Notis": "AR och slutsats del II'"
-        - 'Notis och "kommentarsmöjlighet": "AR och slutsats del I'"
-        - 'Notis och "kommentarsmöjlighet": "AR och slutsats del II'"
-        - 'Kommentar på "notis": "Underlag till invändning mot RMS slutsats'"
-        - "'Notis": "Ansökan dragits tillbaka'"
-        - "'Notis": "Ansökan förfallen'"
-        - "'Notis": "Ansökan tyst godkännande'"
-        - "'Notis": "Beslut för ansökan'"
-        - "'Notis": "Informell RFI del I'"
-        - "'Notis": "Informell RFI del II'"
-        - "'Notis": "Informell RFI validering'"
-        - "'Notis": "Beslut för överflyttad prövningheaderType'"
+        - "Notis: Initial ansökan del I och II"
+        - "Notis: Initial ansökan del I"
+        - "Notis: Initial ansökan del II"
+        - "Notis: Ändringsansökan del I och II"
+        - "Notis: Ändringsansökan del I"
+        - "Notis: Ändringsansökan del II"
+        - "Notis: Valid ansökan"
+        - "Notis: Validerings-RFI till sponsor"
+        - "Begäran: Preliminär granskning del I"
+        - "Begäran: Preliminär granskning del II"
+        - "Svar: Preliminär granskning del I"
+        - "Svar: Preliminär granskning del II"
+        - "Begäran: Granskning av synpunkter från MSC"
+        - "Svar: Granskning av synpunkter från MSC"
+        - "Notis: Bedömnings-RFI del I till sponsor"
+        - "Notis: Bedömnings-RFI del II till sponsor"
+        - "Begäran: Yttrande del I"
+        - "Begäran: Yttrande del II"
+        - "Notis: Komplettering från sponsor del I"
+        - "Notis: Komplettering från sponsor del II"
+        - "Notis: Synpunkter från MSC efter komplettering del I"
+        - "Notis: Synpunkter från MSC efter komplettering del II"
+        - "Svar: Yttrande del I"
+        - "Svar: Yttrande del II"
+        - "Notis: AR och slutsats del I"
+        - "Notis: AR och slutsats del II"
+        - "Notis och kommentarsmöjlighet: AR och slutsats del I"
+        - "Notis och kommentarsmöjlighet: AR och slutsats del II"
+        - "Kommentar på notis: Underlag till invändning mot RMS slutsats"
+        - "Notis: Ansökan dragits tillbaka"
+        - "Notis: Ansökan förfallen"
+        - "Notis: Ansökan tyst godkännande"
+        - "Notis: Beslut för ansökan"
+        - "Notis: Informell RFI del I"
+        - "Notis: Informell RFI del II"
+        - "Notis: Informell RFI validering"
+        - "Notis: Beslut för överflyttad prövning"
     "domainType":
       "description": "Anger vilken prövningsdomän ärendet gäller"
       "type": "string"
@@ -87,9 +86,9 @@
           "enum":
             - 3.0-SNAPSHOT
         "from":
-          "$ref": "'#/components/schemas/partyType'"
+          "$ref": "#/components/schemas/partyType"
         "to":
-          "$ref": "'#/components/schemas/partyType'"
+          "$ref": "#/components/schemas/partyType"
         "transactionId":
           "description": "Ett unikt id för meddelandet. Återanvänds inte även om meddelandet skickas om."
           "type": "string"
@@ -97,16 +96,16 @@
           "description": "Ett id för meddelandet. Om ett meddelande behöver skickas om används samma messageId som på ursprungsmeddelandet."
           "type": "string"
         "parentMessageId":
-          "description": "Används när ett meddelande är ett svar på ett annat meddelande. Sätt då till det värde messageId har i urspungsmeddelandet."
+          "description": "Används när ett meddelande är ett svar på ett annat meddelande. Sätt då till det värde messageId har i ursprungsmeddelandet."
           "type": "string"
         "timestamp":
           "description": "Tidpunkten när meddelandet skapas uttryckt enligt ISO-8601 med sekundupplösning."
           "type": "string"
           "format": "date-time"
         "domain":
-          "$ref": "'#/components/schemas/domainType'"
+          "$ref": "#/components/schemas/domainType"
         "messageReason":
-          "$ref": "'#/components/schemas/messageReasonType'"
+          "$ref": "#/components/schemas/messageReasonType"
         "dueDate":
           "description": "Senaste datumet när avsändaren vill ha svar, uttryckt enligtISO-8601 med datumupplösning. Null om inget svar förväntas."
           "type": "string"
@@ -166,9 +165,9 @@
           "description": "Ett fritextfält"
           "type": "string"
         "organisationAddress":
-          "$ref": "'#/components/schemas/addressType'"
+          "$ref": "#/components/schemas/addressType"
         "principalInvestigator":
-          "$ref": "'#/components/schemas/principalInvestigatorType'"
+          "$ref": "#/components/schemas/principalInvestigatorType"
     "part2Type":
       "description": "Huvudobjekt för data om prövningen som bara berör Sverige."
       "type": "object"
@@ -176,7 +175,7 @@
         "trialSites":
           "type": "array"
           "items":
-            "$ref": "'#/components/schemas/trialSiteType'"
+            "$ref": "#/components/schemas/trialSiteType"
     "clinicalTrialType":
       "description": "Innehåller vissa översiktsdata om prövningen. Domain=HumMedProd"
       "type": "object"
@@ -203,8 +202,8 @@
           "type": "array"
           "items":
             "type": "string"
-          "minItems": "1"
-          "uniqueItems": "true"
+          "minItems": 1
+          "uniqueItems": true
         "sponsor":
           "type": "object"
           "properties":
@@ -217,15 +216,15 @@
         "part1Data":
           "description": "Huvudobjekt för detaljerade data om prövningen gemensam för alla MSC."
           "type": "object"
-          "properties": "{}"
+          "properties": {}
         "swedishPart2Data":
-          "$ref": "'#/components/schemas/part2Type'"
+          "$ref": "#/components/schemas/part2Type"
     "clinicalStudyType":
       "description": "Innehåller vissa översiktsdata om MT-prövningar. Används tillsammans medDomain=MT"
       "type": "object"
       "properties":
         "cid":
-          "description": "Prövningens id i etjänsten för MT-prävningar"
+          "description": "Prövningens id i e-tjänsten för MT-prövningar"
           "type": "string"
         "title":
           "description": "Prövningens titel"
@@ -241,14 +240,14 @@
               "description": "Huvudsponsorns namn baserat på vad som angivits i ansökningsformuläret"
               "type": "string"
     "documentTypeType":
-      "description": "Benämning på dokumentet i CTIS-portalen. Alla dokument CTIS-portalenär hårt typade och representeras av en kod och ett “DisplayName”. Ensponsor kan inte lägga till godtyckliga dokument, men kan lägga till flera dokument av varje tillåten typ."
+      "description": "Benämning på dokumentet i CTIS-portalen. Alla dokument CTIS-portalen är hårt typade och representeras av en kod och ett “DisplayName”. En sponsor kan inte lägga till godtyckliga dokument, men kan lägga till flera dokument av varje tillåten typ."
       "type": "object"
       "properties":
         "code":
           "description": "Dokumenttypens kod"
           "type": "string"
         "displayName":
-          "description": "displayName uttrycks på svenska och kan användas för att beskrivabilagorna för handläggarna. Mängden av dokumenttyper som finnstillgängliga är inte bunden utan kan utökas efter hand."
+          "description": "displayName uttrycks på svenska och kan användas för att beskriva bilagorna för handläggarna. Mängden av dokumenttyper som finns tillgängliga är inte bunden utan kan utökas efter hand."
           "type": "string"
       "required":
         - code
@@ -260,13 +259,13 @@
           "description": "Filnamnet på dokumentet"
           "type": "string"
         "applicationPart":
-          "description": "Om dokumentet tillhör del I eller del II, representerad som ”1”eller ”2”. Observera att även ”” förekommer, vilket är rapporteratsom bug hos CTIS/EMA."
+          "description": "Om dokumentet tillhör del I eller del II, representerad som ”1”eller ”2”. Observera att även ”” förekommer, vilket är rapporterat som bug hos CTIS/EMA."
           "type": "string"
         "systemVersion":
           "description": "Version som uppdateras varje gång dokumentet laddas upp iCTIS-portalen"
           "type": "string"
         "documentType":
-          "$ref": "'#/components/schemas/documentTypeType'"
+          "$ref": "#/components/schemas/documentTypeType"
       "required":
         - filename
         - documentType
@@ -274,15 +273,15 @@
       "description": "Lista på metadata om dokument från prövningens sponsor"
       "type": "array"
       "items":
-        "$ref": "'#/components/schemas/documentInListType'"
+        "$ref": "#/components/schemas/documentInListType"
     "otherDocumentsType":
-      "description": "Lista med metadata om samverkansdokument som finns i meddelandet. Skalli samtliga fall vara minst 4 stycken, message.json, message.htm,ctisMetadata.json och ctismetadata.htm"
+      "description": "Lista med metadata om samverkansdokument som finns i meddelandet. Skall i samtliga fall vara minst 4 stycken, message.json, message.htm,ctisMetadata.json och ctismetadata.htm"
       "type": "array"
       "items":
         "allOf":
-          - "$ref": "'#/components/schemas/documentInListType'"
+          - "$ref": "#/components/schemas/documentInListType"
           - "description": "Struktur för beskrivningen av bifogade samverkansdokument."
-          - "minItems": "4"
+          - "minItems": 4
 
 
     "caseClassType":
@@ -320,10 +319,10 @@
       "type": "object"
       "properties":
         "activity":
-          "description": ""LV":s beskrivande text av tidtabellhändelsen"
+          "description": "LV:s beskrivande text av tidtabellhändelsen"
           "type": "string"
         "activityType":
-          "description": ""LV":s interna typ på tidtabellhändelsen. Exempelvis start, deadline eller meeting."
+          "description": "LV:s interna typ på tidtabellhändelsen. Exempelvis start, deadline eller meeting."
           "type": "string"
         "status":
           "oneOf":
@@ -334,7 +333,7 @@
                 - Completed
             - {}
         "key":
-          "description": "En nyckel till tidtabellshändelsen i "LV":särendehanteringssystem."
+          "description": "En nyckel till tidtabellshändelsen i LV:s ärendehanteringssystem."
           "type": "string"
         "order":
           "description": "Sorteringsordning av tidtabellhändelserna. I dokumentet kan händelserna komma osorterade."
@@ -355,7 +354,7 @@
           "description": "Diarienummer från LV, unikt ID för varje ansökan. Används som korrelationsID för olika meddelanden i ett ärende."
           "type": "string"
         "caseClass":
-          "$ref": "'#/components/schemas/caseClassType'"
+          "$ref": "#/components/schemas/caseClassType"
         "caseType":
           "description": "Den ärendetyp som LV gett ärendet. Ska ge EPM/RBC tillräcklig information om vilken sorts ärende det är frågan om (multinationell eller bara Sverige? Del I, del II, eller båda? Nyansökan eller ändringsansökan?)"
           "type": "string"
@@ -376,23 +375,23 @@
           "description": "Boolean som ger true om ärendet gäller en prövning som flyttats över från gamla reglementet. Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen"
           "type": "boolean"
         "transitionedFrom":
-          "description": "EudtraCT-nummer på den tidigare prövningen.Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen"
+          "description": "EudraCT-nummer på den tidigare prövningen.Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen"
           "type": "string"
         "decision":
-          "$ref": "'#/components/schemas/decisionType'"
+          "$ref": "#/components/schemas/decisionType"
         "decisionDetail":
-          "$ref": "'#/components/schemas/decisionDetailType'"
+          "$ref": "#/components/schemas/decisionDetailType"
         "concernsEpm":
-          "description": "Anger om ansökan rör EPM och RBC. Kan vara null om "EMP:s/RBS":s medverkan inte ännu kunnat bestämmas."
+          "description": "Anger om ansökan rör EPM och RBC. Kan vara null om EMP:s/RBC:s medverkan inte ännu kunnat bestämmas."
           "type": "boolean"
         "concernsRbc":
-          "description": "Anger om ansökan rör EPM och RBC. Kan vara null om "EMP:s/RBS":s medverkan inte ännu kunnat bestämmas."
+          "description": "Anger om ansökan rör EPM och RBC. Kan vara null om EMP:s/RBC:s medverkan inte ännu kunnat bestämmas."
           "type": "boolean"
         "timetable":
           "description": "Lista på för RBC/EPM relevanta tidtabellshändelser så som LV planerar dem. Ska användas för att RBC/EPM ska kunna planera framtida bemanning."
           "type": "array"
           "items":
-            "$ref": "'#/components/schemas/timeTableType'"
+            "$ref": "#/components/schemas/timeTableType"
       "required":
         - lvDiaryNumber
         - caseType
@@ -404,7 +403,7 @@
           "description": "Diarienummer från LV, unikt ID för varje ansökan. Används som korrelationsID för olika meddelanden i ett ärende."
           "type": "string"
         "caseClass":
-          "$ref": "'#/components/schemas/caseClassType'"
+          "$ref": "#/components/schemas/caseClassType"
         "caseType":
           "description": "Den ärendetyp som LV gett ärendet. Ska ge EPM/RBC tillräcklig information om vilken sorts ärende det är frågan om (multinationell eller bara Sverige? Del I, del II, eller båda? Nyansökan eller ändringsansökan?)"
           "type": "string"
@@ -423,42 +422,42 @@
             - 'IVDR, Ändring av Ansökan, 66.7a'
             - 'IVDR, Ändring av Anmälan 70.1'
         "decision":
-          "$ref": "'#/components/schemas/decisionType'"
+          "$ref": "#/components/schemas/decisionType"
         "decisionDetail":
-          "$ref": "'#/components/schemas/decisionDetailType'"
+          "$ref": "#/components/schemas/decisionDetailType"
         "concernsEpm":
-          "description": "Anger om ansökan rör EPM och RBC. Kan vara null om "EMP:s/RBS":s medverkan inte ännu kunnat bestämmas."
+          "description": "Anger om ansökan rör EPM och RBC. Kan vara null om EMP:s/RBC:s medverkan inte ännu kunnat bestämmas."
           "type": "boolean"
         "concernsRbc":
-          "description": "Anger om ansökan rör EPM och RBC. Kan vara null om "EMP:s/RBS":s medverkan inte ännu kunnat bestämmas."
+          "description": "Anger om ansökan rör EPM och RBC. Kan vara null om EMP:s/RBC:s medverkan inte ännu kunnat bestämmas."
           "type": "boolean"
         "timetable":
           "description": "Lista på för RBC/EPM relevanta tidtabellshändelser så som LV planerar dem. Ska användas för att RBC/EPM ska kunna planera framtida bemanning."
           "type": "array"
           "items":
-            "$ref": "'#/components/schemas/timeTableType'"
+            "$ref": "#/components/schemas/timeTableType"
       "required":
         - lvDiaryNumber
         - caseType
     "caseDataType":
       "oneOf":
-        - "$ref": "'#/components/schemas/kpCaseDataType'"
-        - "$ref": "'#/components/schemas/mtCaseDataType'"
+        - "$ref": "#/components/schemas/kpCaseDataType"
+        - "$ref": "#/components/schemas/mtCaseDataType"
     "trialObjectType":
       "oneOf":
-        - "$ref": "'#/components/schemas/clinicalTrialType'"
-        - "$ref": "'#/components/schemas/clinicalStudyType'"
+        - "$ref": "#/components/schemas/clinicalTrialType"
+        - "$ref": "#/components/schemas/clinicalStudyType"
     "messageType":
       "description": "Schema for message metadata version 3.0-SNAPSHOT"
       "type": "object"
       "properties":
         "header":
-          "$ref": "'#/components/schemas/headerType'"
+          "$ref": "#/components/schemas/headerType"
         "caseData":
-          "$ref": "'#/components/schemas/caseDataType'"
+          "$ref": "#/components/schemas/caseDataType"
         "trialObject":
-          "$ref": "'#/components/schemas/trialObjectType'"
+          "$ref": "#/components/schemas/trialObjectType"
         "sponsorDocuments":
-          "$ref": "'#/components/schemas/sponsorDocumentsType'"
+          "$ref": "#/components/schemas/sponsorDocumentsType"
         "otherDocuments":
-          "$ref": "'#/components/schemas/otherDocumentsType'"
+          "$ref": "#/components/schemas/otherDocumentsType"
