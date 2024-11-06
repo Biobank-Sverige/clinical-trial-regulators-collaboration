@@ -385,7 +385,18 @@
                 "description": "Metadata gällande ärendet och dess behandling. Innehåller information som är specifik för kliniska läkemedelsprövningar.",
                 "type": "object",
                 "properties": {
-                    "caseType": {
+                    "evaluationProcess": {
+                        "description": "Anger i vilken del av utvärderingsprocessen är vid expedieringen av meddelandet",
+                        "type": "string",
+                        "enum":
+                        [
+                            "Validering",
+                            "Del I",
+                            "Del II",
+                            "Beslut",
+                            " "
+                        ]
+                    },"caseType": {
                         "description": "Den ärendetyp som LV gett ärendet. Ska ge EPM/RBC tillräcklig information om vilken sorts ärende det är frågan om (multinationell eller bara Sverige? Del I, del II, eller båda? Nyansökan eller ändringsansökan?)",
                         "type": "string",
                         "enum": [
@@ -428,6 +439,17 @@
                 "description": "MT-specifika metadata gällande ärendet och dess behandling",
                 "type": "object",
                 "properties": {
+                    "evaluationProcess": {
+                        "description": "Anger i vilken del av utvärderingsprocessen är vid expedieringen av meddelandet",
+                        "type": "string",
+                        "enum": 
+                        [
+                            "Validering",
+                            "Beredning",
+                            "Beslut",
+                            " "
+                        ]
+                    },
                     "caseType": {
                         "description": "Den ärendetyp som LV gett ärendet. Ska ge EPM/RBC tillräcklig information om vilken sorts ärende det är frågan om (multinationell eller bara Sverige? Del I, del II, eller båda? Nyansökan eller ändringsansökan?)",
                         "type": "string",
@@ -446,14 +468,6 @@
                             "IVDR, Ändring av Ansökan, 66.7a",
                             "IVDR, Ändring av Anmälan 70.1"
                         ]
-                    },
-                    "concernsEpm": {
-                        "description": "Anger om ansökan rör EPM och RBC. Kan vara null om EMP:s/RBC:s medverkan inte ännu kunnat bestämmas.",
-                        "type": "boolean"
-                    },
-                    "concernsRbc": {
-                        "description": "Anger om ansökan rör EPM och RBC. Kan vara null om EMP:s/RBC:s medverkan inte ännu kunnat bestämmas.",
-                        "type": "boolean"
                     },
                     "trialData": {
                         "description": "Strukturerade uppgifter från den bakomliggande ansökan.",
