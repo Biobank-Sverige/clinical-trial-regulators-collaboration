@@ -362,6 +362,28 @@
                         "type": "string",
                         "format": "date"
                     },
+                    "regulation": {
+                        "description": "Anger vilket lagrum som är aktuellt för den aktuella prövningen",
+                        "type": "string",
+                        "enum": [
+                            "MDR",
+                            "IVDR"
+                        ]
+                    },
+                    "process": {
+                        "description": "Prövningens titel",
+                        "type": "string",
+                        "enum": [
+                            "70.7a",
+                            "70.7b",
+                            "74.1",
+                            "82",
+                            "66.7a",
+                            "66.7b",
+                            "70.1",
+                            "58.2"
+                        ]
+                    },
                     "sponsor": {
                         "type": "object",
                         "properties": {
@@ -388,15 +410,15 @@
                     "evaluationProcess": {
                         "description": "Anger i vilken del av utvärderingsprocessen är vid expedieringen av meddelandet",
                         "type": "string",
-                        "enum":
-                        [
+                        "enum": [
                             "Validering",
                             "Del I",
                             "Del II",
                             "Beslut",
                             " "
                         ]
-                    },"caseType": {
+                    },
+                    "caseType": {
                         "description": "Den ärendetyp som LV gett ärendet. Ska ge EPM/RBC tillräcklig information om vilken sorts ärende det är frågan om (multinationell eller bara Sverige? Del I, del II, eller båda? Nyansökan eller ändringsansökan?)",
                         "type": "string",
                         "enum": [
@@ -442,8 +464,7 @@
                     "evaluationProcess": {
                         "description": "Anger i vilken del av utvärderingsprocessen är vid expedieringen av meddelandet",
                         "type": "string",
-                        "enum": 
-                        [
+                        "enum": [
                             "Validering",
                             "Beredning",
                             "Beslut",
