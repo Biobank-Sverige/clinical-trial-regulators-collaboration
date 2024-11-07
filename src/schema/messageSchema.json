@@ -477,17 +477,18 @@
                         "enum": [
                             "MDR, Ansökan, 70.7a",
                             "MDR, Ansökan, 70.7b",
-                            "MDR, Anmälan, 82/74.1",
-                            "IVDR, Ansökan 66.7a",
-                            "IVDR, Ansökan 66.7b",
-                            "IVDR, Anmälan 70.1",
-                            "IVDR, Anmälan 58.2",
+                            "MDR, Anmälan, 74.1",
+                            "MDR, Anmälan, 82",
+                            "IVDR, Ansökan, 66.7a",
+                            "IVDR, Ansökan, 66.7b",
+                            "IVDR, Anmälan, 58.2",
+                            "IVDR, Anmälan, 70.1",
                             "MDR, Ändring av Ansökan, 70.7a",
                             "MDR, Ändring av Ansökan, 70.7b",
                             "MDR, Ändring av Anmälan, 74.1",
                             "MDR, Ändring av Anmälan, 82",
                             "IVDR, Ändring av Ansökan, 66.7a",
-                            "IVDR, Ändring av Anmälan 70.1"
+                            "IVDR, Ändring av Anmälan, 70.1"
                         ]
                     },
                     "trialData": {
