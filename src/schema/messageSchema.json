@@ -138,497 +138,496 @@
             "otherDocumentsType": {
                 "type": "array",
                 "items": {
-                            "description": "Struktur för beskrivningen av bifogade samverkansdokument.",
-                            "$ref": "#/components/schemas/documentInListType"
-                        }
+                    "description": "Struktur för beskrivningen av bifogade samverkansdokument.",
+                    "$ref": "#/components/schemas/documentInListType"
                 }
-            },
-            "partyType": {
-                "description": "Parter i kommunikationen. Mottagande system skall verifiera att det är korrekt adresserat till respektive verksamhet.",
-                "type": "string",
-                "enum": [
-                    "LV",
-                    "EPM",
-                    "RBC"
-                ]
-            },
-            "messageReasonType": {
-                "description": "En text som beskriver varför meddelandet skickats.",
-                "type": "string",
-                "enum": [
-                    "Notis: Initial ansökan del I och II",
-                    "Notis: Initial ansökan del I",
-                    "Notis: Initial ansökan del II",
-                    "Notis: Ändringsansökan del I och II",
-                    "Notis: Ändringsansökan del I",
-                    "Notis: Ändringsansökan del II",
-                    "Notis: Valid ansökan",
-                    "Notis: Validerings-RFI till sponsor",
-                    "Begäran: Preliminär granskning del I",
-                    "Begäran: Preliminär granskning del II",
-                    "Svar: Preliminär granskning del I",
-                    "Svar: Preliminär granskning del II",
-                    "Begäran: Granskning av synpunkter från MSC",
-                    "Svar: Granskning av synpunkter från MSC",
-                    "Notis: Bedömnings-RFI del I till sponsor",
-                    "Notis: Bedömnings-RFI del II till sponsor",
-                    "Begäran: Yttrande del I",
-                    "Begäran: Yttrande del II",
-                    "Notis: Komplettering från sponsor del I",
-                    "Notis: Komplettering från sponsor del II",
-                    "Notis: Synpunkter från MSC efter komplettering del I",
-                    "Notis: Synpunkter från MSC efter komplettering del II",
-                    "Svar: Yttrande del I",
-                    "Svar: Yttrande del II",
-                    "Notis: AR och slutsats del I",
-                    "Notis: AR och slutsats del II",
-                    "Notis och kommentarsmöjlighet: AR och slutsats del I",
-                    "Notis och kommentarsmöjlighet: AR och slutsats del II",
-                    "Kommentar på notis: Underlag till invändning mot RMS slutsats",
-                    "Notis: Ansökan dragits tillbaka",
-                    "Notis: Ansökan förfallen",
-                    "Notis: Ansökan tyst godkännande",
-                    "Notis: Beslut för ansökan",
-                    "Notis: Informell RFI del I",
-                    "Notis: Informell RFI del II",
-                    "Notis: Informell RFI validering",
-                    "Notis: Beslut för överflyttad prövning"
-                ]
-            },
-            "domainType": {
-                "description": "Anger vilken prövningsdomän ärendet gäller",
-                "type": "string",
-                "enum": [
-                    "HumMedProd",
-                    "MT"
-                ]
-            },
-            "addressType": {
-                "type": "object",
-                "properties": {
-                    "addressLine1": {
-                        "description": "Adressrad 1",
-                        "type": "string"
-                    },
-                    "addressLine2": {
-                        "description": "Adressrad 2",
-                        "type": "string"
-                    },
-                    "addressLine3": {
-                        "description": "Adressrad 3",
-                        "type": "string"
-                    },
-                    "addressLine4": {
-                        "description": "Adressrad 4",
-                        "type": "string"
-                    },
-                    "postalCode": {
-                        "description": "Postnummer",
-                        "type": "string"
-                    },
-                    "city": {
-                        "description": "Ort",
-                        "type": "string"
+            }
+        },
+        "partyType": {
+            "description": "Parter i kommunikationen. Mottagande system skall verifiera att det är korrekt adresserat till respektive verksamhet.",
+            "type": "string",
+            "enum": [
+                "LV",
+                "EPM",
+                "RBC"
+            ]
+        },
+        "messageReasonType": {
+            "description": "En text som beskriver varför meddelandet skickats.",
+            "type": "string",
+            "enum": [
+                "Notis: Initial ansökan del I och II",
+                "Notis: Initial ansökan del I",
+                "Notis: Initial ansökan del II",
+                "Notis: Ändringsansökan del I och II",
+                "Notis: Ändringsansökan del I",
+                "Notis: Ändringsansökan del II",
+                "Notis: Valid ansökan",
+                "Notis: Validerings-RFI till sponsor",
+                "Begäran: Preliminär granskning del I",
+                "Begäran: Preliminär granskning del II",
+                "Svar: Preliminär granskning del I",
+                "Svar: Preliminär granskning del II",
+                "Begäran: Granskning av synpunkter från MSC",
+                "Svar: Granskning av synpunkter från MSC",
+                "Notis: Bedömnings-RFI del I till sponsor",
+                "Notis: Bedömnings-RFI del II till sponsor",
+                "Begäran: Yttrande del I",
+                "Begäran: Yttrande del II",
+                "Notis: Komplettering från sponsor del I",
+                "Notis: Komplettering från sponsor del II",
+                "Notis: Synpunkter från MSC efter komplettering del I",
+                "Notis: Synpunkter från MSC efter komplettering del II",
+                "Svar: Yttrande del I",
+                "Svar: Yttrande del II",
+                "Notis: AR och slutsats del I",
+                "Notis: AR och slutsats del II",
+                "Notis och kommentarsmöjlighet: AR och slutsats del I",
+                "Notis och kommentarsmöjlighet: AR och slutsats del II",
+                "Kommentar på notis: Underlag till invändning mot RMS slutsats",
+                "Notis: Ansökan dragits tillbaka",
+                "Notis: Ansökan förfallen",
+                "Notis: Ansökan tyst godkännande",
+                "Notis: Beslut för ansökan",
+                "Notis: Informell RFI del I",
+                "Notis: Informell RFI del II",
+                "Notis: Informell RFI validering",
+                "Notis: Beslut för överflyttad prövning"
+            ]
+        },
+        "domainType": {
+            "description": "Anger vilken prövningsdomän ärendet gäller",
+            "type": "string",
+            "enum": [
+                "HumMedProd",
+                "MT"
+            ]
+        },
+        "addressType": {
+            "type": "object",
+            "properties": {
+                "addressLine1": {
+                    "description": "Adressrad 1",
+                    "type": "string"
+                },
+                "addressLine2": {
+                    "description": "Adressrad 2",
+                    "type": "string"
+                },
+                "addressLine3": {
+                    "description": "Adressrad 3",
+                    "type": "string"
+                },
+                "addressLine4": {
+                    "description": "Adressrad 4",
+                    "type": "string"
+                },
+                "postalCode": {
+                    "description": "Postnummer",
+                    "type": "string"
+                },
+                "city": {
+                    "description": "Ort",
+                    "type": "string"
+                }
+            }
+        },
+        "principalInvestigatorType": {
+            "description": "Prövningsställets huvudprövares kontaktuppgifter.",
+            "type": "object",
+            "properties": {
+                "familyName": {
+                    "description": "Efternamn",
+                    "type": "string"
+                },
+                "givenName": {
+                    "description": "Förnamn",
+                    "type": "string"
+                },
+                "phoneNumber": {
+                    "description": "Telefonnummer",
+                    "type": "string"
+                },
+                "emailAddress": {
+                    "description": "E-postadress",
+                    "type": "string"
+                }
+            }
+        },
+        "trialSiteType": {
+            "type": "object",
+            "properties": {
+                "trialSiteName": {
+                    "description": "Namnet på prövningsstället. Värdet kommer tillsvidare alltid vara null eftersom det är så det skickas ut från CTIS.",
+                    "type": "string"
+                },
+                "department": {
+                    "description": "Ett fritextfält som anger mer i detalj vilken enhet på prövningsstället som utför arbetet",
+                    "type": "string"
+                },
+                "organisationAddress": {
+                    "$ref": "#/components/schemas/addressType"
+                },
+                "principalInvestigator": {
+                    "description": "Kontaktuppgifter till den ansvarige på respektive prövningsställe",
+                    "$ref": "#/components/schemas/principalInvestigatorType"
+                }
+            }
+        },
+        "part2Type": {
+            "description": "Huvudobjekt för data om prövningen som bara berör Sverige.",
+            "type": "object",
+            "properties": {
+                "trialSites": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/components/schemas/trialSiteType"
                     }
                 }
-            },
-            "principalInvestigatorType": {
-                "description": "Prövningsställets huvudprövares kontaktuppgifter.",
-                "type": "object",
-                "properties": {
-                    "familyName": {
-                        "description": "Efternamn",
+            }
+        },
+        "kpTrialType": {
+            "description": "Innehåller vissa översiktsdata om prövningen. Domain=HumMedProd",
+            "type": "object",
+            "properties": {
+                "clinicalTrialId": {
+                    "description": "Prövningens id i CTIS-portalen",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Prövningens officiella titel",
+                    "type": "string"
+                },
+                "emaSubmissionDate": {
+                    "description": "Datum då den kliniska prövningen initierades av sponsor",
+                    "type": "string",
+                    "format": "date"
+                },
+                "swedenRole": {
+                    "description": "Sveriges aktuella RMS/MSC-status i prövningen. Kan uppdateras under valideringsfasen.",
+                    "type": "string",
+                    "enum": [
+                        "Föreslagen MSC",
+                        "Föreslagen RMS",
+                        "MSC",
+                        "RMS"
+                    ]
+                },
+                "memberstateConcerned": {
+                    "description": "En lista på alla deltagande länder i prövningen.",
+                    "type": "array",
+                    "items": {
                         "type": "string"
                     },
-                    "givenName": {
-                        "description": "Förnamn",
-                        "type": "string"
-                    },
-                    "phoneNumber": {
-                        "description": "Telefonnummer",
-                        "type": "string"
-                    },
-                    "emailAddress": {
-                        "description": "E-postadress",
-                        "type": "string"
-                    }
-                }
-            },
-            "trialSiteType": {
-                "type": "object",
-                "properties": {
-                    "trialSiteName": {
-                        "description": "Namnet på prövningsstället. Värdet kommer tillsvidare alltid vara null eftersom det är så det skickas ut från CTIS.",
-                        "type": "string"
-                    },
-                    "department": {
-                        "description": "Ett fritextfält som anger mer i detalj vilken enhet på prövningsstället som utför arbetet",
-                        "type": "string"
-                    },
-                    "organisationAddress": {
-                        "$ref": "#/components/schemas/addressType"
-                    },
-                    "principalInvestigator": {
-                        "description": "Kontaktuppgifter till den ansvarige på respektive prövningsställe",
-                        "$ref": "#/components/schemas/principalInvestigatorType"
-                    }
-                }
-            },
-            "part2Type": {
-                "description": "Huvudobjekt för data om prövningen som bara berör Sverige.",
-                "type": "object",
-                "properties": {
-                    "trialSites": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/trialSiteType"
-                        }
-                    }
-                }
-            },
-            "kpTrialType": {
-                "description": "Innehåller vissa översiktsdata om prövningen. Domain=HumMedProd",
-                "type": "object",
-                "properties": {
-                    "clinicalTrialId": {
-                        "description": "Prövningens id i CTIS-portalen",
-                        "type": "string"
-                    },
-                    "title": {
-                        "description": "Prövningens officiella titel",
-                        "type": "string"
-                    },
-                    "emaSubmissionDate": {
-                        "description": "Datum då den kliniska prövningen initierades av sponsor",
-                        "type": "string",
-                        "format": "date"
-                    },
-                    "swedenRole": {
-                        "description": "Sveriges aktuella RMS/MSC-status i prövningen. Kan uppdateras under valideringsfasen.",
-                        "type": "string",
-                        "enum": [
-                            "Föreslagen MSC",
-                            "Föreslagen RMS",
-                            "MSC",
-                            "RMS"
-                        ]
-                    },
-                    "memberstateConcerned": {
-                        "description": "En lista på alla deltagande länder i prövningen.",
-                        "type": "array",
-                        "items": {
+                    "minItems": 1,
+                    "uniqueItems": true
+                },
+                "sponsor": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "description": "Huvudsponsorns namn baserat på vad som angivits i CTIS-portalen",
                             "type": "string"
                         },
-                        "minItems": 1,
-                        "uniqueItems": true
-                    },
-                    "sponsor": {
-                        "type": "object",
-                        "properties": {
-                            "name": {
-                                "description": "Huvudsponsorns namn baserat på vad som angivits i CTIS-portalen",
-                                "type": "string"
-                            },
-                            "country": {
-                                "description": "Sponsors ort som angivits i adressen.",
-                                "type": "string"
-                            }
+                        "country": {
+                            "description": "Sponsors ort som angivits i adressen.",
+                            "type": "string"
                         }
-                    },
-                    "part1Data": {
-                        "description": "Huvudobjekt för detaljerade data om prövningen gemensam för alla MSC.",
-                        "type": "object",
-                        "properties": {}
-                    },
-                    "swedishPart2Data": {
-                        "$ref": "#/components/schemas/part2Type"
                     }
+                },
+                "part1Data": {
+                    "description": "Huvudobjekt för detaljerade data om prövningen gemensam för alla MSC.",
+                    "type": "object",
+                    "properties": {}
+                },
+                "swedishPart2Data": {
+                    "$ref": "#/components/schemas/part2Type"
                 }
-            },
-            "mtStudyType": {
-                "description": "Innehåller vissa översiktsdata om MT-studier. Används tillsammans medDomain=MT",
-                "type": "object",
-                "properties": {
-                    "cid": {
-                        "description": "Prövningens id i e-tjänsten för MT-prövningar",
-                        "type": "string"
-                    },
-                    "title": {
-                        "description": "Prövningens titel",
-                        "type": "string"
-                    },
-                    "submissionDate": {
-                        "description": "Datum då ansökan skickades in.",
-                        "type": "string",
-                        "format": "date"
-                    },
-                    "swedenRole": {
-                        "description": "Sveriges aktuella RMS/MSC-status i prövningen. Kan uppdateras under valideringsfasen.",
-                        "type": "string",
-                        "enum": [
-                            "RMS"
-                        ]
-                    },
-                    "regulation": {
-                        "description": "Anger vilket lagrum som är aktuellt för den aktuella prövningen",
-                        "type": "string",
-                        "enum": [
-                            "MDR",
-                            "IVDR"
-                        ]
-                    },
-                    "process": {
-                        "description": "Prövningens process i aktuellt lagrum",
-                        "type": "string",
-                        "enum": [
-                            "70.7a",
-                            "70.7b",
-                            "74.1",
-                            "82",
-                            "66.7a",
-                            "66.7b",
-                            "70.1",
-                            "58.2"
-                        ]
-                    },
-                    "sponsor": {
-                        "type": "object",
-                        "properties": {
-                            "name": {
-                                "description": "Huvudsponsorns namn baserat på vad som angivits i ansökningsformuläret",
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            },
-            "caseClassType": {
-                "description": "Den klassificering ärende har i LVs klassificeringssystem LVKS",
-                "type": "string",
-                "enum": [
-                    "Nyansökan",
-                    "Ändring"
-                ]
-            },
-            "kpCaseDataType": {
-                "description": "Metadata gällande ärendet och dess behandling. Innehåller information som är specifik för kliniska läkemedelsprövningar.",
-                "type": "object",
-                "properties": {
-                    "evaluationProcess": {
-                        "description": "Anger i vilken del av utvärderingsprocessen är vid expedieringen av meddelandet",
-                        "type": "string",
-                        "enum": [
-                            "Validering",
-                            "Del I",
-                            "Del II",
-                            "Beslut",
-                            " "
-                        ]
-                    },
-                    "caseType": {
-                        "description": "Den ärendetyp som LV gett ärendet. Ska ge EPM/RBC tillräcklig information om vilken sorts ärende det är frågan om (multinationell eller bara Sverige? Del I, del II, eller båda? Nyansökan eller ändringsansökan?)",
-                        "type": "string",
-                        "enum": [
-                            "KP-ansökan, multinationell, initialt del I",
-                            "KP-ansökan, multinationell, initialt komplett",
-                            "KP-ansökan, multinationell, transitional",
-                            "KP-ansökan, mononationell, initialt del I",
-                            "KP-ansökan, mononationell, initialt komplett",
-                            "KP-ansökan, mononationell, transitional",
-                            "KP-ansökan, Tillägg av SE som MSC",
-                            "Ändring, multinationell, del I",
-                            "Ändring, multinationell, del I och del II",
-                            "Ändring, mononationell, del I",
-                            "Ändring, mononationell, del I och del II",
-                            "Ändring, nationell, del II"
-                        ]
-                    },
-                    "isTransitioned": {
-                        "description": "Boolean som ger true om ärendet gäller en prövning som flyttats över från gamla reglementet. Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen",
-                        "type": "boolean"
-                    },
-                    "transitionedFrom": {
-                        "description": "EudraCT-nummer på den tidigare prövningen.Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen",
-                        "type": "string"
-                    },
-                    "trialData": {
-                        "description": "Strukturerade uppgifter från den bakomliggande ansökan.",
-                        "type": "object",
-                        "items": {
-                            "$ref": "#/components/schemas/kpTrialType"
-                        }
-                    }
-                },
-                "required": [
-                    "lvDiaryNumber",
-                    "caseType"
-                ]
-            },
-            "mtCaseDataType": {
-                "description": "MT-specifika metadata gällande ärendet och dess behandling",
-                "type": "object",
-                "properties": {
-                    "evaluationProcess": {
-                        "description": "Anger i vilken del av utvärderingsprocessen är vid expedieringen av meddelandet",
-                        "type": "string",
-                        "enum": [
-                            "Validering",
-                            "Beredning",
-                            "Beslut",
-                            " "
-                        ]
-                    },
-                    "caseType": {
-                        "description": "Den ärendetyp som LV gett ärendet. Ska ge EPM/RBC tillräcklig information om vilken sorts ärende det är frågan om (multinationell eller bara Sverige? Del I, del II, eller båda? Nyansökan eller ändringsansökan?)",
-                        "type": "string",
-                        "enum": [
-                            "MDR, Ansökan, 70.7a",
-                            "MDR, Ansökan, 70.7b",
-                            "MDR, Anmälan, 74.1",
-                            "MDR, Anmälan, 82",
-                            "IVDR, Ansökan, 66.7a",
-                            "IVDR, Ansökan, 66.7b",
-                            "IVDR, Anmälan, 58.2",
-                            "IVDR, Anmälan, 70.1",
-                            "MDR, Ändring av Ansökan, 70.7a",
-                            "MDR, Ändring av Ansökan, 70.7b",
-                            "MDR, Ändring av Anmälan, 74.1",
-                            "MDR, Ändring av Anmälan, 82",
-                            "IVDR, Ändring av Ansökan, 66.7a",
-                            "IVDR, Ändring av Anmälan, 70.1"
-                        ]
-                    },
-                    "trialData": {
-                        "description": "Strukturerade uppgifter från den bakomliggande ansökan.",
-                        "type": "object",
-                        "items": {
-                            "$ref": "#/components/schemas/mtStudyType"
-                        }
-                    }
-                },
-                "required": [
-                    "lvDiaryNumber",
-                    "caseType"
-                ]
-            },
-            "decisionType": {
-                "description": "I fall där det finns ett beslut är utfallet noterat i detta element.",
-                "type": "string",
-                "enum": [
-                    "Avslag",
-                    "Avslut",
-                    "Bifall",
-                    "Avvisning",
-                    "Avskrivning"
-                ]
-            },
-            "decisionDetailType": {
-                "description": "Ytterligare information om beslutet som fattats, i princip om det finns villkor alternativt motiv till avslag.",
-                "oneOf": [
-                    {
-                        "type": "string",
-                        "enum": [
-                            "Bifall enligt ansökan i sin helhet",
-                            "Förutsättningar att bevilja ansökan saknas",
-                            "Nödvändig komplettering inte inkommen",
-                            "Ingen ytterligare åtgärd krävs",
-                            "Ansökan ej komplett eller annan formell brist",
-                            "Ansökan återtagen"
-                        ]
-                    },
-                    {}
-                ]
-            },
-            "timeTableType": {
-                "description": "Avgränsad aktivitet i handläggningen av en ansökan om prövningstillstånd för farmakologisk prövning.",
-                "required": [
-                    "activity",
-                    "order"
-                ],
-                "type": "object",
-                "properties": {
-                    "activity": {
-                        "description": "LV:s beskrivande text av tidtabellhändelsen",
-                        "type": "string"
-                    },
-                    "activityType": {
-                        "description": "LV:s interna typ på tidtabellhändelsen. Exempelvis start, deadline eller meeting.",
-                        "type": "string"
-                    },
-                    "status": {
-                        "oneOf": [
-                            {
-                                "type": "string",
-                                "enum": [
-                                    "Selected",
-                                    "Ongoing",
-                                    "Completed"
-                                ]
-                            },
-                            {}
-                        ]
-                    },
-                    "key": {
-                        "description": "En nyckel till tidtabellshändelsen i LV:s ärendehanteringssystem.",
-                        "type": "string"
-                    },
-                    "order": {
-                        "description": "Sorteringsordning av tidtabellhändelserna. I dokumentet kan händelserna komma osorterade.",
-                        "type": "integer"
-                    },
-                    "plannedEndDate": {
-                        "description": "Det planerade datumet då tidtabellhändelsen ska avslutas, uttryckt enligt RFC 3339 med datumupplösning.",
-                        "type": "string",
-                        "format": "date"
-                    },
-                    "actualEndDate": {
-                        "description": "Det datum då tidtabellhändelsen faktiskt avslutades, uttryckt enligt RFC 3339 med datumupplösning.",
-                        "type": "string",
-                        "format": "date"
-                    }
-                }
-            },
-            "documentTypeType": {
-                "description": "Benämning på dokumentet i CTIS-portalen. Alla dokument CTIS-portalen är hårt typade och representeras av en kod och ett DisplayName. En sponsor kan inte lägga till godtyckliga dokument, men kan lägga till flera dokument av varje tillåten typ.",
-                "type": "object",
-                "properties": {
-                    "code": {
-                        "description": "Dokumenttypens kod",
-                        "type": "string"
-                    },
-                    "displayName": {
-                        "description": "displayName uttrycks på svenska och kan användas för att beskriva bilagorna för handläggarna. Mängden av dokumenttyper som finns tillgängliga är inte bunden utan kan utökas efter hand.",
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "code"
-                ]
-            },
-            "documentInListType": {
-                "type": "object",
-                "properties": {
-                    "filename": {
-                        "description": "Filnamnet på dokumentet",
-                        "type": "string"
-                    },
-                    "applicationPart": {
-                        "description": "Om dokumentet tillhör del I eller del II, representerad som ”1”eller ”2”. Observera att även ”” förekommer, vilket är rapporterat som bug hos CTIS/EMA.",
-                        "type": "string"
-                    },
-                    "systemVersion": {
-                        "description": "Version som uppdateras varje gång en version av dokumentet laddas upp i CTIS-portalen",
-                        "type": "string"
-                    },
-                    "documentType": {
-                        "$ref": "#/components/schemas/documentTypeType"
-                    }
-                },
-                "required": [
-                    "filename",
-                    "documentType"
-                ]
             }
+        },
+        "mtStudyType": {
+            "description": "Innehåller vissa översiktsdata om MT-studier. Används tillsammans medDomain=MT",
+            "type": "object",
+            "properties": {
+                "cid": {
+                    "description": "Prövningens id i e-tjänsten för MT-prövningar",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Prövningens titel",
+                    "type": "string"
+                },
+                "submissionDate": {
+                    "description": "Datum då ansökan skickades in.",
+                    "type": "string",
+                    "format": "date"
+                },
+                "swedenRole": {
+                    "description": "Sveriges aktuella RMS/MSC-status i prövningen. Kan uppdateras under valideringsfasen.",
+                    "type": "string",
+                    "enum": [
+                        "RMS"
+                    ]
+                },
+                "regulation": {
+                    "description": "Anger vilket lagrum som är aktuellt för den aktuella prövningen",
+                    "type": "string",
+                    "enum": [
+                        "MDR",
+                        "IVDR"
+                    ]
+                },
+                "process": {
+                    "description": "Prövningens process i aktuellt lagrum",
+                    "type": "string",
+                    "enum": [
+                        "70.7a",
+                        "70.7b",
+                        "74.1",
+                        "82",
+                        "66.7a",
+                        "66.7b",
+                        "70.1",
+                        "58.2"
+                    ]
+                },
+                "sponsor": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "description": "Huvudsponsorns namn baserat på vad som angivits i ansökningsformuläret",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "caseClassType": {
+            "description": "Den klassificering ärende har i LVs klassificeringssystem LVKS",
+            "type": "string",
+            "enum": [
+                "Nyansökan",
+                "Ändring"
+            ]
+        },
+        "kpCaseDataType": {
+            "description": "Metadata gällande ärendet och dess behandling. Innehåller information som är specifik för kliniska läkemedelsprövningar.",
+            "type": "object",
+            "properties": {
+                "evaluationProcess": {
+                    "description": "Anger i vilken del av utvärderingsprocessen är vid expedieringen av meddelandet",
+                    "type": "string",
+                    "enum": [
+                        "Validering",
+                        "Del I",
+                        "Del II",
+                        "Beslut",
+                        " "
+                    ]
+                },
+                "caseType": {
+                    "description": "Den ärendetyp som LV gett ärendet. Ska ge EPM/RBC tillräcklig information om vilken sorts ärende det är frågan om (multinationell eller bara Sverige? Del I, del II, eller båda? Nyansökan eller ändringsansökan?)",
+                    "type": "string",
+                    "enum": [
+                        "KP-ansökan, multinationell, initialt del I",
+                        "KP-ansökan, multinationell, initialt komplett",
+                        "KP-ansökan, multinationell, transitional",
+                        "KP-ansökan, mononationell, initialt del I",
+                        "KP-ansökan, mononationell, initialt komplett",
+                        "KP-ansökan, mononationell, transitional",
+                        "KP-ansökan, Tillägg av SE som MSC",
+                        "Ändring, multinationell, del I",
+                        "Ändring, multinationell, del I och del II",
+                        "Ändring, mononationell, del I",
+                        "Ändring, mononationell, del I och del II",
+                        "Ändring, nationell, del II"
+                    ]
+                },
+                "isTransitioned": {
+                    "description": "Boolean som ger true om ärendet gäller en prövning som flyttats över från gamla reglementet. Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen",
+                    "type": "boolean"
+                },
+                "transitionedFrom": {
+                    "description": "EudraCT-nummer på den tidigare prövningen.Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen",
+                    "type": "string"
+                },
+                "trialData": {
+                    "description": "Strukturerade uppgifter från den bakomliggande ansökan.",
+                    "type": "object",
+                    "items": {
+                        "$ref": "#/components/schemas/kpTrialType"
+                    }
+                }
+            },
+            "required": [
+                "lvDiaryNumber",
+                "caseType"
+            ]
+        },
+        "mtCaseDataType": {
+            "description": "MT-specifika metadata gällande ärendet och dess behandling",
+            "type": "object",
+            "properties": {
+                "evaluationProcess": {
+                    "description": "Anger i vilken del av utvärderingsprocessen är vid expedieringen av meddelandet",
+                    "type": "string",
+                    "enum": [
+                        "Validering",
+                        "Beredning",
+                        "Beslut",
+                        " "
+                    ]
+                },
+                "caseType": {
+                    "description": "Den ärendetyp som LV gett ärendet. Ska ge EPM/RBC tillräcklig information om vilken sorts ärende det är frågan om (multinationell eller bara Sverige? Del I, del II, eller båda? Nyansökan eller ändringsansökan?)",
+                    "type": "string",
+                    "enum": [
+                        "MDR, Ansökan, 70.7a",
+                        "MDR, Ansökan, 70.7b",
+                        "MDR, Anmälan, 74.1",
+                        "MDR, Anmälan, 82",
+                        "IVDR, Ansökan, 66.7a",
+                        "IVDR, Ansökan, 66.7b",
+                        "IVDR, Anmälan, 58.2",
+                        "IVDR, Anmälan, 70.1",
+                        "MDR, Ändring av Ansökan, 70.7a",
+                        "MDR, Ändring av Ansökan, 70.7b",
+                        "MDR, Ändring av Anmälan, 74.1",
+                        "MDR, Ändring av Anmälan, 82",
+                        "IVDR, Ändring av Ansökan, 66.7a",
+                        "IVDR, Ändring av Anmälan, 70.1"
+                    ]
+                },
+                "trialData": {
+                    "description": "Strukturerade uppgifter från den bakomliggande ansökan.",
+                    "type": "object",
+                    "items": {
+                        "$ref": "#/components/schemas/mtStudyType"
+                    }
+                }
+            },
+            "required": [
+                "lvDiaryNumber",
+                "caseType"
+            ]
+        },
+        "decisionType": {
+            "description": "I fall där det finns ett beslut är utfallet noterat i detta element.",
+            "type": "string",
+            "enum": [
+                "Avslag",
+                "Avslut",
+                "Bifall",
+                "Avvisning",
+                "Avskrivning"
+            ]
+        },
+        "decisionDetailType": {
+            "description": "Ytterligare information om beslutet som fattats, i princip om det finns villkor alternativt motiv till avslag.",
+            "oneOf": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "Bifall enligt ansökan i sin helhet",
+                        "Förutsättningar att bevilja ansökan saknas",
+                        "Nödvändig komplettering inte inkommen",
+                        "Ingen ytterligare åtgärd krävs",
+                        "Ansökan ej komplett eller annan formell brist",
+                        "Ansökan återtagen"
+                    ]
+                },
+                {}
+            ]
+        },
+        "timeTableType": {
+            "description": "Avgränsad aktivitet i handläggningen av en ansökan om prövningstillstånd för farmakologisk prövning.",
+            "required": [
+                "activity",
+                "order"
+            ],
+            "type": "object",
+            "properties": {
+                "activity": {
+                    "description": "LV:s beskrivande text av tidtabellhändelsen",
+                    "type": "string"
+                },
+                "activityType": {
+                    "description": "LV:s interna typ på tidtabellhändelsen. Exempelvis start, deadline eller meeting.",
+                    "type": "string"
+                },
+                "status": {
+                    "oneOf": [
+                        {
+                            "type": "string",
+                            "enum": [
+                                "Selected",
+                                "Ongoing",
+                                "Completed"
+                            ]
+                        },
+                        {}
+                    ]
+                },
+                "key": {
+                    "description": "En nyckel till tidtabellshändelsen i LV:s ärendehanteringssystem.",
+                    "type": "string"
+                },
+                "order": {
+                    "description": "Sorteringsordning av tidtabellhändelserna. I dokumentet kan händelserna komma osorterade.",
+                    "type": "integer"
+                },
+                "plannedEndDate": {
+                    "description": "Det planerade datumet då tidtabellhändelsen ska avslutas, uttryckt enligt RFC 3339 med datumupplösning.",
+                    "type": "string",
+                    "format": "date"
+                },
+                "actualEndDate": {
+                    "description": "Det datum då tidtabellhändelsen faktiskt avslutades, uttryckt enligt RFC 3339 med datumupplösning.",
+                    "type": "string",
+                    "format": "date"
+                }
+            }
+        },
+        "documentTypeType": {
+            "description": "Benämning på dokumentet i CTIS-portalen. Alla dokument CTIS-portalen är hårt typade och representeras av en kod och ett DisplayName. En sponsor kan inte lägga till godtyckliga dokument, men kan lägga till flera dokument av varje tillåten typ.",
+            "type": "object",
+            "properties": {
+                "code": {
+                    "description": "Dokumenttypens kod",
+                    "type": "string"
+                },
+                "displayName": {
+                    "description": "displayName uttrycks på svenska och kan användas för att beskriva bilagorna för handläggarna. Mängden av dokumenttyper som finns tillgängliga är inte bunden utan kan utökas efter hand.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "code"
+            ]
+        },
+        "documentInListType": {
+            "type": "object",
+            "properties": {
+                "filename": {
+                    "description": "Filnamnet på dokumentet",
+                    "type": "string"
+                },
+                "applicationPart": {
+                    "description": "Om dokumentet tillhör del I eller del II, representerad som ”1”eller ”2”. Observera att även ”” förekommer, vilket är rapporterat som bug hos CTIS/EMA.",
+                    "type": "string"
+                },
+                "systemVersion": {
+                    "description": "Version som uppdateras varje gång en version av dokumentet laddas upp i CTIS-portalen",
+                    "type": "string"
+                },
+                "documentType": {
+                    "$ref": "#/components/schemas/documentTypeType"
+                }
+            },
+            "required": [
+                "filename",
+                "documentType"
+            ]
         }
     }
 }
