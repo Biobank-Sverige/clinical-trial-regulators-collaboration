@@ -10,12 +10,15 @@
             "$ref": "#/components/schemas/headerType"
         },
         "caseData": {
+            "derscription": "Objekt som samlar information om ärende och samhörande klinisk prövning/studie",
             "$ref": "#/components/schemas/caseDataType"
         },
         "sponsorDocuments": {
+            "derscription": "Objekt som samlar alla dokument som härstammar från beställaren av den kliniska prövningen",
             "$ref": "#/components/schemas/sponsorDocumentsType"
         },
         "otherDocuments": {
+            "description": "Lista med metadata om samverkansdokument som finns i meddelandet. Skall i samtliga fall vara minst 4 stycken, message.json, message.htm,ctisMetadata.json och ctismetadata.htm",
             "$ref": "#/components/schemas/otherDocumentsType"
         }
     },
@@ -58,7 +61,8 @@
                     "domain": {
                         "$ref": "#/components/schemas/domainType"
                     },
-                    "messageReason": {
+                    "messageReasonType": {
+                        "description": "En text som beskriver varför meddelandet skickats.",
                         "$ref": "#/components/schemas/messageReasonType"
                     },
                     "dueDate": {
@@ -73,7 +77,7 @@
                         "transactionId",
                         "messageId",
                         "timestamp",
-                        "messageReason"
+                        "messageReasonType"
                     ]
                 }
             },
@@ -86,6 +90,7 @@
                         "type": "string"
                     },
                     "caseClass": {
+                        "description": "Den klassificering ärende har i LVs klassificeringssystem LVKS",
                         "$ref": "#/components/schemas/caseClassType"
                     },
                     "concernsEpm": {
@@ -107,9 +112,11 @@
                         ]
                     },
                     "decision": {
+                        "description": "I fall där det finns ett beslut är utfallet noterat i detta element.",
                         "$ref": "#/components/schemas/decisionType"
                     },
                     "decisionDetail": {
+                        "description": "Ytterligare information om beslutet som fattats, i princip om det finns villkor alternativt motiv till avslag.",
                         "$ref": "#/components/schemas/decisionDetailType"
                     },
                     "timetable": {
@@ -129,20 +136,11 @@
                 }
             },
             "otherDocumentsType": {
-                "description": "Lista med metadata om samverkansdokument som finns i meddelandet. Skall i samtliga fall vara minst 4 stycken, message.json, message.htm,ctisMetadata.json och ctismetadata.htm",
                 "type": "array",
                 "items": {
-                    "allOf": [
-                        {
+                            "description": "Struktur för beskrivningen av bifogade samverkansdokument.",
                             "$ref": "#/components/schemas/documentInListType"
-                        },
-                        {
-                            "description": "Struktur för beskrivningen av bifogade samverkansdokument."
-                        },
-                        {
-                            "minItems": 4
                         }
-                    ]
                 }
             },
             "partyType": {
@@ -264,13 +262,14 @@
                         "type": "string"
                     },
                     "department": {
-                        "description": "Ett fritextfält",
+                        "description": "Ett fritextfält som anger mer i detalj vilken enhet på prövningsstället som utför arbetet",
                         "type": "string"
                     },
                     "organisationAddress": {
                         "$ref": "#/components/schemas/addressType"
                     },
                     "principalInvestigator": {
+                        "description": "Kontaktuppgifter till den ansvarige på respektive prövningsställe",
                         "$ref": "#/components/schemas/principalInvestigatorType"
                     }
                 }
@@ -300,6 +299,7 @@
                         "type": "string"
                     },
                     "emaSubmissionDate": {
+                        "description": "Datum då den kliniska prövningen initierades av sponsor",
                         "type": "string",
                         "format": "date"
                     },
@@ -362,6 +362,13 @@
                         "type": "string",
                         "format": "date"
                     },
+                    "swedenRole": {
+                        "description": "Sveriges aktuella RMS/MSC-status i prövningen. Kan uppdateras under valideringsfasen.",
+                        "type": "string",
+                        "enum": [
+                            "RMS"
+                        ]
+                    },
                     "regulation": {
                         "description": "Anger vilket lagrum som är aktuellt för den aktuella prövningen",
                         "type": "string",
@@ -371,7 +378,7 @@
                         ]
                     },
                     "process": {
-                        "description": "Prövningens titel",
+                        "description": "Prövningens process i aktuellt lagrum",
                         "type": "string",
                         "enum": [
                             "70.7a",
