@@ -136,9 +136,9 @@
                 }
             },
             "otherDocumentsType": {
+                "description": "Struktur för beskrivningen av bifogade samverkansdokument.",
                 "type": "array",
                 "items": {
-                    "description": "Struktur för beskrivningen av bifogade samverkansdokument.",
                     "$ref": "#/components/schemas/documentInListType"
                 }
             }
@@ -422,7 +422,7 @@
                         "Del I",
                         "Del II",
                         "Beslut",
-                        " "
+                        "Odefinierat"
                     ]
                 },
                 "caseType": {
@@ -475,7 +475,7 @@
                         "Validering",
                         "Beredning",
                         "Beslut",
-                        " "
+                        "Odefinierat"
                     ]
                 },
                 "caseType": {
