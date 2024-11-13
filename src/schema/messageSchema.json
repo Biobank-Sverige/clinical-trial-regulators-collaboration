@@ -550,6 +550,7 @@
                             {
                                 "type": "string",
                                 "enum": [
+                                    "Upcoming",
                                     "Selected",
                                     "Ongoing",
                                     "Completed"
