@@ -69,17 +69,17 @@
                         "description": "Senaste datumet när avsändaren vill ha svar, uttryckt enligt RFC 3339 med datumupplösning. Null om inget svar förväntas.",
                         "type": "string",
                         "format": "date"
-                    },
-                    "required": [
-                        "version",
-                        "from",
-                        "to",
-                        "transactionId",
-                        "messageId",
-                        "timestamp",
-                        "messageReasonType"
-                    ]
-                }
+                    }
+                },
+                "required": [
+                    "version",
+                    "from",
+                    "to",
+                    "transactionId",
+                    "messageId",
+                    "timestamp",
+                    "messageReasonType"
+                ]
             },
             "caseDataType": {
                 "description": "Metadata gällande ärendet och den bakomliggande ansökan",
@@ -540,10 +540,6 @@
             },
             "timeTableType": {
                 "description": "Avgränsad aktivitet i handläggningen av en ansökan om prövningstillstånd för farmakologisk prövning.",
-                "required": [
-                    "activity",
-                    "order"
-                ],
                 "type": "object",
                 "properties": {
                     "activity": {
@@ -585,7 +581,11 @@
                         "type": "string",
                         "format": "date"
                     }
-                }
+                },
+                "required": [
+                    "activity",
+                    "order"
+                ]
             },
             "documentTypeType": {
                 "description": "Benämning på dokumentet i CTIS-portalen. Alla dokument CTIS-portalen är hårt typade och representeras av en kod och ett DisplayName. En sponsor kan inte lägga till godtyckliga dokument, men kan lägga till flera dokument av varje tillåten typ.",
