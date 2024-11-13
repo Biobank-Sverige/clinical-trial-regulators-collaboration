@@ -18,7 +18,7 @@
             "$ref": "#/components/schemas/sponsorDocumentsType"
         },
         "otherDocuments": {
-            "description": "Lista med metadata om samverkansdokument som finns i meddelandet. Skall i samtliga fall vara minst 4 stycken, message.json, message.htm,ctisMetadata.json och ctismetadata.htm",
+            "description": "Lista med metadata om samverkansdokument som finns i meddelandet.",
             "$ref": "#/components/schemas/otherDocumentsType"
         }
     },
@@ -59,6 +59,7 @@
                         "format": "date-time"
                     },
                     "domain": {
+                        "description": "Anger vilken prövningsdomän ärendet gäller",
                         "$ref": "#/components/schemas/domainType"
                     },
                     "messageReasonType": {
