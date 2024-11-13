@@ -452,10 +452,7 @@
                     },
                     "trialData": {
                         "description": "Strukturerade uppgifter från den bakomliggande ansökan.",
-                        "type": "object",
-                        "items": {
-                            "$ref": "#/components/schemas/kpTrialType"
-                        }
+                        "$ref": "#/components/schemas/kpTrialType"
                     }
                 },
                 "required": [
@@ -499,10 +496,7 @@
                     },
                     "trialData": {
                         "description": "Strukturerade uppgifter från den bakomliggande ansökan.",
-                        "type": "object",
-                        "items": {
-                            "$ref": "#/components/schemas/mtStudyType"
-                        }
+                        "$ref": "#/components/schemas/mtStudyType"
                     }
                 },
                 "required": [
