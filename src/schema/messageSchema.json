@@ -79,6 +79,7 @@
                     "transactionId",
                     "messageId",
                     "timestamp",
+                    "domain",
                     "messageReasonType"
                 ]
             },
@@ -127,7 +128,15 @@
                             "$ref": "#/components/schemas/timeTableType"
                         }
                     }
-                }
+                },
+                "required":[
+                    "lvDiaryNumber",
+                    "caseClass",
+                    "concernsEpm",
+                    "concernsRbc",
+                    "specificCaseData",
+                    "timetable"
+                ]
             },
             "sponsorDocumentsType": {
                 "description": "Lista på metadata om dokument från prövningens sponsor",
@@ -457,8 +466,9 @@
                     }
                 },
                 "required": [
-                    "lvDiaryNumber",
-                    "caseType"
+                    "evaluationProcess",
+                    "caseType",
+                    "trialData"
                 ]
             },
             "mtCaseDataType": {
@@ -501,8 +511,9 @@
                     }
                 },
                 "required": [
-                    "lvDiaryNumber",
-                    "caseType"
+                    "evaluationProcess",
+                    "caseType",
+                    "trialData"
                 ]
             },
             "decisionType": {
@@ -518,19 +529,14 @@
             },
             "decisionDetailType": {
                 "description": "Ytterligare information om beslutet som fattats, i princip om det finns villkor alternativt motiv till avslag.",
-                "oneOf": [
-                    {
-                        "type": "string",
-                        "enum": [
-                            "Bifall enligt ansökan i sin helhet",
-                            "Förutsättningar att bevilja ansökan saknas",
-                            "Nödvändig komplettering inte inkommen",
-                            "Ingen ytterligare åtgärd krävs",
-                            "Ansökan ej komplett eller annan formell brist",
-                            "Ansökan återtagen"
-                        ]
-                    },
-                    {}
+                "type": "string",
+                "enum": [
+                    "Bifall enligt ansökan i sin helhet",
+                    "Förutsättningar att bevilja ansökan saknas",
+                    "Nödvändig komplettering inte inkommen",
+                    "Ingen ytterligare åtgärd krävs",
+                    "Ansökan ej komplett eller annan formell brist",
+                    "Ansökan återtagen"
                 ]
             },
             "timeTableType": {
@@ -546,17 +552,12 @@
                         "type": "string"
                     },
                     "status": {
-                        "oneOf": [
-                            {
-                                "type": "string",
-                                "enum": [
-                                    "Upcoming",
-                                    "Selected",
-                                    "Ongoing",
-                                    "Completed"
-                                ]
-                            },
-                            {}
+                        "type": "string",
+                        "enum": [
+                            "Upcoming",
+                            "Selected",
+                            "Ongoing",
+                            "Completed"
                         ]
                     },
                     "key": {
@@ -597,7 +598,8 @@
                     }
                 },
                 "required": [
-                    "code"
+                    "code",
+                    "displayName"
                 ]
             },
             "documentInListType": {
