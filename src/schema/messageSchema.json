@@ -295,6 +295,32 @@
                     }
                 }
             },
+            "sponsorContactPointType": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "Email address till den utpekade kontaktpunkten för EU",
+                        "type": "string"
+                    }
+                }
+            },
+            "memberstateType": {
+                "type": "object",
+                "properties": {
+                    "country": {
+                        "description": "Namnet på prövningsstället. Värdet kommer tillsvidare alltid vara null eftersom det är så det skickas ut från CTIS.",
+                        "type": "string"
+                    },
+                    "trialSubjects": {
+                        "description": "Anger antal testpersoner i landet",
+                        "type": "integer"
+                    },
+                    "isRMS": {
+                        "description": "Anger om landet är vald RMS för prövningen",
+                        "type": "boolean"
+                    }
+                }
+            },
             "kpTrialType": {
                 "description": "Innehåller vissa översiktsdata om prövningen. Domain=HumMedProd",
                 "type": "object",
@@ -322,14 +348,34 @@
                             "RMS"
                         ]
                     },
+                    "therapeuticArea":{
+                        "description": "Anger vilket terapiområde prövningen behandlar",
+                        "type": "string"
+                    },
+                    "protocolNumber": {
+                        "description": "Protokollnummer för den kliniska prövningen",
+                        "type":"string"
+                    },
                     "memberstateConcerned": {
-                        "description": "En lista på alla deltagande länder i prövningen.",
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "minItems": 1,
-                        "uniqueItems": true
+                        "type": "object",
+                        "properties": {
+                            "trialSubjectsEurope":{
+                                "description": "Antal testpersoner i samtliga europeriska länder",
+                                "type": "integer"
+                            },
+                            "memberStates":{
+                                "description": "En lista på alla deltagande länder i prövningen.",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/memberstateType"
+                                },
+                                "minItems": 1,
+                                "uniqueItems": true
+                            }
+                        }
+                    },
+                    "sponsorContactPoint":{
+                        "$ref": "#/components/schemas/sponsorContactPointType"
                     },
                     "sponsor": {
                         "type": "object",
@@ -341,6 +387,10 @@
                             "country": {
                                 "description": "Sponsors ort som angivits i adressen.",
                                 "type": "string"
+                            },
+                            "isCommercial": {
+                                "description": "Sanger om det är en komerciell sponsor.",
+                                "type": "boolean"
                             }
                         }
                     }
