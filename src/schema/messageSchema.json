@@ -343,14 +343,6 @@
                                 "type": "string"
                             }
                         }
-                    },
-                    "part1Data": {
-                        "description": "Huvudobjekt för detaljerade data om prövningen gemensam för alla MSC.",
-                        "type": "object",
-                        "properties": {}
-                    },
-                    "swedishPart2Data": {
-                        "$ref": "#/components/schemas/part2Type"
                     }
                 }
             },
