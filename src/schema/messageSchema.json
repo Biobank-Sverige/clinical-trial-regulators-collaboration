@@ -362,9 +362,7 @@
                         "description": "Lista med terapiområden prövningen behandlar",
                         "type": "array",
                         "items": {
-                            "therapeuticArea": {
-                                "type": "string"
-                            }
+                            "type": "string"
                         }
                     },
                     "protocolNumber": {
@@ -408,6 +406,9 @@
                                 "type": "boolean"
                             }
                         }
+                    },
+                    "swedishPart2Data":{
+                        "$ref": "#/components/schemas/part2Type"
                     }
                 },
                 "required": [
