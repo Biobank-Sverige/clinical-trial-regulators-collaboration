@@ -10,11 +10,11 @@
             "$ref": "#/components/schemas/headerType"
         },
         "caseData": {
-            "derscription": "Objekt som samlar information om ärende och samhörande klinisk prövning/studie",
+            "description": "Objekt som samlar information om ärende och samhörande klinisk prövning/studie",
             "$ref": "#/components/schemas/caseDataType"
         },
         "sponsorDocuments": {
-            "derscription": "Objekt som samlar alla dokument som härstammar från beställaren av den kliniska prövningen",
+            "description": "Objekt som samlar alla dokument som härstammar från beställaren av den kliniska prövningen",
             "$ref": "#/components/schemas/sponsorDocumentsType"
         },
         "otherDocuments": {
