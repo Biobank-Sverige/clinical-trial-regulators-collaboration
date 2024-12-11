@@ -32,7 +32,9 @@
                         "description": "Schemat hanteras i versioner och elementet version säger vilken version av schemat som meddelandet skall följa. Majorversioner skall vara bakåtkompatibla så att en högre minorversion inte stör tolkningen av en tidigare.",
                         "type": "string",
                         "enum": [
-                            "4-SNAPSHOT"
+                            "3.0",
+                            "3.0.1",
+                            "3.0.2"
                         ]
                     },
                     "from": {
