@@ -131,7 +131,7 @@
                         }
                     }
                 },
-                "required":[
+                "required": [
                     "lvDiaryNumber",
                     "caseClass",
                     "concernsEpm",
@@ -297,6 +297,32 @@
                     }
                 }
             },
+            "sponsorContactPointType": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "Email address till den utpekade kontaktpunkten för EU",
+                        "type": "string"
+                    }
+                }
+            },
+            "memberstateType": {
+                "type": "object",
+                "properties": {
+                    "country": {
+                        "description": "Namnet på prövningsstället. Värdet kommer tillsvidare alltid vara null eftersom det är så det skickas ut från CTIS.",
+                        "type": "string"
+                    },
+                    "trialSubjectCount": {
+                        "description": "Anger antal testpersoner i landet",
+                        "type": "integer"
+                    },
+                    "isRMS": {
+                        "description": "Anger om landet är vald RMS för prövningen",
+                        "type": "boolean"
+                    }
+                }
+            },
             "kpTrialType": {
                 "description": "Innehåller vissa översiktsdata om prövningen. Domain=HumMedProd",
                 "type": "object",
@@ -314,6 +340,16 @@
                         "type": "string",
                         "format": "date"
                     },
+                    "estimatedRecruitmentStartDate": {
+                        "description": "Datum då sponsor beräknar att börja rekrytera testpersoner i något av de involverade länderna",
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "estimatedEndDate": {
+                        "description": "Datum då sponsor bedömer att den kliniska prövningen kan avslutas",
+                        "type": "string",
+                        "format": "date"
+                    },
                     "swedenRole": {
                         "description": "Sveriges aktuella RMS/MSC-status i prövningen. Kan uppdateras under valideringsfasen.",
                         "type": "string",
@@ -324,14 +360,37 @@
                             "RMS"
                         ]
                     },
-                    "memberstateConcerned": {
-                        "description": "En lista på alla deltagande länder i prövningen.",
+                    "therapeuticAreas": {
+                        "description": "Lista med terapiområden prövningen behandlar",
                         "type": "array",
                         "items": {
                             "type": "string"
-                        },
-                        "minItems": 1,
-                        "uniqueItems": true
+                        }
+                    },
+                    "protocolNumber": {
+                        "description": "Protokollnummer för den kliniska prövningen",
+                        "type": "string"
+                    },
+                    "memberstatesConcerned": {
+                        "type": "object",
+                        "properties": {
+                            "trialSubjectCountEurope": {
+                                "description": "Antal testpersoner i samtliga europeriska länder",
+                                "type": "integer"
+                            },
+                            "memberstates": {
+                                "description": "En lista på alla deltagande länder i prövningen.",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/memberstateType"
+                                },
+                                "minItems": 1,
+                                "uniqueItems": true
+                            }
+                        }
+                    },
+                    "sponsorContactPoint": {
+                        "$ref": "#/components/schemas/sponsorContactPointType"
                     },
                     "sponsor": {
                         "type": "object",
@@ -343,10 +402,21 @@
                             "country": {
                                 "description": "Sponsors ort som angivits i adressen.",
                                 "type": "string"
+                            },
+                            "isCommercial": {
+                                "description": "Sanger om det är en komerciell sponsor.",
+                                "type": "boolean"
                             }
                         }
+                    },
+                    "swedishPart2Data":{
+                        "$ref": "#/components/schemas/part2Type"
                     }
-                }
+                },
+                "required": [
+                    "clinicalTrialId",
+                    "title"
+                ]
             },
             "mtStudyType": {
                 "description": "Innehåller vissa översiktsdata om MT-studier. Används tillsammans medDomain=MT",
@@ -394,6 +464,9 @@
                             "58.2"
                         ]
                     },
+                    "sponsorContactPoint": {
+                        "$ref": "#/components/schemas/sponsorContactPointType"
+                    },
                     "sponsor": {
                         "type": "object",
                         "properties": {
@@ -403,7 +476,13 @@
                             }
                         }
                     }
-                }
+                },
+                "required": [
+                    "cid",
+                    "title",
+                    "regulation",
+                    "process"
+                ]
             },
             "caseClassType": {
                 "description": "Den klassificering ärende har i LVs klassificeringssystem LVKS",
@@ -543,6 +622,10 @@
                     },
                     "activityType": {
                         "description": "LV:s interna typ på tidtabellhändelsen. Exempelvis start, deadline eller meeting.",
+                        "type": "string"
+                    },
+                    "evaluationProcess": {
+                        "description": "The stage in the process that the evaluation is when this timetableActivity is executed.",
                         "type": "string"
                     },
                     "status": {
