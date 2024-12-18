@@ -2,28 +2,83 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/message",
     "title": "Message",
-    "description": "Schema for meddelanden som används för att utbyta information om pågående ärenden för ansökningar om prövningstillstånd.",
-    "type": "object",
-    "properties": {
-        "header": {
-            "description": "Metadata som beskriver meddelandet självt",
-            "$ref": "#/components/schemas/headerType"
+    "oneOf": [
+        {
+            "$ref": "#/components/schemas/simplifiedMessageType"
         },
-        "caseData": {
-            "description": "Objekt som samlar information om ärende och samhörande klinisk prövning/studie",
-            "$ref": "#/components/schemas/caseDataType"
-        },
-        "sponsorDocuments": {
-            "description": "Objekt som samlar alla dokument som härstammar från beställaren av den kliniska prövningen",
-            "$ref": "#/components/schemas/sponsorDocumentsType"
-        },
-        "otherDocuments": {
-            "description": "Lista med metadata om samverkansdokument som finns i meddelandet.",
-            "$ref": "#/components/schemas/otherDocumentsType"
+        {
+            "$ref": "#/components/schemas/fullMessageType"
         }
-    },
+    ],
     "components": {
         "schemas": {
+            "simplifiedMessageType": {
+                "description": "Schema för förenklade svarsmeddelanden där endast ett fåtal fält krävs. To=LV",
+                "type": "object",
+                "properties": {
+                    "header": {
+                        "type": "object",
+                        "properties": {
+                            "messageReasonType": {
+                                "$ref": "#/components/schemas/messageReasonType"
+                            },
+                            "from": {
+                                "$ref": "#/components/schemas/partyTypeEPM"
+                            },
+                            "to": {
+                                "$ref": "#/components/schemas/partyTypeLV"
+                            }
+                        },
+                        "required": [
+                            "messageReasonType",
+                            "from",
+                            "to"
+                        ]
+                    },
+                    "caseData": {
+                        "type": "object",
+                        "properties": {
+                            "lvDiaryNumber": {
+                                "description": "Diarienummer från LV, unikt ID för varje ansökan. Används som korrelationsID för olika meddelanden i ett ärende.",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "lvDiaryNumber"
+                        ]
+                    },
+                    "otherDocuments": {
+                        "description": "Lista med metadata om samverkansdokument som finns i meddelandet.",
+                        "$ref": "#/components/schemas/otherDocumentsType"
+                    }
+                },
+                "required": [
+                    "header",
+                    "caseData"
+                ]
+            },
+            "fullMessageType": {
+                "description": "Schema for meddelanden som används för att utbyta information om pågående ärenden för ansökningar om prövningstillstånd.",
+                "type": "object",
+                "properties": {
+                    "header": {
+                        "description": "Metadata som beskriver meddelandet självt",
+                        "$ref": "#/components/schemas/headerType"
+                    },
+                    "caseData": {
+                        "description": "Objekt som samlar information om ärende och samhörande klinisk prövning/studie",
+                        "$ref": "#/components/schemas/caseDataType"
+                    },
+                    "sponsorDocuments": {
+                        "description": "Objekt som samlar alla dokument som härstammar från beställaren av den kliniska prövningen",
+                        "$ref": "#/components/schemas/sponsorDocumentsType"
+                    },
+                    "otherDocuments": {
+                        "description": "Lista med metadata om samverkansdokument som finns i meddelandet.",
+                        "$ref": "#/components/schemas/otherDocumentsType"
+                    }
+                }
+            },
             "headerType": {
                 "description": "Metadata som beskriver meddelandet självt",
                 "type": "object",
@@ -38,10 +93,10 @@
                         ]
                     },
                     "from": {
-                        "$ref": "#/components/schemas/partyType"
+                        "$ref": "#/components/schemas/partyTypeLV"
                     },
                     "to": {
-                        "$ref": "#/components/schemas/partyType"
+                        "$ref": "#/components/schemas/partyTypeEPM"
                     },
                     "transactionId": {
                         "description": "Ett unikt id för transaktionen. Återanvänds inte även om meddelandet skickas om.",
@@ -154,13 +209,19 @@
                     "$ref": "#/components/schemas/documentInListType"
                 }
             },
-            "partyType": {
+            "partyTypeEPM": {
                 "description": "Parter i kommunikationen. Mottagande system skall verifiera att det är korrekt adresserat till respektive verksamhet.",
                 "type": "string",
                 "enum": [
-                    "LV",
                     "EPM",
                     "RBC"
+                ]
+            },
+            "partyTypeLV": {
+                "description": "Parter i kommunikationen. Mottagande system skall verifiera att det är korrekt adresserat till respektive verksamhet.",
+                "type": "string",
+                "enum": [
+                    "LV"
                 ]
             },
             "messageReasonType": {
@@ -409,7 +470,7 @@
                             }
                         }
                     },
-                    "swedishPart2Data":{
+                    "swedishPart2Data": {
                         "$ref": "#/components/schemas/part2Type"
                     }
                 },
