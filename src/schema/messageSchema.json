@@ -23,10 +23,10 @@
                                 "$ref": "#/components/schemas/messageReasonType"
                             },
                             "from": {
-                                "$ref": "#/components/schemas/partyTypeEPM"
+                                "$ref": "#/components/schemas/epmOrRbcPartyType"
                             },
                             "to": {
-                                "$ref": "#/components/schemas/partyTypeLV"
+                                "$ref": "#/components/schemas/lvPartyType"
                             }
                         },
                         "required": [
@@ -93,10 +93,10 @@
                         ]
                     },
                     "from": {
-                        "$ref": "#/components/schemas/partyTypeLV"
+                        "$ref": "#/components/schemas/lvPartyType"
                     },
                     "to": {
-                        "$ref": "#/components/schemas/partyTypeEPM"
+                        "$ref": "#/components/schemas/epmOrRbcPartyType"
                     },
                     "transactionId": {
                         "description": "Ett unikt id för transaktionen. Återanvänds inte även om meddelandet skickas om.",
@@ -209,7 +209,7 @@
                     "$ref": "#/components/schemas/documentInListType"
                 }
             },
-            "partyTypeEPM": {
+            "epmOrRbcPartyType": {
                 "description": "Parter i kommunikationen. Mottagande system skall verifiera att det är korrekt adresserat till respektive verksamhet.",
                 "type": "string",
                 "enum": [
@@ -217,7 +217,7 @@
                     "RBC"
                 ]
             },
-            "partyTypeLV": {
+            "lvPartyType": {
                 "description": "Parter i kommunikationen. Mottagande system skall verifiera att det är korrekt adresserat till respektive verksamhet.",
                 "type": "string",
                 "enum": [
