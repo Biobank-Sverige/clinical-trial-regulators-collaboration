@@ -83,10 +83,6 @@
                 "description": "Metadata som beskriver meddelandet självt",
                 "type": "object",
                 "properties": {
-                    "version": {
-                        "description": "Schemat hanteras i versioner och elementet version säger vilken version av schemat som meddelandet skall följa.",
-                        "type": "string"
-                    },
                     "from": {
                         "$ref": "#/components/schemas/lvPartyType"
                     },
@@ -229,24 +225,39 @@
                     "Notis: Ändringsansökan del I och II",
                     "Notis: Ändringsansökan del I",
                     "Notis: Ändringsansökan del II",
+                    "Notis: Initial ansökan",
+                    "Notis: Ansökan/anmälan till EPM/RBC",
                     "Notis: Valid ansökan",
+                    "Notis: Initial anmälan ",
+                    "Notis: Komplett anmälan",
+                    "Notis: Ändringsanmälan",
+                    "Notis: Anmälan dragits tillbaka",
+                    "Notis: Anmälan förfallen",
                     "Notis: Validerings-RFI till sponsor",
                     "Begäran: Preliminär granskning del I",
                     "Begäran: Preliminär granskning del II",
+                    "Begäran: Preliminär granskning",
                     "Svar: Preliminär granskning del I",
                     "Svar: Preliminär granskning del II",
                     "Begäran: Granskning av synpunkter från MSC",
                     "Svar: Granskning av synpunkter från MSC",
+                    "Svar: Bedömnings-RFI till sponsor",
+                    "Svar: Preliminär granskning",
                     "Notis: Bedömnings-RFI del I till sponsor",
                     "Notis: Bedömnings-RFI del II till sponsor",
+                    "Notis: Bedömnings-RFI till sponsor",
                     "Begäran: Yttrande del I",
                     "Begäran: Yttrande del II",
+                    "Begäran: Yttrande",
                     "Notis: Komplettering från sponsor del I",
                     "Notis: Komplettering från sponsor del II",
+                    "Notis: Komplettering från sponsor ",
+                    "Notis: Mottagningskontroll-RFI till sponsor",
                     "Notis: Synpunkter från MSC efter komplettering del I",
                     "Notis: Synpunkter från MSC efter komplettering del II",
                     "Svar: Yttrande del I",
                     "Svar: Yttrande del II",
+                    "Svar: Yttrande ",
                     "Notis: AR och slutsats del I",
                     "Notis: AR och slutsats del II",
                     "Notis och kommentarsmöjlighet: AR och slutsats del I",
@@ -256,10 +267,12 @@
                     "Notis: Ansökan förfallen",
                     "Notis: Ansökan tyst godkännande",
                     "Notis: Beslut för ansökan",
+                    "Notis: Beslut",
                     "Notis: Informell RFI del I",
                     "Notis: Informell RFI del II",
                     "Notis: Informell RFI validering",
-                    "Notis: Beslut för överflyttad prövning"
+                    "Notis: Beslut för överflyttad prövning",
+                    "Svar: Beslut"
                 ]
             },
             "domainType": {
@@ -661,6 +674,7 @@
                 "type": "string",
                 "enum": [
                     "Bifall enligt ansökan i sin helhet",
+                    "Bifall med villkor",
                     "Förutsättningar att bevilja ansökan saknas",
                     "Nödvändig komplettering inte inkommen",
                     "Ingen ytterligare åtgärd krävs",
