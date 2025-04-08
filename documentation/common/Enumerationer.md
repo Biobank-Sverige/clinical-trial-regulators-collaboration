@@ -7,7 +7,7 @@ Dokumenttyper EMA-dokument
 
 Dokument som laddas upp i CTIS har metainformation som berättar vad det är tänkt att dokumenet innehåller för typ av uppgifter. Vi har inte möjlighet att strikt enumerera dessa eftersom de definieras av EMA och uppdateras utanför vår kontroll. Nedan lista baserar sig dels på vad som framkommit i tidigare dokumentation och dels på de filer som faktiskt skickats till RBC under de första årens tid i drift. Kolumnerna 'EPM' och 'RBC' indikerar huruvuda det är en typ av dokument som organisationen behöver för sin handläggning av ärendet.
 
-Det finns in data från produktionsmiljön flera exempel på där DisplayName förekommer både på engelska och på svenska. 
+Det finns i data från produktionsmiljön flera exempel på där DisplayName förekommer både på engelska och på svenska. 
 
 | typeCode   | Dokumentnamn                                                                   | EPM | RBC  |
 |------------|--------------------------------------------------------------------------------|-----|------|
