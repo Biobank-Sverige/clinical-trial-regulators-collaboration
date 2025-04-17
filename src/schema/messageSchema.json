@@ -83,6 +83,10 @@
                 "description": "Metadata som beskriver meddelandet självt",
                 "type": "object",
                 "properties": {
+                    "version": {
+                        "description": "Schemat hanteras i versioner och elementet version säger vilken version av schemat som meddelandet skall följa.",
+                        "type": "string"
+                    },
                     "from": {
                         "$ref": "#/components/schemas/lvPartyType"
                     },
