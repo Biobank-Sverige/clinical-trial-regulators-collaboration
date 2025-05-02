@@ -626,7 +626,7 @@
                         "type": "string",
                         "enum": [
                             "Validering",
-                            "Beredning",
+                            "Del I",
                             "Beslut",
                             "Odefinierat"
                         ]
