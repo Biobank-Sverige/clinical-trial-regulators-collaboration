@@ -15,9 +15,11 @@
             "simplifiedMessageType": {
                 "description": "Schema för förenklade svarsmeddelanden där endast ett fåtal fält krävs. To=LV",
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "header": {
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "messageReasonType": {
                                 "$ref": "#/components/schemas/messageReasonType"
@@ -37,6 +39,7 @@
                     },
                     "caseData": {
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "lvDiaryNumber": {
                                 "description": "Diarienummer från LV, unikt ID för varje ansökan. Används som korrelationsID för olika meddelanden i ett ärende.",
@@ -60,6 +63,7 @@
             "fullMessageType": {
                 "description": "Schema for meddelanden som används för att utbyta information om pågående ärenden för ansökningar om prövningstillstånd.",
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "header": {
                         "description": "Metadata som beskriver meddelandet självt",
@@ -82,6 +86,7 @@
             "headerType": {
                 "description": "Metadata som beskriver meddelandet självt",
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "version": {
                         "description": "Schemat hanteras i versioner och elementet version säger vilken version av schemat som meddelandet skall följa.",
@@ -138,6 +143,7 @@
             "caseDataType": {
                 "description": "Metadata gällande ärendet och den bakomliggande ansökan",
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "lvDiaryNumber": {
                         "description": "Diarienummer från LV, unikt ID för varje ansökan. Används som korrelationsID för olika meddelanden i ett ärende.",
@@ -289,6 +295,7 @@
             },
             "addressType": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "addressLine1": {
                         "description": "Adressrad 1",
@@ -319,6 +326,7 @@
             "principalInvestigatorType": {
                 "description": "Prövningsställets huvudprövares kontaktuppgifter.",
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "familyName": {
                         "description": "Efternamn",
@@ -340,6 +348,7 @@
             },
             "trialSiteType": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "trialSiteName": {
                         "description": "Namnet på prövningsstället. Värdet kommer tillsvidare alltid vara null eftersom det är så det skickas ut från CTIS.",
@@ -361,6 +370,7 @@
             "part2Type": {
                 "description": "Huvudobjekt för data om prövningen som bara berör Sverige.",
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "trialSites": {
                         "type": "array",
@@ -372,6 +382,7 @@
             },
             "sponsorContactPointType": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "email": {
                         "description": "Email address till den utpekade kontaktpunkten för EU",
@@ -381,6 +392,7 @@
             },
             "memberstateType": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "country": {
                         "description": "Namnet på prövningsstället. Värdet kommer tillsvidare alltid vara null eftersom det är så det skickas ut från CTIS.",
@@ -399,6 +411,7 @@
             "kpTrialType": {
                 "description": "Innehåller vissa översiktsdata om prövningen. Domain=HumMedProd",
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "clinicalTrialId": {
                         "description": "Prövningens id i CTIS-portalen",
@@ -446,6 +459,7 @@
                     },
                     "memberstatesConcerned": {
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "trialSubjectCountEurope": {
                                 "description": "Antal testpersoner i samtliga europeriska länder",
@@ -467,6 +481,7 @@
                     },
                     "sponsor": {
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "name": {
                                 "description": "Huvudsponsorns namn baserat på vad som angivits i CTIS-portalen",
@@ -488,12 +503,14 @@
                 },
                 "required": [
                     "clinicalTrialId",
-                    "title"
+                    "title",
+                    "memberstatesConcerned"
                 ]
             },
             "mtStudyType": {
                 "description": "Innehåller vissa översiktsdata om MT-studier. Används tillsammans medDomain=MT",
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "cid": {
                         "description": "Prövningens id i e-tjänsten för MT-prövningar",
@@ -542,6 +559,7 @@
                     },
                     "sponsor": {
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "name": {
                                 "description": "Huvudsponsorns namn baserat på vad som angivits i ansökningsformuläret",
@@ -568,6 +586,7 @@
             "kpCaseDataType": {
                 "description": "Metadata gällande ärendet och dess behandling. Innehåller information som är specifik för kliniska läkemedelsprövningar.",
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "evaluationProcess": {
                         "description": "Anger i vilken del av utvärderingsprocessen är vid expedieringen av meddelandet",
@@ -620,6 +639,7 @@
             "mtCaseDataType": {
                 "description": "MT-specifika metadata gällande ärendet och dess behandling",
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "evaluationProcess": {
                         "description": "Anger i vilken del av utvärderingsprocessen är vid expedieringen av meddelandet",
@@ -689,6 +709,7 @@
             "timeTableType": {
                 "description": "Avgränsad aktivitet i handläggningen av en ansökan om prövningstillstånd för farmakologisk prövning.",
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "activity": {
                         "description": "LV:s beskrivande text av tidtabellhändelsen",
@@ -738,6 +759,7 @@
             "documentTypeType": {
                 "description": "Benämning på dokumentet i CTIS-portalen. Alla dokument CTIS-portalen är hårt typade och representeras av en kod och ett DisplayName. En sponsor kan inte lägga till godtyckliga dokument, men kan lägga till flera dokument av varje tillåten typ.",
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "code": {
                         "description": "Dokumenttypens kod",
@@ -755,6 +777,7 @@
             },
             "documentInListType": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "filename": {
                         "description": "Filnamnet på dokumentet",
