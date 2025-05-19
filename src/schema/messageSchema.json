@@ -29,6 +29,23 @@
                             },
                             "to": {
                                 "$ref": "#/components/schemas/lvPartyType"
+                            },
+                            "version": {
+                                "description": "Schemat hanteras i versioner och elementet version säger vilken version av schemat som meddelandet skall följa.",
+                                "type": "string"
+                            },
+                            "transactionId": {
+                                "description": "Ett unikt id för transaktionen. Återanvänds inte även om meddelandet skickas om.",
+                                "type": "string"
+                            },
+                            "messageId": {
+                                "description": "Ett id för meddelandet. Om ett meddelande behöver skickas om används samma messageId som på ursprungsmeddelandet.",
+                                "type": "string"
+                            },
+                            "timestamp": {
+                                "description": "Tidpunkten när meddelandet skapas uttryckt enligt RFC 3339 med sekundupplösning.",
+                                "type": "string",
+                                "format": "date-time"
                             }
                         },
                         "required": [
@@ -44,7 +61,23 @@
                             "lvDiaryNumber": {
                                 "description": "Diarienummer från LV, unikt ID för varje ansökan. Används som korrelationsID för olika meddelanden i ett ärende.",
                                 "type": "string"
-                            }
+                            },
+                            "specificCaseData": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "trialData": {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "clinicalTrialId": {
+                                                "description": "Prövningens id i CTIS-portalen",
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+					        }
                         },
                         "required": [
                             "lvDiaryNumber"
@@ -803,3 +836,5 @@
         }
     }
 }
+
+
