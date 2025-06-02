@@ -196,59 +196,59 @@ Det finns i data från produktionsmiljön flera exempel på där DisplayName fö
 MessageReasonType
 ---
 
-| MessageReasonType                                             | KP | MDR/IVDR |
-|---------------------------------------------------------------|----|----------|
-| Notis: Initial ansökan del I och II                           | X  | -        |
-| Notis: Initial ansökan del I                                  | X  | -        |
-| Notis: Initial ansökan del II                                 | X  | -        |
-| Notis: Ändringsansökan del I och II                           | X  | -        |
-| Notis: Ändringsansökan del I                                  | X  | -        |
-| Notis: Ändringsansökan del II                                 | X  | -        |
-| Notis: Initial ansökan                                        | -  | X        |
-| Notis: Ansökan/anmälan till EPM/RBC                           | -  | X        |
-| Notis: Valid ansökan                                          | X  | ?        |
-| Notis: Initial anmälan                                        | -  | X        |
-| Notis: Komplett anmälan                                       | -  | X        |
-| Notis: Ändringsanmälan                                        | -  | X        |
-| Notis: Anmälan dragits tillbaka                               | -  | X        |
-| Notis: Anmälan förfallen                                      | -  | X        |
-| Notis: Validerings-RFI till sponsor                           | X  | X        |
-| Begäran: Preliminär granskning del I                          | X  | -        |
-| Begäran: Preliminär granskning del II                         | X  | -        |
-| Begäran: Preliminär granskning                                | -  | X        |
-| Svar: Preliminär granskning del I                             | X  | -        |
-| Svar: Preliminär granskning del II                            | X  | -        |
-| Begäran: Granskning av synpunkter från MSC                    | X  | -        |
-| Svar: Granskning av synpunkter från MSC                       | X  | -        |
-| Svar: Bedömnings-RFI till sponsor                             | -  | X        |
-| Svar: Preliminär granskning                                   | -  | X        |
-| Notis: Bedömnings-RFI del I till sponsor                      | X  | -        |
-| Notis: Bedömnings-RFI del II till sponsor                     | X  | -        |
-| Notis: Bedömnings-RFI till sponsor                            | -  | X        |
-| Begäran: Yttrande del I                                       | X  | -        |
-| Begäran: Yttrande del II                                      | X  | -        |
-| Begäran: Yttrande                                             | -  | X        |
-| Notis: Komplettering från sponsor del I                       | X  | -        |
-| Notis: Komplettering från sponsor del II                      | X  | -        |
-| Notis: Komplettering från sponsor                             | -  | X        |
-| Notis: Mottagningskontroll-RFI till sponsor                   | -  | X        |
-| Notis: Synpunkter från MSC efter komplettering del I          | X  | -        |
-| Notis: Synpunkter från MSC efter komplettering del II         | X  | -        |
-| Svar: Yttrande del I                                          | X  | -        |
-| Svar: Yttrande del II                                         | X  |-        |
-| Svar: Yttrande                                                | -  | X        |
-| Notis: AR och slutsats del I                                  | X  | -        |
-| Notis: AR och slutsats del II                                 | X  | -        |
-| Notis och kommentarsmöjlighet: AR och slutsats del I          | X  | -        |
-| Notis och kommentarsmöjlighet: AR och slutsats del II         | X  | -        |
-| Kommentar på notis: Underlag till invändning mot RMS slutsats | X  | -        |
-| Notis: Ansökan dragits tillbaka                               | X  | X        |
-| Notis: Ansökan förfallen                                      | X  | X        |
-| Notis: Ansökan tyst godkännande                               | X  | -        |
-| Notis: Beslut för ansökan                                     | X  | -        |
-| Notis: Beslut                                                 | -  | X        |
-| Notis: Informell RFI del I                                    | X  | -        |
-| Notis: Informell RFI del II                                   | X  | -        |
-| Notis: Informell RFI validering                               | X  | -        |
-| Notis: Beslut för överflyttad prövning                        | X  | -        |
-| Svar: Beslut                                                  | -  | X        |
+| MessageReasonType                                             | KP | MDR/IVDR   | RBC | EPM |
+|---------------------------------------------------------------|----|------------|-----|-----|
+| Notis: Initial ansökan del I och II                           | X  | -          | X   |     |
+| Notis: Initial ansökan del I                                  | X  | -          | X   |     |
+| Notis: Initial ansökan del II                                 | X  | -          | X   |     |
+| Notis: Ändringsansökan del I och II                           | X  | -          | X   |     |
+| Notis: Ändringsansökan del I                                  | X  | -          | X   |     |
+| Notis: Ändringsansökan del II                                 | X  | -          | X   |     |
+| Notis: Initial ansökan                                        | -  | X          | -   |     |
+| Notis: Ansökan/anmälan till EPM/RBC                           | -  | X          | -   |     |
+| Notis: Valid ansökan                                          | X  | ?          | X   |     |
+| Notis: Initial anmälan                                        | -  | X          | -   |     |
+| Notis: Komplett anmälan                                       | -  | X          | -   |     |
+| Notis: Ändringsanmälan                                        | -  | X          | -   |     |
+| Notis: Anmälan dragits tillbaka                               | -  | X          | -   |     |
+| Notis: Anmälan förfallen                                      | -  | X          | -   |     |
+| Notis: Validerings-RFI till sponsor                           | X  | X          | X   |     |
+| Begäran: Preliminär granskning del I                          | X  | -          | X   |     |
+| Begäran: Preliminär granskning del II                         | X  | -          | X   |     |
+| Begäran: Preliminär granskning                                | -  | X          | -   |     |
+| Svar: Preliminär granskning del I                             | X  | -          | -   |     |
+| Svar: Preliminär granskning del II                            | X  | -          | -   |     |
+| Begäran: Granskning av synpunkter från MSC                    | X  | -          | -   |     |
+| Svar: Granskning av synpunkter från MSC                       | X  | -          | -   |     |
+| Svar: Bedömnings-RFI till sponsor                             | -  | X          | -   |     |
+| Svar: Preliminär granskning                                   | -  | X          | -   |     |
+| Notis: Bedömnings-RFI del I till sponsor                      | X  | -          | X   |     |
+| Notis: Bedömnings-RFI del II till sponsor                     | X  | -          | X   |     |
+| Notis: Bedömnings-RFI till sponsor                            | -  | X          | -   |     |
+| Begäran: Yttrande del I                                       | X  | -          | X   |     |
+| Begäran: Yttrande del II                                      | X  | -          | X   |     |
+| Begäran: Yttrande                                             | -  | X          | -   |     |
+| Notis: Komplettering från sponsor del I                       | X  | -          | X   |     |
+| Notis: Komplettering från sponsor del II                      | X  | -          | X   |     |
+| Notis: Komplettering från sponsor                             | -  | X          | -   |     |
+| Notis: Mottagningskontroll-RFI till sponsor                   | -  | X          | -   |     |
+| Notis: Synpunkter från MSC efter komplettering del I          | X  | -          | -   |     |
+| Notis: Synpunkter från MSC efter komplettering del II         | X  | -          | -   |     |
+| Svar: Yttrande del I                                          | X  | -          | -   |     |
+| Svar: Yttrande del II                                         | X  | -          | -   |     |
+| Svar: Yttrande                                                | -  | X          | -   |     |
+| Notis: AR och slutsats del I                                  | X  | -          | X   |     |
+| Notis: AR och slutsats del II                                 | X  | -          | X   |     |
+| Notis och kommentarsmöjlighet: AR och slutsats del I          | X  | -          | -   |     |
+| Notis och kommentarsmöjlighet: AR och slutsats del II         | X  | -          | -   |     |
+| Kommentar på notis: Underlag till invändning mot RMS slutsats | X  | -          | -   |     |
+| Notis: Ansökan dragits tillbaka                               | X  | X          | X   |     |
+| Notis: Ansökan förfallen                                      | X  | X          | X   |     |
+| Notis: Ansökan tyst godkännande                               | X  | -          | X   |     |
+| Notis: Beslut för ansökan                                     | X  | -          | X   |     |
+| Notis: Beslut                                                 | -  | X          | -   |     |
+| Notis: Informell RFI del I                                    | X  | -          | X   |     |
+| Notis: Informell RFI del II                                   | X  | -          | X   |     |
+| Notis: Informell RFI validering                               | X  | -          | X   |     |
+| Notis: Beslut för överflyttad prövning                        | X  | -          | X   |     |
+| Svar: Beslut                                                  | -  | X          | -   |     |
