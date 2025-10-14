@@ -1,0 +1,369 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/common-types",
+  "title": "Common types",
+  "$defs": {
+    "simplifiedMessageTypeBase": {
+      "description": "Schema för förenklade svarsmeddelanden där endast ett fåtal fält krävs. To=LV",
+      "type": "object",
+      "unevaluatedProperties": false,
+      "properties": {
+        "caseData": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "lvDiaryNumber": {
+              "description": "Diarienummer från LV, unikt ID för varje ansökan. Används som korrelationsID för olika meddelanden i ett ärende.",
+              "type": "string"
+            },
+            "specificCaseData": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "trialData": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "clinicalTrialId": {
+                      "description": "Prövningens id i CTIS-portalen",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "lvDiaryNumber"
+          ]
+        },
+        "otherDocuments": {
+          "description": "Lista med metadata om samverkansdokument som finns i meddelandet.",
+          "$ref": "#/$defs/otherDocumentsType"
+        }
+      },
+      "required": [
+        "header",
+        "caseData"
+      ]
+    },
+    "simplifiedHeaderTypeBase": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "properties": {
+        "from": {
+          "$ref": "#/$defs/epmOrRbcPartyType"
+        },
+        "to": {
+          "$ref": "#/$defs/lvPartyType"
+        },
+        "version": {
+          "description": "Schemat hanteras i versioner och elementet version säger vilken version av schemat som meddelandet skall följa.",
+          "type": "string"
+        },
+        "transactionId": {
+          "description": "Ett unikt id för transaktionen. Återanvänds inte även om meddelandet skickas om.",
+          "type": "string"
+        },
+        "messageId": {
+          "description": "Ett id för meddelandet. Om ett meddelande behöver skickas om används samma messageId som på ursprungsmeddelandet.",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "Tidpunkten när meddelandet skapas uttryckt enligt RFC 3339 med sekundupplösning.",
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "from",
+        "to"
+      ]
+    },
+    "fullMessageTypeBase": {
+      "description": "Schema for meddelanden som används för att utbyta information om pågående ärenden för ansökningar om prövningstillstånd.",
+      "unevaluatedProperties": false,
+      "type": "object",
+      "properties": {
+        "sponsorDocuments": {
+          "description": "Objekt som samlar alla dokument som härstammar från beställaren av den kliniska prövningen",
+          "$ref": "#/$defs/sponsorDocumentsType"
+        },
+        "otherDocuments": {
+          "description": "Lista med metadata om samverkansdokument som finns i meddelandet.",
+          "$ref": "#/$defs/otherDocumentsType"
+        }
+      }
+    },
+    "headerTypeBase": {
+      "description": "Metadata som beskriver meddelandet självt",
+      "type": "object",
+      "unevaluatedProperties": false,
+      "properties": {
+        "version": {
+          "description": "Schemat hanteras i versioner och elementet version säger vilken version av schemat som meddelandet skall följa.",
+          "type": "string"
+        },
+        "from": {
+          "$ref": "#/$defs/lvPartyType"
+        },
+        "to": {
+          "$ref": "#/$defs/epmOrRbcPartyType"
+        },
+        "transactionId": {
+          "description": "Ett unikt id för transaktionen. Återanvänds inte även om meddelandet skickas om.",
+          "type": "string"
+        },
+        "messageId": {
+          "description": "Ett id för meddelandet. Om ett meddelande behöver skickas om används samma messageId som på ursprungsmeddelandet.",
+          "type": "string"
+        },
+        "parentMessageId": {
+          "description": "Används när ett meddelande är ett svar på ett annat meddelande. Sätt då till det värde messageId har i ursprungsmeddelandet.",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "Tidpunkten när meddelandet skapas uttryckt enligt RFC 3339 med sekundupplösning.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "domain": {
+          "description": "Anger vilken prövningsdomän ärendet gäller",
+          "$ref": "#/$defs/domainType"
+        },
+        "dueDate": {
+          "description": "Senaste datumet när avsändaren vill ha svar, uttryckt enligt RFC 3339 med datumupplösning. Null om inget svar förväntas.",
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "version",
+        "from",
+        "to",
+        "transactionId",
+        "messageId",
+        "timestamp",
+        "domain"
+      ]
+    },
+    "caseDataTypeBase": {
+      "description": "Metadata gällande ärendet och den bakomliggande ansökan",
+      "type": "object",
+      "unevaluatedProperties": false,
+      "properties": {
+        "lvDiaryNumber": {
+          "description": "Diarienummer från LV, unikt ID för varje ansökan. Används som korrelationsID för olika meddelanden i ett ärende.",
+          "type": "string"
+        },
+        "caseClass": {
+          "description": "Den klassificering ärende har i LVs klassificeringssystem LVKS",
+          "$ref": "commonTypes.json#/$defs/caseClassType"
+        },
+        "concernsEpm": {
+          "description": "Anger om ansökan rör EPM. Kan vara null om EMPs medverkan inte ännu kunnat bestämmas.",
+          "type": "boolean"
+        },
+        "concernsRbc": {
+          "description": "Anger om ansökan rör RBC. Kan vara null om RBCs medverkan inte ännu kunnat bestämmas.",
+          "type": "boolean"
+        },
+        "decision": {
+          "description": "I fall där det finns ett beslut är utfallet noterat i detta element.",
+          "$ref": "commonTypes.json#/$defs/decisionType"
+        },
+        "decisionDetail": {
+          "description": "Ytterligare information om beslutet som fattats, i princip om det finns villkor alternativt motiv till avslag.",
+          "$ref": "commonTypes.json#/$defs/decisionDetailType"
+        },
+        "timetable": {
+          "description": "Lista på för RBC/EPM relevanta tidtabellshändelser så som LV planerar dem. Ska användas för att RBC/EPM ska kunna planera framtida bemanning.",
+          "type": "array",
+          "items": {
+            "$ref": "commonTypes.json#/$defs/timeTableType"
+          }
+        }
+      },
+      "required": [
+        "lvDiaryNumber",
+        "caseClass",
+        "concernsEpm",
+        "concernsRbc",
+        "timetable"
+      ]
+    },
+    "sponsorDocumentsType": {
+      "description": "Lista på metadata om dokument från prövningens sponsor",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/documentInListType"
+      }
+    },
+    "otherDocumentsType": {
+      "description": "Struktur för beskrivningen av bifogade samverkansdokument.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/documentInListType"
+      }
+    },
+    "epmOrRbcPartyType": {
+      "description": "Parter i kommunikationen. Mottagande system skall verifiera att det är korrekt adresserat till respektive verksamhet.",
+      "type": "string",
+      "enum": [
+        "EPM",
+        "RBC"
+      ]
+    },
+    "lvPartyType": {
+      "description": "Parter i kommunikationen. Mottagande system skall verifiera att det är korrekt adresserat till respektive verksamhet.",
+      "type": "string",
+      "enum": [
+        "LV"
+      ]
+    },
+    "domainType": {
+      "description": "Anger vilken prövningsdomän ärendet gäller",
+      "type": "string",
+      "enum": [
+        "HumMedProd",
+        "MT"
+      ]
+    },
+    "sponsorContactPointType": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "email": {
+          "description": "Email address till den utpekade kontaktpunkten för EU",
+          "type": "string"
+        }
+      }
+    },
+    "caseClassType": {
+      "description": "Den klassificering ärende har i LVs klassificeringssystem LVKS",
+      "type": "string",
+      "enum": [
+        "Nyansökan",
+        "Ändring"
+      ]
+    },
+    "decisionType": {
+      "description": "I fall där det finns ett beslut är utfallet noterat i detta element.",
+      "type": "string",
+      "enum": [
+        "Avslag",
+        "Avslut",
+        "Bifall",
+        "Avvisning",
+        "Avskrivning"
+      ]
+    },
+    "decisionDetailType": {
+      "description": "Ytterligare information om beslutet som fattats, i princip om det finns villkor alternativt motiv till avslag.",
+      "type": "string",
+      "enum": [
+        "Bifall enligt ansökan i sin helhet",
+        "Bifall med villkor",
+        "Förutsättningar att bevilja ansökan saknas",
+        "Nödvändig komplettering inte inkommen",
+        "Ingen ytterligare åtgärd krävs",
+        "Ansökan ej komplett eller annan formell brist",
+        "Ansökan återtagen"
+      ]
+    },
+    "timeTableType": {
+      "description": "Avgränsad aktivitet i handläggningen av en ansökan om prövningstillstånd för farmakologisk prövning.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "activity": {
+          "description": "LV:s beskrivande text av tidtabellhändelsen",
+          "type": "string"
+        },
+        "activityType": {
+          "description": "LV:s interna typ på tidtabellhändelsen. Exempelvis start, deadline eller meeting.",
+          "type": "string"
+        },
+        "evaluationProcess": {
+          "description": "The stage in the process that the evaluation is when this timetableActivity is executed.",
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "Upcoming",
+            "Selected",
+            "Ongoing",
+            "Completed"
+          ]
+        },
+        "key": {
+          "description": "En nyckel till tidtabellshändelsen i LV:s ärendehanteringssystem.",
+          "type": "string"
+        },
+        "order": {
+          "description": "Sorteringsordning av tidtabellhändelserna. I dokumentet kan händelserna komma osorterade.",
+          "type": "integer"
+        },
+        "plannedEndDate": {
+          "description": "Det planerade datumet då tidtabellhändelsen ska avslutas, uttryckt enligt RFC 3339 med datumupplösning.",
+          "type": "string",
+          "format": "date"
+        },
+        "actualEndDate": {
+          "description": "Det datum då tidtabellhändelsen faktiskt avslutades, uttryckt enligt RFC 3339 med datumupplösning.",
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "activity",
+        "order"
+      ]
+    },
+    "documentTypeType": {
+      "description": "Benämning på dokumentet i CTIS-portalen. Alla dokument CTIS-portalen är hårt typade och representeras av en kod och ett DisplayName. En sponsor kan inte lägga till godtyckliga dokument, men kan lägga till flera dokument av varje tillåten typ.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "description": "Dokumenttypens kod",
+          "type": "string"
+        },
+        "displayName": {
+          "description": "displayName uttrycks på svenska och kan användas för att beskriva bilagorna för handläggarna. Mängden av dokumenttyper som finns tillgängliga är inte bunden utan kan utökas efter hand.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "displayName"
+      ]
+    },
+    "documentInListType": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "filename": {
+          "description": "Filnamnet på dokumentet",
+          "type": "string"
+        },
+        "applicationPart": {
+          "description": "Om dokumentet tillhör del I eller del II, representerad som ”1”eller ”2”. Observera att även ”” förekommer, vilket är rapporterat som bug hos CTIS/EMA.",
+          "type": "string"
+        },
+        "systemVersion": {
+          "description": "Version som uppdateras varje gång en version av dokumentet laddas upp i CTIS-portalen",
+          "type": "string"
+        },
+        "documentType": {
+          "$ref": "#/$defs/documentTypeType"
+        }
+      },
+      "required": [
+        "filename",
+        "documentType"
+      ]
+    }
+  }
+}

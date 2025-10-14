@@ -1,0 +1,403 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/CTR-schema",
+  "title": "CTR-Schema",
+  "oneOf": [
+    {
+      "$ref": "#/components/schemas/simplifiedMessageType"
+    },
+    {
+      "$ref": "#/components/schemas/fullMessageType"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "simplifiedMessageType": {
+        "allOf": [
+          {
+            "$ref": "commonTypes.json#/$defs/simplifiedMessageTypeBase"
+          },
+          {
+            "properties": {
+              "header": {
+                "$ref": "#/components/schemas/simplifiedHeaderType"
+              }
+            },
+            "required": [
+              "header"
+            ]
+          }
+        ]
+      },
+      "simplifiedHeaderType": {
+        "allOf": [
+          {
+            "$ref": "commonTypes.json#/$defs/simplifiedHeaderTypeBase"
+          },
+          {
+            "properties": {
+              "messageReasonType": {
+                "$ref": "#/components/schemas/messageReasonType"
+              }
+            },
+            "required": [
+              "messageReasonType"
+            ]
+          }
+        ]
+      },
+      "fullMessageType": {
+        "allOf": [
+          {
+            "$ref": "commonTypes.json#/$defs/fullMessageTypeBase"
+          },
+          {
+            "properties": {
+              "header": {
+                "$ref": "#/components/schemas/headerType"
+              },
+              "caseData": {
+                "description": "Objekt som samlar information om ärende och samhörande klinisk prövning/studie",
+                "$ref": "#/components/schemas/caseDataType"
+              }
+            }
+          }
+        ]
+      },
+      "headerType": {
+        "allOf": [
+          {
+            "$ref": "commonTypes.json#/$defs/headerTypeBase"
+          },
+          {
+            "properties": {
+              "messageReasonType": {
+                "$ref": "#/components/schemas/messageReasonType"
+              }
+            },
+            "required": [
+              "messageReasonType"
+            ]
+          }
+        ]
+      },
+      "caseDataType": {
+        "allOf": [
+          {
+            "$ref": "commonTypes.json#/$defs/caseDataTypeBase"
+          },
+          {
+            "properties": {
+              "specificCaseData": {
+                "$ref": "#/components/schemas/kpCaseDataType"
+              }
+            },
+            "required": [
+              "specificCaseData"
+            ]
+          }
+        ]
+      },
+      "addressType": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "addressLine1": {
+            "description": "Adressrad 1",
+            "type": "string"
+          },
+          "addressLine2": {
+            "description": "Adressrad 2",
+            "type": "string"
+          },
+          "addressLine3": {
+            "description": "Adressrad 3",
+            "type": "string"
+          },
+          "addressLine4": {
+            "description": "Adressrad 4",
+            "type": "string"
+          },
+          "postalCode": {
+            "description": "Postnummer",
+            "type": "string"
+          },
+          "city": {
+            "description": "Ort",
+            "type": "string"
+          }
+        }
+      },
+      "principalInvestigatorType": {
+        "description": "Prövningsställets huvudprövares kontaktuppgifter.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "familyName": {
+            "description": "Efternamn",
+            "type": "string"
+          },
+          "givenName": {
+            "description": "Förnamn",
+            "type": "string"
+          },
+          "phoneNumber": {
+            "description": "Telefonnummer",
+            "type": "string"
+          },
+          "emailAddress": {
+            "description": "E-postadress",
+            "type": "string"
+          }
+        }
+      },
+      "trialSiteType": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "trialSiteName": {
+            "description": "Namnet på prövningsstället. Värdet kommer tillsvidare alltid vara null eftersom det är så det skickas ut från CTIS.",
+            "type": "string"
+          },
+          "department": {
+            "description": "Ett fritextfält som anger mer i detalj vilken enhet på prövningsstället som utför arbetet",
+            "type": "string"
+          },
+          "organisationAddress": {
+            "$ref": "#/components/schemas/addressType"
+          },
+          "principalInvestigator": {
+            "description": "Kontaktuppgifter till den ansvarige på respektive prövningsställe",
+            "$ref": "#/components/schemas/principalInvestigatorType"
+          }
+        }
+      },
+      "part2Type": {
+        "description": "Huvudobjekt för data om prövningen som bara berör Sverige.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "trialSites": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/trialSiteType"
+            }
+          }
+        }
+      },
+      "memberstateType": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "country": {
+            "description": "Namnet på prövningsstället. Värdet kommer tillsvidare alltid vara null eftersom det är så det skickas ut från CTIS.",
+            "type": "string"
+          },
+          "trialSubjectCount": {
+            "description": "Anger antal testpersoner i landet",
+            "type": "integer"
+          },
+          "isRMS": {
+            "description": "Anger om landet är vald RMS för prövningen",
+            "type": "boolean"
+          }
+        }
+      },
+      "kpTrialType": {
+        "description": "Innehåller vissa översiktsdata om prövningen. Domain=HumMedProd",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "clinicalTrialId": {
+            "description": "Prövningens id i CTIS-portalen",
+            "type": "string"
+          },
+          "title": {
+            "description": "Prövningens officiella titel",
+            "type": "string"
+          },
+          "emaSubmissionDate": {
+            "description": "Datum då den kliniska prövningen initierades av sponsor",
+            "type": "string",
+            "format": "date"
+          },
+          "estimatedRecruitmentStartDate": {
+            "description": "Datum då sponsor beräknar att börja rekrytera testpersoner i något av de involverade länderna",
+            "type": "string",
+            "format": "date"
+          },
+          "estimatedEndDate": {
+            "description": "Datum då sponsor bedömer att den kliniska prövningen kan avslutas",
+            "type": "string",
+            "format": "date"
+          },
+          "swedenRole": {
+            "description": "Sveriges aktuella RMS/MSC-status i prövningen. Kan uppdateras under valideringsfasen.",
+            "type": "string",
+            "enum": [
+              "Föreslagen MSC",
+              "Föreslagen RMS",
+              "MSC",
+              "RMS"
+            ]
+          },
+          "therapeuticAreas": {
+            "description": "Lista med terapiområden prövningen behandlar",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "protocolNumber": {
+            "description": "Protokollnummer för den kliniska prövningen",
+            "type": "string"
+          },
+          "memberstatesConcerned": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "trialSubjectCountEurope": {
+                "description": "Antal testpersoner i samtliga europeriska länder",
+                "type": "integer"
+              },
+              "memberstates": {
+                "description": "En lista på alla deltagande länder i prövningen.",
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/memberstateType"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            }
+          },
+          "sponsorContactPoint": {
+            "$ref": "commonTypes.json#/$defs/sponsorContactPointType"
+          },
+          "sponsor": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "description": "Huvudsponsorns namn baserat på vad som angivits i CTIS-portalen",
+                "type": "string"
+              },
+              "country": {
+                "description": "Sponsors ort som angivits i adressen.",
+                "type": "string"
+              },
+              "isCommercial": {
+                "description": "Sanger om det är en komerciell sponsor.",
+                "type": "boolean"
+              }
+            }
+          },
+          "swedishPart2Data": {
+            "$ref": "#/components/schemas/part2Type"
+          }
+        },
+        "required": [
+          "clinicalTrialId",
+          "title",
+          "memberstatesConcerned"
+        ]
+      },
+      "kpCaseDataType": {
+        "description": "Metadata gällande ärendet och dess behandling. Innehåller information som är specifik för kliniska läkemedelsprövningar.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "evaluationProcess": {
+            "description": "Anger i vilken del av utvärderingsprocessen är vid expedieringen av meddelandet",
+            "type": "string",
+            "enum": [
+              "Validering",
+              "Del I",
+              "Del II",
+              "Beslut",
+              "Odefinierat"
+            ]
+          },
+          "caseType": {
+            "description": "Den ärendetyp som LV gett ärendet. Ska ge EPM/RBC tillräcklig information om vilken sorts ärende det är frågan om (multinationell eller bara Sverige? Del I, del II, eller båda? Nyansökan eller ändringsansökan?)",
+            "type": "string",
+            "enum": [
+              "KP-ansökan, multinationell, initialt del I",
+              "KP-ansökan, multinationell, initialt komplett",
+              "KP-ansökan, multinationell, transitional",
+              "KP-ansökan, mononationell, initialt del I",
+              "KP-ansökan, mononationell, initialt komplett",
+              "KP-ansökan, mononationell, transitional",
+              "KP-ansökan, Tillägg av SE som MSC",
+              "Ändring, multinationell, del I",
+              "Ändring, multinationell, del I och del II",
+              "Ändring, mononationell, del I",
+              "Ändring, mononationell, del I och del II",
+              "Ändring, nationell, del II"
+            ]
+          },
+          "isTransitioned": {
+            "description": "Boolean som ger true om ärendet gäller en prövning som flyttats över från gamla reglementet. Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen",
+            "type": "boolean"
+          },
+          "transitionedFrom": {
+            "description": "EudraCT-nummer på den tidigare prövningen.Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen",
+            "type": "string"
+          },
+          "trialData": {
+            "description": "Strukturerade uppgifter från den bakomliggande ansökan.",
+            "$ref": "#/components/schemas/kpTrialType"
+          }
+        },
+        "required": [
+          "evaluationProcess",
+          "caseType",
+          "trialData"
+        ]
+      },
+      "messageReasonType": {
+        "description": "En text som beskriver varför meddelandet skickats.",
+        "type": "string",
+        "enum": [
+          "Notis: Initial ansökan del I och II",
+          "Notis: Initial ansökan del I",
+          "Notis: Initial ansökan del II",
+          "Notis: Ändringsansökan del I och II",
+          "Notis: Ändringsansökan del I",
+          "Notis: Ändringsansökan del II",
+          "Notis: Valid ansökan",
+          "Notis: Validerings-RFI till sponsor",
+          "Begäran: Preliminär granskning del I",
+          "Begäran: Preliminär granskning del II",
+          "Svar: Preliminär granskning del I",
+          "Svar: Preliminär granskning del II",
+          "Begäran: Granskning av synpunkter från MSC",
+          "Svar: Granskning av synpunkter från MSC",
+          "Notis: Bedömnings-RFI del I till sponsor",
+          "Notis: Bedömnings-RFI del II till sponsor",
+          "Begäran: Yttrande del I",
+          "Begäran: Yttrande del II",
+          "Notis: Komplettering från sponsor del I",
+          "Notis: Komplettering från sponsor del II",
+          "Notis: Synpunkter från MSC efter komplettering del I",
+          "Notis: Synpunkter från MSC efter komplettering del II",
+          "Svar: Yttrande del I",
+          "Svar: Yttrande del II",
+          "Notis: AR och slutsats del I",
+          "Notis: AR och slutsats del II",
+          "Notis och kommentarsmöjlighet: AR och slutsats del I",
+          "Notis och kommentarsmöjlighet: AR och slutsats del II",
+          "Kommentar på notis: Underlag till invändning mot RMS slutsats",
+          "Notis: Ansökan dragits tillbaka",
+          "Notis: Ansökan förfallen",
+          "Notis: Ansökan tyst godkännande",
+          "Notis: Beslut för ansökan",
+          "Notis: Informell RFI del I",
+          "Notis: Informell RFI del II",
+          "Notis: Informell RFI validering",
+          "Notis: Beslut för överflyttad prövning"
+        ]
+      }
+    }
+  }
+}
