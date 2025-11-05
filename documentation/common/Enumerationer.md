@@ -110,7 +110,7 @@ Det finns i data från produktionsmiljön flera exempel på där DisplayName fö
 | 266        | Bilaga Ad-hoc-bedömning Diskussionssvar                                        | ?   | NEJ  |
 | 269        | ASR Document (id269)                                                           | ?   | JA   |
 | 272        | Bilaga (id272)                                                                 | ?   | JA   |
-| 273        | Final utredningsrapport del I kvalitet                                         | ?   | NEJ  |
+| 273        | Final utredningsrapport del I kvalitet                                         | ?   | JA   |
 | 274        | Final utredningsrapport del I exklusive kvalitet (för publicering)             | ?   | JA   |
 | 277        | Följsamhet med nationella regler för dataskydd (för publicering)               | ?   | NEJ  |
 | 278        | Följsamhet med regler för användning av biologiska prover (för publicering)    | ?   | JA   |
