@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Biobank-Sverige/clinical-trial-regulators-collaboration/schema/MDR-IVDR-schema",
+  "title": "MDR-IVDR-Schema",
+  "oneOf": [
+    {
+      "$ref": "#/components/schemas/simplifiedMessageType"
+    },
+    {
+      "$ref": "#/components/schemas/fullMessageType"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "simplifiedMessageType": {
+        "allOf": [
+          {
+            "$ref": "commonTypes.json#/$defs/simplifiedMessageTypeBase"
+          },
+          {
+            "properties": {
+              "header": {
+                "$ref": "#/components/schemas/simplifiedHeaderType"
+              }
+            },
+            "required": [
+              "header"
+            ]
+          }
+        ]
+      },
+      "simplifiedHeaderType": {
+        "allOf": [
+          {
+            "$ref": "commonTypes.json#/$defs/simplifiedHeaderTypeBase"
+          },
+          {
+            "properties": {
+              "messageReasonType": {
+                "$ref": "#/components/schemas/messageReasonType"
+              }
+            },
+            "required": [
+              "messageReasonType"
+            ]
+          }
+        ]
+      },
+      "fullMessageType": {
+        "allOf": [
+          {
+            "$ref": "commonTypes.json#/$defs/fullMessageTypeBase"
+          },
+          {
+            "properties": {
+              "header": {
+                "$ref": "#/components/schemas/headerType"
+              },
+              "caseData": {
+                "description": "Objekt som samlar information om ärende och samhörande klinisk prövning/studie",
+                "$ref": "#/components/schemas/caseDataType"
+              }
+            }
+          }
+        ]
+      },
+      "headerType": {
+        "allOf": [
+          {
+            "$ref": "commonTypes.json#/$defs/headerTypeBase"
+          },
+          {
+            "properties": {
+              "messageReasonType": {
+                "$ref": "#/components/schemas/messageReasonType"
+              }
+            },
+            "required": [
+              "messageReasonType"
+            ]
+          }
+        ]
+      },
+      "caseDataType": {
+        "allOf": [
+          {
+            "$ref": "commonTypes.json#/$defs/caseDataTypeBase"
+          },
+          {
+            "properties": {
+              "specificCaseData": {
+                "$ref": "#/components/schemas/mtCaseDataType"
+              }
+            },
+            "required": [
+              "specificCaseData"
+            ]
+          }
+        ]
+      },
+      "mtStudyType": {
+        "description": "Innehåller vissa översiktsdata om MT-studier. Används tillsammans medDomain=MT",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cid": {
+            "description": "Prövningens id i e-tjänsten för MT-prövningar",
+            "type": "string"
+          },
+          "title": {
+            "description": "Prövningens titel",
+            "type": "string"
+          },
+          "submissionDate": {
+            "description": "Datum då ansökan skickades in.",
+            "type": "string",
+            "format": "date"
+          },
+          "swedenRole": {
+            "description": "Sveriges aktuella RMS/MSC-status i prövningen. Kan uppdateras under valideringsfasen.",
+            "type": "string",
+            "enum": [
+              "RMS"
+            ]
+          },
+          "regulation": {
+            "description": "Anger vilket lagrum som är aktuellt för den aktuella prövningen",
+            "type": "string",
+            "enum": [
+              "MDR",
+              "IVDR"
+            ]
+          },
+          "process": {
+            "description": "Prövningens process i aktuellt lagrum",
+            "type": "string",
+            "enum": [
+              "70.7a",
+              "70.7b",
+              "74.1",
+              "82",
+              "66.7a",
+              "66.7b",
+              "70.1",
+              "58.2"
+            ]
+          },
+          "sponsorContactPoint": {
+            "$ref": "commonTypes.json#/$defs/sponsorContactPointType"
+          },
+          "sponsor": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "description": "Huvudsponsorns namn baserat på vad som angivits i ansökningsformuläret",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "required": [
+          "cid",
+          "title",
+          "regulation",
+          "process"
+        ]
+      },
+      "mtCaseDataType": {
+        "description": "MT-specifika metadata gällande ärendet och dess behandling",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "evaluationProcess": {
+            "description": "Anger i vilken del av utvärderingsprocessen är vid expedieringen av meddelandet",
+            "type": "string",
+            "enum": [
+              "Validering",
+              "Del I",
+              "Beslut",
+              "Odefinierat"
+            ]
+          },
+          "caseType": {
+            "description": "Den ärendetyp som LV gett ärendet. Ska ge EPM/RBC tillräcklig information om vilken sorts ärende det är frågan om (multinationell eller bara Sverige? Del I, del II, eller båda? Nyansökan eller ändringsansökan?)",
+            "type": "string",
+            "enum": [
+              "MDR, Ansökan, 70.7a",
+              "MDR, Ansökan, 70.7b",
+              "MDR, Anmälan, 74.1",
+              "MDR, Anmälan, 82",
+              "IVDR, Ansökan, 66.7a",
+              "IVDR, Ansökan, 66.7b",
+              "IVDR, Anmälan, 58.2",
+              "IVDR, Anmälan, 70.1",
+              "MDR, Ändring av Ansökan, 70.7a",
+              "MDR, Ändring av Ansökan, 70.7b",
+              "MDR, Ändring av Anmälan, 74.1",
+              "MDR, Ändring av Anmälan, 82",
+              "IVDR, Ändring av Ansökan, 66.7a",
+              "IVDR, Ändring av Ansökan, 66.7b",
+              "IVDR, Ändring av Anmälan, 70.1"
+            ]
+          },
+          "trialData": {
+            "description": "Strukturerade uppgifter från den bakomliggande ansökan.",
+            "$ref": "#/components/schemas/mtStudyType"
+          }
+        },
+        "required": [
+          "evaluationProcess",
+          "caseType",
+          "trialData"
+        ]
+      },
+      "messageReasonType": {
+        "description": "En text som beskriver varför meddelandet skickats.",
+        "type": "string",
+        "enum": [
+          "Notis: Initial ansökan",
+          "Notis: Ansökan/anmälan till EPM/RBC",
+          "Notis: Valid ansökan",
+          "Notis: Initial anmälan ",
+          "Notis: Komplett anmälan",
+          "Notis: Ändringsanmälan",
+          "Notis: Anmälan dragits tillbaka",
+          "Notis: Anmälan förfallen",
+          "Notis: Validerings-RFI till sponsor",
+          "Begäran: Preliminär granskning",
+          "Svar: Bedömnings-RFI till sponsor",
+          "Svar: Preliminär granskning",
+          "Notis: Bedömnings-RFI till sponsor",
+          "Begäran: Yttrande",
+          "Notis: Komplettering från sponsor ",
+          "Notis: Mottagningskontroll-RFI till sponsor",
+          "Svar: Yttrande ",
+          "Notis: Ansökan dragits tillbaka",
+          "Notis: Ansökan förfallen",
+          "Notis: Beslut",
+          "Svar: Beslut"
+        ]
+      }
+    }
+  }
+}
