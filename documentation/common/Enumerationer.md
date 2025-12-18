@@ -192,6 +192,38 @@ Det finns i data från produktionsmiljön flera exempel på där DisplayName fö
 | samverk_10 | RFI/RFI-svar                                                                   | ?   | JA   |
 | samverk_11 | Ärendeinformation                                                              | ?   | JA   |
 
+CaseType
+---
+
+| CaseType                                      | KP | MDR/IVDR | RBC | EPM |
+|-----------------------------------------------|----|----------|-----|-----|
+| KP-ansökan, multinationell, initialt del I    | X  |          | X   | ?   | 
+| KP-ansökan, multinationell, initialt komplett | X  |          | X   | ?   | 
+| KP-ansökan, multinationell, transitional      | X  |          | X   | ?   | 
+| KP-ansökan, mononationell, initialt del I     | X  |          | X   | ?   | 
+| KP-ansökan, mononationell, initialt komplett  | X  |          | X   | ?   | 
+| KP-ansökan, mononationell, transitional       | X  |          | X   | ?   | 
+| KP-ansökan, Tillägg av SE som MSC             | X  |          | X   | ?   |
+| Ändring, multinationell, del I                | X  |          | X   | ?   | 
+| Ändring, multinationell, del I och del II     | X  |          | X   | ?   | 
+| Ändring, mononationell, del I                 | X  |          | X   | ?   | 
+| Ändring, mononationell, del I och del II      | X  |          | X   | ?   | 
+| Ändring, nationell, del II                    | X  |          | X   | ?   |
+| MDR, Ansökan, 70.7a                           |    | X        | -   | ?   | 
+| MDR, Ansökan, 70.7b                           |    | X        | -   | ?   | 
+| MDR, Anmälan, 74.1                            |    | X        | -   | ?   | 
+| MDR, Anmälan, 82                              |    | X        | -   | ?   | 
+| IVDR, Ansökan, 66.7a                          |    | X        | -   | ?   | 
+| IVDR, Ansökan, 66.7b                          |    | X        | -   | ?   | 
+| IVDR, Anmälan, 58.2                           |    | X        | -   | ?   | 
+| IVDR, Anmälan, 70.1                           |    | X        | -   | ?   | 
+| MDR, Ändring av Ansökan, 70.7a                |    | X        | -   | ?   | 
+| MDR, Ändring av Ansökan, 70.7b                |    | X        | -   | ?   | 
+| MDR, Ändring av Anmälan, 74.1                 |    | X        | -   | ?   | 
+| MDR, Ändring av Anmälan, 82                   |    | X        | -   | ?   | 
+| IVDR, Ändring av Ansökan, 66.7a               |    | X        | -   | ?   | 
+| IVDR, Ändring av Ansökan, 66.7b               |    | X        | -   | ?   | 
+| IVDR, Ändring av Anmälan, 70.1                |    | X        | -   | ?   |
 
 MessageReasonType
 ---
