@@ -76,6 +76,8 @@ Följande kombinationer av dessa accepteras när LV skickar meddelanden till BBS
 - Notis: Beslut för överflyttad prövning
     - KP-ansökan, multinationell, transitional
     - KP-ansökan, mononationell, transitional
+- Notis: Information om tidigare beslutat ärende
+    - samtliga
 
 Följande kombinationer av dessa accepteras när BBS skickar meddelanden till LV:
 
