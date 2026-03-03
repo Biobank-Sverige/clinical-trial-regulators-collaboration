@@ -392,8 +392,8 @@ Tidtabellshändelser
 | 2100 | Skicka ansökan samt utredningsrapport till EPM (Del II)              |    |          |           | -   |
 | 2101 | Skicka ansökan samt utredningsrapport till RBC (Del II)              |    |          |           | -   |
 | 2102 | Bedömning, delhandläggare                                            |    |          |           | -   |
-| 2103 | Final rapport (Del I)                                                |    |          |           | X   |
-| 2104 | Final rapport (Del II)                                               |    |          |           | X   |
+| 2103 | Final rapport (Del I)                                                |    |          |           | ?   |
+| 2104 | Final rapport (Del II)                                               |    |          |           | ?   |
 | 2115 | Bedömning                                                            |    |          |           | -   |
 | 2116 | Synpunkter ska lämnas av ny MSC                                      |    |          |           | -   |
 | 2117 | Ange roll, RMS/MSC                                                   |    |          |           | -   |
