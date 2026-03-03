@@ -285,3 +285,262 @@ MessageReasonType
 | Notis: Beslut för överflyttad prövning                        | X  | -        | X   |     |
 | Svar: Beslut                                                  | -  | X        | -   |     |
 | Notis: Information om tidigare beslutat ärende                | X  | ?        | X   |     |
+
+Tidtabellshändelser
+---
+
+
+| Kod  | Text                                                                 | KP | MDR/IVDR | Betydelse | RBC |
+|------|----------------------------------------------------------------------|----|----------|-----------|-----|
+| 2001 | Slutföra registrering                                                | ?  |          |           | -   |
+| 2002 | Skicka notifiering till EPM                                          |    |          |           | -   |
+| 2003 | Första svar på RMS (express willingness)                             |    |          |           | -   |
+| 2004 | Slutgiltigt svar på RMS                                              |    |          |           | -   |
+| 2005 | Utsedd RMS                                                           |    |          |           | -   |
+| 2006 | Skicka notifiering till RBC                                          |    |          |           | -   |
+| 2007 | Synpunkter ska lämnas (validering)                                   |    |          |           | -   |
+| 2008 | Hämta hem synpunkter (validering)                                    |    |          |           | -   |
+| 2009 | Konsolidering klar (validering)                                      |    |          |           | -   |
+| 2010 | Valideringsbesked                                                    |    |          |           | -   |
+| 2011 | RFI skickad (validering)                                             |    |          |           | -   |
+| 2012 | Hämta hem RFI                                                        |    |          |           | -   |
+| 2013 | RFI-svar ska inkomma (validering)                                    |    |          |           | -   |
+| 2014 | Hämta hem RFI-svar                                                   |    |          |           | -   |
+| 2015 | Synpunkter på RFI-svar ska lämnas (validering)                       |    |          |           | -   |
+| 2016 | Hämta hem valideringsbesked                                          |    |          |           | -   |
+| 2017 | Bedömningen börjar (Del I)                                           |    |          |           | X   |
+| 2018 | Bedömningen börjar (Del II)                                          |    |          |           | X   |
+| 2019 | Skicka ansökan till EPM (Del I)                                      |    |          |           | -   |
+| 2020 | Skicka ansökan till RBC (Del I)                                      |    |          |           | -   |
+| 2021 | Skicka ansökan till EPM (Del II)                                     |    |          |           | -   |
+| 2022 | Skicka ansökan till RBC (Del II)                                     |    |          |           | -   |
+| 2023 | Ta emot initialt svar från EPM (Del I)                               |    |          |           | -   |
+| 2024 | Ta emot initialt svar från RBC (Del I)                               |    |          |           | -   |
+| 2025 | Ta emot initialt svar från EPM  (Del II)                             |    |          |           | -   |
+| 2026 | Ta emot initialt svar från RBC  (Del II)                             |    |          |           | -   |
+| 2027 | Bedömning, preliminär rapport                                        |    |          |           | -   |
+| 2028 | Hämta hem preliminär rapport                                         |    |          |           | -   |
+| 2029 | Skicka preliminär rapport till EPM                                   |    |          |           | -   |
+| 2030 | Skicka preliminär rapport till RBC                                   |    |          |           | -   |
+| 2031 | Ta emot första bedömning från EPM                                    |    |          |           | -   |
+| 2032 | Ta emot första bedömning från RBC                                    |    |          |           | -   |
+| 2033 | Synpunkter ska lämnas (bedömning)                                    |    |          |           | -   |
+| 2034 | Hämta hem synpunkter (bedömning)                                     |    |          |           | -   |
+| 2035 | Konsolidering klar (bedömning)                                       |    |          |           | -   |
+| 2036 | Final rapport eller RFI (Del I)                                      |    |          |           | -   |
+| 2037 | Hårt slut bedömningsrunda (Del I)                                    |    |          |           | X   |
+| 2038 | RFI skickad (bedömning Del I)                                        |    |          |           | -   |
+| 2039 | Hämta hem final rapport eller RFI (Del I)                            |    |          |           | -   |
+| 2040 | Skicka final rapport eller RFI-besked till EPM (Del I)               |    |          |           | -   |
+| 2041 | Skicka final rapport eller RFI-besked till RBC (Del I)               |    |          |           | -   |
+| 2042 | Final rapport eller RFI (Del II)                                     |    |          |           | -   |
+| 2043 | Hårt slut bedömningsrunda (Del II)                                   |    |          |           | X   |
+| 2044 | RFI skickad (bedömning Del II)                                       |    |          |           | -   |
+| 2045 | Hämta hem final rapport eller RFI (Del II)                           |    |          |           | -   |
+| 2046 | Skicka final rapport eller RFI-besked till EPM (Del II)              |    |          |           | -   |
+| 2047 | Skicka final rapport eller RFI-besked till RBC (Del II)              |    |          |           | -   |
+| 2048 | Inkommet RFI-svar (bedömning Del I)                                  |    |          |           | -   |
+| 2049 | Skicka RFI-svar till EPM (bedömning Del I)                           |    |          |           | -   |
+| 2050 | Skicka RFI-svar till RBC (bedömning Del I)                           |    |          |           | -   |
+| 2051 | Ta emot RFI-bedömning från EPM (bedömning Del I)                     |    |          |           | -   |
+| 2052 | Inkommet RFI-svar (bedömning Del II)                                 |    |          |           | -   |
+| 2053 | Skicka RFI-svar till EPM (bedömning Del II)                          |    |          |           | -   |
+| 2054 | Skicka RFI-svar till RBC (bedömning Del II)                          |    |          |           | -   |
+| 2055 | Ta emot RFI-bedömning från EPM (bedömning Del II)                    |    |          |           | -   |
+| 2056 | Synpunkter på RFI-svar ska lämnas (bedömning Del I)                  |    |          |           | -   |
+| 2057 | Ta emot RFI-bedömning från EPM (bedömning Del I)                     |    |          |           | -   |
+| 2058 | Bedömning, final rapport (Del I)                                     |    |          |           | -   |
+| 2059 | Hämta hem final rapport (Del I)                                      |    |          |           | -   |
+| 2060 | Skicka final rapport till EPM (Del I)                                |    |          |           | -   |
+| 2061 | Skicka final rapport till RBC (Del I)                                |    |          |           | -   |
+| 2062 | Bedömning, final rapport (Del II)                                    |    |          |           | -   |
+| 2063 | Hämta hem final rapport (Del II)                                     |    |          |           | -   |
+| 2064 | Skicka final rapport till EPM (Del II)                               |    |          |           | -   |
+| 2065 | Skicka final rapport till RBC (Del II)                               |    |          |           | -   |
+| 2066 | Meddela eventuell avvikande åsikt                                    |    |          |           | -   |
+| 2067 | Beslut                                                               |    |          |           | X   |
+| 2068 | Ankomstdatum                                                         |    |          |           | -   |
+| 2069 | Lämna slutgiltigt svar på RMS                                        |    |          |           | -   |
+| 2070 | Lämna synpunkter (validering)                                        |    |          |           | -   |
+| 2071 | Hämta synpunkter (validering)                                        |    |          |           | -   |
+| 2072 | Valideringsbesked eller RFI                                          |    |          |           | -   |
+| 2074 | Validera Del II                                                      |    |          |           | -   |
+| 2076 | Synpunkter ska lämnas (Del II)                                       |    |          |           | -   |
+| 2077 | Intern deadline                                                      |    |          |           | -   |
+| 2078 | Informera EPM om validerings-RFI                                     |    |          |           | -   |
+| 2079 | Informera RBC om validerings-RFI                                     |    |          |           | -   |
+| 2080 | Ta emot preliminär granskning från EPM (Del I)                       |    |          |           | -   |
+| 2081 | Ta emot preliminär granskning från RBC (Del I)                       |    |          |           | -   |
+| 2082 | Hämta hem MS synpunkter (bedömning del I)                            |    |          |           | -   |
+| 2083 | Skicka MS synpunkter till EPM                                        |    |          |           | -   |
+| 2084 | Ta emot EPMs granskning av synpunkter                                |    |          |           | -   |
+| 2085 | Konsolidering klar (bedömning del I)                                 |    |          |           | -   |
+| 2086 | Skicka RFI-besked till EPM (Del I)                                   |    |          |           | -   |
+| 2087 | Skicka RFI-besked till RBC (Del I)                                   |    |          |           | -   |
+| 2088 | Skicka RFI-besked till EPM (Del II)                                  |    |          |           | -   |
+| 2089 | Skicka RFI-besked till RBC (Del II)                                  |    |          |           | -   |
+| 2090 | Informera EPM om beslutet                                            |    |          |           | -   |
+| 2091 | Informera RBC om beslutet                                            |    |          |           | -   |
+| 2092 | Avsluta ärendet                                                      |    |          |           | -   |
+| 2093 | Ta emot preliminär granskning från EPM (Del II)                      |    |          |           | -   |
+| 2094 | Ta emot preliminär granskning från RBC (Del II)                      |    |          |           | -   |
+| 2095 | Konsolidering klar (bedömning del II)                                |    |          |           | -   |
+| 2096 | Avslut eller RFI (Del I)                                             |    |          |           | -   |
+| 2097 | Avslut (Del I)                                                       |    |          |           | -   |
+| 2098 | Skicka ansökan samt utredningsrapport till EPM (Del I)               |    |          |           | -   |
+| 2099 | Skicka ansökan samt utredningsrapport till RBC (Del I)               |    |          |           | -   |
+| 2100 | Skicka ansökan samt utredningsrapport till EPM (Del II)              |    |          |           | -   |
+| 2101 | Skicka ansökan samt utredningsrapport till RBC (Del II)              |    |          |           | -   |
+| 2102 | Bedömning, delhandläggare                                            |    |          |           | -   |
+| 2103 | Final rapport (Del I)                                                |    |          |           | X   |
+| 2104 | Final rapport (Del II)                                               |    |          |           | X   |
+| 2115 | Bedömning                                                            |    |          |           | -   |
+| 2116 | Synpunkter ska lämnas av ny MSC                                      |    |          |           | -   |
+| 2117 | Ange roll, RMS/MSC                                                   |    |          |           | -   |
+| 2118 | Synpunkter på RFI-svar (Del I)                                       |    |          |           | -   |
+| 2119 | Lämna synpunkter, validering                                         |    |          |           | -   |
+| 2120 | Konsolidera synpunkter, validering                                   |    |          |           | -   |
+| 2121 | Skicka notis till EPM, validering                                    |    |          |           | -   |
+| 2122 | Skicka notis till RBC, validering                                    |    |          |           | -   |
+| 2123 | Skicka ansökan till EPM                                              |    |          |           | -   |
+| 2124 | Skicka ansökan till RBC                                              |    |          |           | -   |
+| 2125 | Preliminär rapport inkommer                                          |    |          |           | -   |
+| 2126 | Skicka notis till EPM, preliminär rapport                            |    |          |           | -   |
+| 2127 | Skicka notis till RBC, preliminär rapport                            |    |          |           | -   |
+| 2128 | Lämna synpunkter, bedömning del I                                    |    |          |           | -   |
+| 2129 | Konsolidera synpunkter, bedömning del I                              |    |          |           | -   |
+| 2130 | Valideringsbesked lämnas                                             |    |          |           | -   |
+| 2131 | Eventuell RFI (bedömning del I)                                      |    |          |           | -   |
+| 2132 | Preliminär rapport (endast tidtabellsuppdatering)                    |    |          |           | -   |
+| 2133 | Besked om synpunkter, bedömning del I (endast tidtabellsuppdatering) |    |          |           | -   |
+| 2134 | Konsolidering klar, bedömning del I                                  |    |          |           | -   |
+| 2135 | Bedömningen börjar                                                   |    |          |           | -   |
+| 2136 | Besked om synpunkter                                                 |    |          |           | -   |
+| 2137 | Konsolidera synpunkter                                               |    |          |           | -   |
+| 2138 | RFI-svar                                                             |    |          |           | ?   |
+| 2139 | Preliminär rapport, RFI                                              |    |          |           | -   |
+| 2140 | Besked om synpunkter, RFI                                            |    |          |           | -   |
+| 2141 | Konsolidera synpunkter, RFI                                          |    |          |           | -   |
+| 2142 | Final rapport                                                        |    |          |           | -   |
+| 2143 | Final rapport eller RFI                                              |    |          |           | -   |
+| 2144 | Finala synpunkter på RFI-svar (Del I)                                |    |          |           | -   |
+| 2145 | Synpunkter på RFI-svar från MS (Del I)                               |    |          |           | -   |
+| 2146 | Skicka notis till EPM, ansökan inkommen                              |    |          |           | -   |
+| 2147 | Första besked om roll, RMS/MSC                                       |    |          |           | -   |
+| 2148 | Ange slutgiltig roll, RMS/MSC                                        |    |          |           | -   |
+| 2149 | Besked om utsedd RMS                                                 |    |          |           | -   |
+| 2150 | Initiala synpunkter på RFI-svar (Del I)                              |    |          |           | -   |
+| 2151 | Skicka notis till RBC, ansökan inkommen                              |    |          |           | -   |
+| 2152 | Besked om synpunkter, validering                                     |    |          |           | -   |
+| 2153 | Besked om konsolidering, validering                                  |    |          |           | -   |
+| 2154 | Besked om validering                                                 |    |          |           | -   |
+| 2155 | RFI-svar (validering)                                                |    |          |           | -   |
+| 2156 | Besked om synpunkter på RFI-svar (validering)                        |    |          |           | -   |
+| 2157 | Preliminär rapport                                                   |    |          |           | -   |
+| 2158 | Besked om synpunkter, bedömning del I                                |    |          |           | -   |
+| 2159 | RFI-svar (Del I)                                                     |    |          |           | X   |
+| 2160 | Skicka RFI-svar till EPM (Del I)                                     |    |          |           | -   |
+| 2161 | Notifiera RBC om RFI-svar (Del I)                                    |    |          |           | -   |
+| 2162 | RFI-bedömning från EPM (Del I)                                       |    |          |           | -   |
+| 2163 | RFI-svar (Del II)                                                    |    |          |           | X   |
+| 2164 | Skicka RFI-svar till EPM (Del II)                                    |    |          |           | -   |
+| 2165 | Notifiera RBC om RFI-svar (Del II)                                   |    |          |           | -   |
+| 2166 | RFI-bedömning från EPM (Del II)                                      |    |          |           | -   |
+| 2167 | Granskning av RFI-svar, EPM (Del I)                                  |    |          |           | -   |
+| 2168 | Final rapport och slutsats till EPM (Del I)                          |    |          |           | -   |
+| 2169 | Final rapport och slutsats till RBC (Del I)                          |    |          |           | -   |
+| 2170 | Final rapport och slutsats till EPM (Del II)                         |    |          |           | -   |
+| 2171 | Final rapport och slutsats till RBC (Del II)                         |    |          |           | -   |
+| 2172 | Konsolidering klar, bedömning del II                                 |    |          |           | -   |
+| 2173 | Skicka notis till EPM, validerings-RFI                               |    |          |           | -   |
+| 2174 | Skicka notis till RBC, validerings-RFI                               |    |          |           | -   |
+| 2175 | Preliminär granskning, EPM (Del I)                                   |    |          |           | -   |
+| 2176 | Preliminär granskning, RBC (Del I)                                   |    |          |           | -   |
+| 2177 | Skicka synpunkter till EPM                                           |    |          |           | -   |
+| 2178 | EPMs granskning av synpunkter                                        |    |          |           | -   |
+| 2179 | Konsolidera synpunkter, bedömning del I                              |    |          |           | -   |
+| 2180 | Notifiera EPM om RFI (Del I)                                         |    |          |           | -   |
+| 2181 | Notifiera RBC om RFI (Del I)                                         |    |          |           | -   |
+| 2182 | Notifiera EPM om RFI (Del II)                                        |    |          |           | -   |
+| 2183 | Beslut till EPM                                                      |    |          |           | -   |
+| 2184 | Beslut till RBC                                                      |    |          |           | -   |
+| 2185 | Preliminär granskning, EPM (Del II)                                  |    |          |           | -   |
+| 2186 | Preliminär granskning, RBC (Del II)                                  |    |          |           | -   |
+| 2187 | Konsolidera synpunkter, bedömning del II                             |    |          |           | -   |
+| 2188 | Notifiera RBC om RFI (Del II)                                        |    |          |           | -   |
+| 2189 | Besked om konsolidering, validering (manuell)                        |    |          |           | -   |
+| 2190 | Besked om validering (manuell)                                       |    |          |           | -   |
+| 2191 | Hårt slut bedömningsrunda (Del I, manuell)                           |    |          |           | ?   |
+| 2192 | Hårt slut bedömningsrunda (Del II, manuell)                          |    |          |           | ?   |
+| 2193 | Beslut (manuell)                                                     |    |          |           | ?   |
+| 2194 | Första besked om roll, RMS/MSC (manuell)                             |    |          |           | -   |
+| 2195 | Besked om synpunkter, validering (manuell)                           |    |          |           | -   |
+| 2196 | Preliminär rapport (manuell)                                         |    |          |           | -   |
+| 2197 | Besked om synpunkter, bedömning del I (manuell)                      |    |          |           | -   |
+| 2198 | Konsolidera synpunkter, bedömning del I (manuell)                    |    |          |           | -   |
+| 2199 | Konsolidering klar, bedömning del I (manuell)                        |    |          |           | -   |
+| 2200 | Konsolidera synpunkter, bedömning del II (manuell)                   |    |          |           | -   |
+| 2201 | RFI-svar (Del I, manuell)                                            |    |          |           | ?   |
+| 2202 | RFI-svar (validering, manuell)                                       |    |          |           | -   |
+| 2203 | Besked om synpunkter på RFI-svar (validering, manuell)               |    |          |           | -   |
+| 2204 | Finala synpunkter på RFI-svar (Del I, manuell)                       |    |          |           | -   |
+| 2205 | RFI-svar (Del II, manuell)                                           |    |          |           | ?   |
+| 2206 | Notifiera RBC om RFI (Del II)                                        |    |          |           | -   |
+| 2206 | Notifiera RBC om RFI (Del II)                                        |    |          |           | -   |
+| 2207 | Skicka faktura till Ekonomiavdelningen                               |    |          |           | -   |
+| 2208 | Beslut och ansökan till RBC                                          |    |          |           | -   |
+| 2209 | Ange roll, SaMS/MSC                                                  |    |          |           | -   |
+| 2210 | Preliminär granskning, EPM                                           |    |          |           | -   |
+| 2211 | Preliminär granskning, RBC                                           |    |          |           | -   |
+| 2212 | Final bedömning eller RFI                                            |    |          |           | -   |
+| 2213 | Vid avslag eller villkor, registrera i EUDAMED                       |    |          |           | -   |
+| 2214 | Notifiera EPM om RFI                                                 |    |          |           | -   |
+| 2215 | Notifiera RBC om RFI                                                 |    |          |           | -   |
+| 2216 | RFI-svar                                                             |    |          |           | ?   |
+| 2217 | Skicka RFI-svar till EPM                                             |    |          |           | -   |
+| 2218 | Notifiera RBC om RFI-svar                                            |    |          |           | -   |
+| 2219 | Granskning av RFI-svar, EPM                                          |    |          |           | -   |
+| 2220 | Final bedömning                                                      |    |          |           | -   |
+| 2221 | Besked komplett anmälan                                              |    |          |           | -   |
+| 2222 | Besked om synpunkter på RFI-svar (mottagningskontroll)               |    |          |           | -   |
+| 2223 | Beslut (om RFI)                                                      |    |          |           | -   |
+| 2224 | Beslut eller RFI från EPM                                            |    |          |           | -   |
+| 2225 | Beslut från EPM                                                      |    |          |           | -   |
+| 2226 | Beslut till EPM (om RFI)                                             |    |          |           | -   |
+| 2227 | Beslut till EPM (utan RFI)                                           |    |          |           | -   |
+| 2228 | Beslut till RBC (om RFI)                                             |    |          |           | -   |
+| 2229 | Beslut till RBC (utan RFI)                                           |    |          |           | -   |
+| 2230 | Lämna synpunkter, mottagningskontroll                                |    |          |           | -   |
+| 2231 | Registrera i EUDAMED om aktuellt                                     |    |          |           | -   |
+| 2232 | RFI-svar (mottagningskontroll)                                       |    |          |           | -   |
+| 2233 | Skicka anmälan till EPM                                              |    |          |           | -   |
+| 2234 | Skicka anmälan till RBC                                              |    |          |           | -   |
+| 2235 | Skicka för publicering                                               |    |          |           | -   |
+| 2236 | Skicka notis till EPM, anmälan inkommen                              |    |          |           | -   |
+| 2237 | Skicka notis till EPM, komplett anmälan                              |    |          |           | -   |
+| 2238 | Skicka notis till EPM, mottagningskontroll-RFI                       |    |          |           | -   |
+| 2239 | Skicka notis till RBC, anmälan inkommen                              |    |          |           | -   |
+| 2240 | Skicka notis till RBC, komplett anmälan                              |    |          |           | -   |
+| 2241 | Skicka notis till RBC, mottagningskontroll-RFI                       |    |          |           | -   |
+| 2242 | Skicka RFI-svar till RBC                                             |    |          |           | -   |
+| 2243 | Skicka slutsats till Inspektion                                      |    |          |           | -   |
+| 2244 | Ta mot beslut från Inspektion                                        |    |          |           | -   |
+| 2245 | Vid ej valid, registrera i EUDAMED                                   |    |          |           | -   |
+| 2246 | Beslut (utan RFI)                                                    |    |          |           | ?   |
+| 2247 | Skicka mottagningsbekräftelse                                        |    |          |           | -   |
+| 2248 | Skicka TTY till sponsor                                              |    |          |           | -   |
+| 2249 | Skicka mottagningsbekräftelse, ej komplett                           |    |          |           | -   |
+| 2250 | Skicka mottagningsbekräftelse vid Tillfälligt avbrott                |    |          |           | -   |
+| 2251 | Skicka BOK till sponsor                                              |    |          |           | -   |
+| 2252 | Granska och föredra beslutsbrev                                      |    |          |           | -   |
+| 2253 | Skicka Beslut (LV, EPM) till sponsor                                 |    |          |           | -   |
+| 2254 | Skicka Beslut (LV, EPM) till sponsor (utan RFI)                      |    |          |           | -   |
+| 2255 | Skicka Beslut (LV, EPM) till sponsor (om RFI)                        |    |          |           | -   |
+| 2256 | Granska och föredra validbeslut                                      |    |          |           | -   |
+| 2257 | Granska och föredra beslutsbrev (utan RFI)                           |    |          |           | -   |
+| 2258 | Granska och föredra beslutsbrev (om RFI)                             |    |          |           | -   |
+| 2259 | Skicka mottagningsbekräftelse                                        |    |          |           | -   |
+| 2260 | Komplett anmälan                                                     |    |          |           | -   |
+| 1004 | Initial registrering                                                 |    |          |           | -   |
+| 292  | Start                                                                |    |          |           | -   |
+| 435  | Möte                                                                 |    |          |           | -   |
