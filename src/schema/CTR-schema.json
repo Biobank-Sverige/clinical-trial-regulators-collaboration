@@ -27,7 +27,8 @@
               "header"
             ]
           }
-        ]
+        ],
+        "unevaluatedProperties": false
       },
       "simplifiedHeaderType": {
         "allOf": [
@@ -44,7 +45,8 @@
               "messageReasonType"
             ]
           }
-        ]
+        ],
+        "unevaluatedProperties": false
       },
       "fullMessageType": {
         "allOf": [
@@ -62,7 +64,8 @@
               }
             }
           }
-        ]
+        ],
+        "unevaluatedProperties": false
       },
       "headerType": {
         "allOf": [
@@ -79,7 +82,8 @@
               "messageReasonType"
             ]
           }
-        ]
+        ],
+        "unevaluatedProperties": false
       },
       "caseDataType": {
         "allOf": [
@@ -96,7 +100,8 @@
               "specificCaseData"
             ]
           }
-        ]
+        ],
+        "unevaluatedProperties": false
       },
       "addressType": {
         "type": "object",
