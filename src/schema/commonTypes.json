@@ -6,7 +6,6 @@
     "simplifiedMessageTypeBase": {
       "description": "Schema för förenklade svarsmeddelanden där endast ett fåtal fält krävs. To=LV",
       "type": "object",
-      "unevaluatedProperties": false,
       "properties": {
         "caseData": {
           "type": "object",
@@ -49,7 +48,6 @@
     },
     "simplifiedHeaderTypeBase": {
       "type": "object",
-      "unevaluatedProperties": false,
       "properties": {
         "from": {
           "$ref": "#/$defs/epmOrRbcPartyType"
@@ -82,7 +80,6 @@
     },
     "fullMessageTypeBase": {
       "description": "Schema for meddelanden som används för att utbyta information om pågående ärenden för ansökningar om prövningstillstånd.",
-      "unevaluatedProperties": false,
       "type": "object",
       "properties": {
         "sponsorDocuments": {
@@ -98,7 +95,6 @@
     "headerTypeBase": {
       "description": "Metadata som beskriver meddelandet självt",
       "type": "object",
-      "unevaluatedProperties": false,
       "properties": {
         "version": {
           "description": "Schemat hanteras i versioner och elementet version säger vilken version av schemat som meddelandet skall följa.",
@@ -150,7 +146,6 @@
     "caseDataTypeBase": {
       "description": "Metadata gällande ärendet och den bakomliggande ansökan",
       "type": "object",
-      "unevaluatedProperties": false,
       "properties": {
         "lvDiaryNumber": {
           "description": "Diarienummer från LV, unikt ID för varje ansökan. Används som korrelationsID för olika meddelanden i ett ärende.",
