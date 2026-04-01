@@ -199,10 +199,8 @@ CaseType
 |-----------------------------------------------|----|----------|-----|-----|
 | KP-ansökan, multinationell, initialt del I    | X  |          | X   | ?   | 
 | KP-ansökan, multinationell, initialt komplett | X  |          | X   | ?   | 
-| KP-ansökan, multinationell, transitional      | X  |          | X   | ?   | 
 | KP-ansökan, mononationell, initialt del I     | X  |          | X   | ?   | 
 | KP-ansökan, mononationell, initialt komplett  | X  |          | X   | ?   | 
-| KP-ansökan, mononationell, transitional       | X  |          | X   | ?   | 
 | KP-ansökan, Tillägg av SE som MSC             | X  |          | X   | ?   |
 | Ändring, multinationell, del I                | X  |          | X   | ?   | 
 | Ändring, multinationell, del I och del II     | X  |          | X   | ?   | 
