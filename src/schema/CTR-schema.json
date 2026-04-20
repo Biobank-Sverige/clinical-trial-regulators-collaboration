@@ -340,6 +340,10 @@
             "Ändring, nationell, del II"
           ]
         },
+        "art11Workaround": {
+          "description": " En flagga som anger om det aktuella ärendet skall hanteras i enlighet med rutinerna för Artikel 11 överenskommelsen",
+          "type":"boolean"
+        },
         "isTransitioned": {
           "description": "Boolean som ger true om ärendet gäller en prövning som flyttats över från gamla reglementet. Finns bara med för det ärende som flyttar över prövningen, inte för efterkommande ändringsansökningar på den nyskapade kliniska prövningen",
           "type": "boolean"
