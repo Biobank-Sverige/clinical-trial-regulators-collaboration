@@ -73,7 +73,7 @@ Följande kombinationer av dessa accepteras när LV skickar meddelanden till BBS
     - Samma som första meddelandet i ansökan
 - Notis: Informell RFI
     - Samma som första meddelandet i ansökan
-- Notis: Beslut för överflyttad prövning
+- Notis: Beslut för överflyttad prövning (utgått)
     - KP-ansökan, multinationell, transitional
     - KP-ansökan, mononationell, transitional
 - Notis: Information om tidigare beslutat ärende
@@ -121,6 +121,8 @@ Som första meddelande för en ny studie från LV till BBS accepteras:
     - Ändring, mononationell, del I
     - Ändring, mononationell, del I och del II
     - Ändring, nationell, del II
+- Notis: Information om tidigare beslutat ärende
+    - samtliga
 
 När ett sådant meddelande är mottaget startas en studie och en ansökan (*case*) och en eller två bedömning(ar) (*assessment(s)*)
 
@@ -163,12 +165,10 @@ Bedömning del I startar alltid i samband med
     - Ändring, multinationell, del I och del II
     - Ändring, mononationell, del I
     - Ändring, mononationell, del I och del II
-    - KP-ansökan, Tillägg av SE som MSC
 
 Bedömning del I avslutas vid meddelande:
 
 - Notis: AR och slutsats del I
-- Notis: Beslut för ansökan
 - Notis: Ansökan dragits tillbaka
 - Notis: Ansökan förfallen
 - Notis: Ansökan tyst godkännande
@@ -194,12 +194,10 @@ Bedömning del II startar alltid i samband med
     - Ändring, multinationell, del I och del II
     - Ändring, mononationell, del I och del II
     - Ändring, nationell, del II
-    - KP-ansökan, Tillägg av SE som MSC
 
 Bedömning del II avslutas vid meddelande:
 
 - Notis: AR och slutsats del II
-- Notis: Beslut för ansökan
 - Notis: Ansökan dragits tillbaka
 - Notis: Ansökan förfallen
 - Notis: Ansökan tyst godkännande
